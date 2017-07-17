@@ -1,0 +1,899 @@
+﻿@{
+    ViewBag.Title = "jzxm";
+                                    //Layout = null;
+}
+@model IEnumerable<Health.Models.S4zhishi>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+
+    @*  <link href="~/css/css2.css" rel="stylesheet" />*@
+    <script src="~/js/lxb.js" charset="utf-8"></script>
+    <script src="~/js/hm.js"></script>
+    <script src="~/js/jquery1.js"></script>
+    <script type="text/javascript" src="~/js/jquery1.js"></script>
+    <script src="~/js/foucs.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/superslide.js"></script>
+    <script language="javascript" type="text/javascript" src="~/js/ss.js"></script>
+
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+</head>
+<body>
+    <script src="~/js/lrtk.js"></script>
+    <script>
+        $(function () {
+
+            $(".gfwx").hover(function () {
+
+                $(".kf_ewm").show();
+            }, function () {
+                $(".kf_ewm").hide();
+            })
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+            /*成功案例*/
+            $(".cgal_list").hide();
+            $(".cgal_list").eq(0).show();
+
+            $(".cgal_title li").hover(function () {
+                var x = $(".cgal_title li").index(this)
+                $(".cgal_list").hide();
+                $(".cgal_list").eq(x).show();
+
+                $(".cgal_title li").removeClass("current_al")
+                $(this).addClass("current_al")
+            })
+
+            /*种植*/
+            $(".zz_text").hide();
+            $(".zz_text").eq(0).show();
+
+            $(".zz_list li").hover(function () {
+                var x = $(".zz_list li").index(this)
+                $(".zz_text").hide();
+                $(".zz_text").eq(x).show();
+
+                $(".zz_list li").removeClass("current_zz")
+                $(this).addClass("current_zz")
+            })
+
+            /*5大矫正技术*/
+            $(".jz03_list").hide();
+            $(".jz03_list").eq(0).show();
+
+            $(".jz_03_text ul li").hover(function () {
+                var x = $(".jz_03_text ul li").index(this)
+                $(".jz03_list").hide();
+                $(".jz03_list").eq(x).show();
+
+                $(".jz_03_text ul li").removeClass("currentj")
+                $(this).addClass("currentj")
+            })
+
+
+        })
+    </script>
+    <!--主体部分-->
+    <div class="container clearfix" style="width: 1300px;">
+        <!--左侧导航栏-->
+        <div class="ltbox fl bd1">
+            <div class="ltmenu">
+                <div class="tit">
+                    <h2>牙齿矫正</h2>
+                </div>
+                <ul class="menulist clearfix">
+                    <li class="current cli"><a href="#o1" class="scroll"><i></i>错颌畸形的危害</a></li>
+                    <li class="cli"><a href="#o2" class="scroll"><i></i>牙齿矫正适应症</a></li>
+                    <li class="cli"><a href="#o3" class="scroll"><i></i>矫正类型</a></li>
+                    <li class="cli"><a href="#o4" class="scroll"><i></i>矫正专家</a></li>
+                    <li class="cli"><a href="#o5" class="scroll"><i></i>矫正流程图</a></li>
+                    <li class="cli"><a href="#o6" class="scroll"><i></i>隐形矫正</a></li>
+                    <li class="cli"><a href="#o7" class="scroll"><i></i>儿童牙齿矫正</a></li>
+                    <li class="cli"><a href="#o8" class="scroll"><i></i>热门问答</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/cur.js"></script>
+        <!--右侧内容栏-->
+        <div class="rtbox fr" style="width: 1060px;">
+            <div class="jz_box">
+                <div class="jz_01">
+                    <div id="o1">
+                        <div class="jz_01_text">
+                            <div class="jz02_js">
+                                <div>
+                                    <p>
+                                        目前矫正牙齿的方法已经非常成熟，地包天、龅牙、牙间隙、牙列不齐、牙齿拥挤等问题均可通过牙齿矫正来治疗。
+                                    </p>
+                                    <br>
+                                    <p>
+                                        在我国错颌畸形的患病率高达70%以上，错颌畸形的危害主要有两个方面：
+                                    </p>
+                                </div>
+                                <img src="~/images/zhzl_03_tp08.png" />
+                            </div>
+                            <div class="jz02_wh">
+                                <div class="jz02_wh01">
+                                    <h1 class=" jz02_wh01_bt">局部危害性</h1>
+                                    <div class="jz02_wh_text">
+                                        <ul style="margin-left: 40px;">
+                                            <li>
+                                                <h1>◇ 对颌面部发育的影响
+                                                </h1>
+                                                <p>
+                                                    有些错颌畸形发生后，影响颌面软硬组织的正常发育，导致错颌畸形发展愈来愈严重，随着年龄的增长，颌面部的畸形愈来愈明显。
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <h1>◇ 对口腔健康的影响
+                                                </h1>
+                                                <p>
+                                                    错颌患者患有创伤性错颌而影响牙周组织、咀嚼肌及颞下关节的健康，食物残渣长期滞留在牙面上，容易发生龋齿、牙结石、牙龈炎等，甚至引发牙周病、牙齿松动、牙痛。
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <img src="~/images/jz02_tp02.jpg">
+                                        <ul>
+                                            <li>
+                                                <h1>◇ 对容貌的影响
+                                                </h1>
+                                                <p>
+                                                    很多错颌畸形可造成颜面的畸形，影响美观。进而影响职业选择及正常社交。
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <h1>◇ 对口腔功能的影响
+                                                </h1>
+                                                <p>
+                                                    严重的错颌畸形，如严重的牙齿拥挤、开颌等畸形，影响发音，严重下颌后缩，影响正常呼吸，严重下颌前突可造成吞咽异常，降低咀嚼功能。
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="jz02_wh01">
+                                    <h1 class=" jz02_wh01_bt">全身危害性</h1>
+                                    <div class="jz02_wh02">
+                                        <p>
+                                            错颌严重时，咀嚼功能严重降低，引起消化不良及胃肠疾病，损害身体健康。有些错颌畸形由于妨碍了发音及容貌，甚至会影响职业选择，影响心理健康，很多人由于牙齿不整齐不爱说话，不敢大笑，产生自卑心理。
+                                        </p>
+                                        <p>
+                                            对工作择业和口腔健康埋下隐患，造成不可估量的损失。
+                                        </p>
+                                    </div>
+                                    <div class="jz02_wh02_btn">
+                                        <a href="~/zhongli/doctor" target="_blank">
+                                            <img src="~/images/jz02_yy.jpg"></a> 
+                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow"><img src="~/images/jz02_zx.jpg"></a>
+                                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="o2">
+                        <div class="jz02_syz">
+                            <img src="~/images/jz02_tp05.jpg">
+                        </div>
+                        <div class="jz_02_text">
+                            <div class="jz02_jzjs">
+                                <img src="~/images/jz02_tp06.jpg">
+                                <ul>
+                                </ul>
+                            </div>
+                            <div class="jz02_jzjs">
+                                <img src="~/images/jz02_tp07.jpg">
+                                <ul>
+                                </ul>
+                            </div>
+                            <div class="jz02_jzjs">
+                                <img src="~/images/jz02_tp08.jpg">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jz_01">
+                    <div class="jz_01_title jz_03_title"><a href="#" target="_blank">&gt;&gt; 点击咨询详情</a></div>
+                    <div id="o3">
+                        <div class="jz_03_text">
+                            <ul>
+                                <li class="">
+                                    <img src="~/images/jz03_tp01.jpg">
+                                    <h1 style="line-height: 56px;">隐形矫正</h1>
+                                </li>
+                                <li class="">
+                                    <img src="~/images/jz03_tp02.jpg">
+                                    <h1>陶瓷托槽<br>
+                                        半隐形矫正</h1>
+                                </li>
+                                <li class="">
+                                    <img src="~/images/jz03_tp03.jpg">
+                                    <h1>美国3M自锁<br>
+                                        托槽矫正</h1>
+                                </li>
+                                <li class="">
+                                    <img src="~/images/jz03_tp04.jpg">
+                                    <h1>美国Ormco精密<br>
+                                        自锁托槽矫正</h1>
+                                </li>
+                                <li class="currentj" style="margin-right: 0;">
+                                    <img src="~/images/jz03_tp05.jpg">
+                                    <h1 style="line-height: 56px;">普通金属托槽矫正</h1>
+                                </li>
+                            </ul>
+
+                            <div style="display: none;" class="jz03_list">
+                                <div class="jz03_list_L">
+                                    <img src="~/images/jz03_tp06.jpg">
+                                    <div>
+                                        <h1>适应症</h1>
+                                        <p>所有畸形牙，明星、商务人士、企业白领及对美观度要求极高的人士首选</p>
+                                    </div>
+                                </div>
+
+                                <div class="jz03_list_R">
+                                    <div class="jz03_list_R_title">
+                                        <h1>隐形矫正</h1>
+                                        <h2>隐形矫正，明显首选</h2>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>精准矫正，完美效果</h1>
+                                        <p>采用美国隐形矫牙技术，个性化设计矫治过程，用三维立体图像快速成型技术制造矫治器，实现不同阶段的牙颌畸形个性化矫治。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>易清洁，口腔更卫生</h1>
+                                        <p>易于摘带，故更加容易清洁，给牙齿一个干净卫生的"居住环境"，从而杜绝了牙损伤与牙病变。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>无托槽弓丝，舒适无痛</h1>
+                                        <p>没有托槽与弓丝，不会造成食物残留，更加没有口腔粘膜摩擦的烦恼，极大程度的减少了不适、疼痛的感觉。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>效果稳定，不易复发</h1>
+                                        <p>矫正时间比传统矫正缩短了1/3，复诊次数更少，在更加快速矫正的同时更加便于生活。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: none;" class="jz03_list">
+                                <div class="jz03_list_L">
+                                    <img src="~/images/tc.jpg">
+                                    <div>
+                                        <h1>适应症</h1>
+                                        <p>所有畸形牙，爱美人士、以及工作上对美观有要求的人士</p>
+                                    </div>
+                                </div>
+
+                                <div class="jz03_list_R">
+                                    <div class="jz03_list_R_title">
+                                        <h1>陶瓷托槽半隐形矫正</h1>
+                                        <h2>隐形矫牙，再难都行</h2>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>性价比高</h1>
+                                        <p>比隐形矫正更经济，比金属托槽矫正更美观</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>舒适无痛</h1>
+                                        <p>陶瓷矫治器表面光滑圆润，佩戴无明显异物感，牙套与牙齿浑然一体。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>隐形美观</h1>
+                                        <p>玻璃陶瓷制作，呈乳白色半透明，与牙齿色泽一致。让您的笑容毫无瑕疵。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>应用广泛</h1>
+                                        <p>世界各地的正畸医师均信赖和使用陶瓷托槽。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: none;" class="jz03_list">
+                                <div class="jz03_list_L">
+                                    <img src="~/images/3M.jpg">
+                                    <div>
+                                        <h1>适应症</h1>
+                                        <p>矫治时间更短，具有治疗效果的可预见性。适用于对矫正时间有要求的人士。</p>
+                                    </div>
+                                </div>
+
+                                <div class="jz03_list_R">
+                                    <div class="jz03_list_R_title">
+                                        <h1>美国3M自锁托槽矫正</h1>
+                                        <h2></h2>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>疗程缩短</h1>
+                                        <p>传统固定正畸的复诊，病人每月需要到医院调整一次。而使用自锁托槽矫治的复诊间隔，病人每两个月左右到医院调整一次即可。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>免除拔牙</h1>
+                                        <p>由于自锁托槽的摩擦力极低，牙齿的移动更为容易，所以一些以往需要拔牙治疗的病人现在可以不拔牙治疗。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>舒适安全 减轻痛苦</h1>
+                                        <p>在柔和的轻力水下平实现牙齿的移动，患者不易感到疼痛及不适，无需结扎，避免了损伤，大大减轻了矫治痛苦。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>效果稳定</h1>
+                                        <p>没有结扎丝等附件，更有利于口腔清洁，有利于保护牙周组织健康，矫治效果更稳定。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: none;" class="jz03_list">
+                                <div class="jz03_list_L">
+                                    <img src="~/images/Ormco.jpg">
+                                    <div>
+                                        <h1>适应症</h1>
+                                        <p>定位精确，疗程简化。不需要结扎圈。适用于所有需要矫正人士。</p>
+                                    </div>
+                                </div>
+
+                                <div class="jz03_list_R">
+                                    <div class="jz03_list_R_title">
+                                        <h1>美国Ormco精密自锁托槽矫正</h1>
+                                        <h2></h2>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>缩短治疗时间</h1>
+                                        <p>极大地降低了系统内部摩擦力，使用轻力矫治体系，提高牙齿的移动效率，可以缩短疗程半年以上。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>免除拔牙</h1>
+                                        <p>由于自锁托槽的摩擦力极低，牙齿的移动更为容易，所以一些以往需要拔牙治疗的病人现在可以不拔牙治疗。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>病人舒适度提升</h1>
+                                        <p>无钢丝和弹性结扎，矫治力轻使患者不适感减轻很多。托槽体积更小，更薄，更舒适。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>有利于口腔卫生</h1>
+                                        <p>托槽较窄，托槽间距宽，所以容易清洁，口腔卫生好，易于被患者接受。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div style="display: block;" class="jz03_list">
+                                <div class="jz03_list_L">
+                                    <img src="~/images/ptjs.jpg">
+                                    <div>
+                                        <h1>适应症</h1>
+                                        <p>价格优廉，适用于学生、青少年</p>
+                                    </div>
+                                </div>
+
+                                <div class="jz03_list_R">
+                                    <div class="jz03_list_R_title">
+                                        <h1>金属托槽矫正</h1>
+                                        <h2>传统技艺，成熟可靠</h2>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>价格便宜</h1>
+                                        <p>经济实惠，适合dental health矫正患者。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>材料优质</h1>
+                                        <p>具有金属刚性及弹性，不易断裂变形。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text">
+                                        <h1>舒适稳固</h1>
+                                        <p>独特自然的弯曲程度，提供最大限度的接触面和舒适度。</p>
+                                    </div>
+                                    <div class="jz03_list_R_text" style="float: right;">
+                                        <h1>矫正效果好</h1>
+                                        <p>传统技艺，成熟可靠。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o4">
+                    <div class="jz_01">
+
+                        <div class="jz_05_text">
+                            <div class="jz_zjbox">
+                                <img class="jz_zjBtnL prev" src="~/images/jz05_btnL.png">
+                                <div class="jz_zjUl">
+                                    <div class="tempWrap" style="overflow: hidden; position: relative; width: 948px">
+                                        <ul style="width: 6636px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -2212px;">
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/66" target="_blank">
+                                                        <img src="~/images/c80e45e9b0af602d6c16f9c730882c40.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>陈键  </h1>
+                                                    <p>主治医师 dental health口腔鹦鹉花园门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长根管治疗、固定义齿、活动义齿，对口腔正畸有较深造诣</p>
+                                                    <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/67" target="_blank">
+                                                        <img src="~/images/90f0036688af9e1da3a337ca2ad31dd4.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>张秋  </h1>
+                                                    <p>主治医师 dental health口腔杨园门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长青少年牙齿矫正、美容修复、复杂活动义齿、无痛根管治疗</p>
+                                                    <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/61" target="_blank">
+                                                        <img src="~/images/8f752a5c50f862974b87af47cec52744.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>潘少群 </h1>
+                                                    <p>副教授 副主任医师 正畸科专家</p>
+                                                    <br>
+                                                    <p>擅长各种类型的牙颌畸形、各种类型的口腔牙颌面畸形的诊断、设计和矫正治疗</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/62" target="_blank">
+                                                        <img src="~/images/2f72125128328c5fc32f2af42777df08.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>胡德进 </h1>
+                                                    <p>主治医师 dental health口腔青年路门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长口腔美容修复、固定义齿、活动义齿、根管治疗、复杂牙拔除、错颌畸形矫正</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/63" target="_blank">
+                                                        <img src="~/images/abf32ba7a9ce582a5d3800172230d90b.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>蒋澍   </h1>
+                                                    <p>主治医师 dental health口腔医院门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长牙颌畸形的预防与矫治，对口腔修复、复杂根管的治疗有一定造诣</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/64" target="_blank">
+                                                        <img src="~/images/8f752a5c50f862974b87af47cec52744.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>袁开森  </h1>
+                                                    <p>主治医师 dental health口腔钢都花园门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长根管治疗、固定义齿、活动义齿，擅长牙颌畸形诊疗、完成正畸数百例</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/65" target="_blank">
+                                                        <img src="~/images/aba0d7ecc619103000758d91f09437b8.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>张雷  </h1>
+                                                    <p>主治医师 dental health口腔丁字桥门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长各类固定义齿、活动义齿的诊疗与制作，各类常见牙颌畸形的诊疗及矫正</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/66" target="_blank">
+                                                        <img src="~/images/c80e45e9b0af602d6c16f9c730882c40.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>陈键  </h1>
+                                                    <p>主治医师 dental health口腔鹦鹉花园门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长根管治疗、固定义齿、活动义齿，对口腔正畸有较深造诣</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>                                           
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/63" target="_blank">
+                                                        <img src="~/images/abf32ba7a9ce582a5d3800172230d90b.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>蒋澍   </h1>
+                                                    <p>主治医师 dental health口腔医院门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长牙颌畸形的预防与矫治，对口腔修复、复杂根管的治疗有一定造诣</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>                                        
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/65" target="_blank">
+                                                        <img src="~/images/abf32ba7a9ce582a5d3800172230d90b.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>张雷  </h1>
+                                                    <p>主治医师 dental health口腔丁字桥门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长各类固定义齿、活动义齿的诊疗与制作，各类常见牙颌畸形的诊疗及矫正</p>
+                                                   <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>                                       
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/67" target="_blank">
+                                                        <img src="~/images/abf32ba7a9ce582a5d3800172230d90b.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>张秋  </h1>
+                                                    <p>主治医师 dental health口腔杨园门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长青少年牙齿矫正、美容修复、复杂活动义齿、无痛根管治疗</p>
+                                                    <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/61" target="_blank">
+                                                        <img src="~/images/8f752a5c50f862974b87af47cec52744.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>潘少群 </h1>
+                                                    <p>副教授 副主任医师 正畸科专家</p>
+                                                    <br>
+                                                    <p>擅长各种类型的牙颌畸形、各种类型的口腔牙颌面畸形的诊断、设计和矫正治疗</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/62" target="_blank">
+                                                        <img src="~/images/2f72125128328c5fc32f2af42777df08.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>胡德进 </h1>
+                                                    <p>主治医师 dental health口腔青年路门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长口腔美容修复、固定义齿、活动义齿、根管治疗、复杂牙拔除、错颌畸形矫正</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/63" target="_blank">
+                                                        <img src="~/images/abf32ba7a9ce582a5d3800172230d90b.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>蒋澍   </h1>
+                                                    <p>主治医师 dental health口腔医院门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长牙颌畸形的预防与矫治，对口腔修复、复杂根管的治疗有一定造诣</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/64" target="_blank">
+                                                        <img src="~/images/abf32ba7a9ce582a5d3800172230d90b.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>袁开森  </h1>
+                                                    <p>主治医师 dental health口腔钢都花园门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长根管治疗、固定义齿、活动义齿，擅长牙颌畸形诊疗、完成正畸数百例</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="jz_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/qwzj/65" target="_blank">
+                                                        <img src="~/images/aba0d7ecc619103000758d91f09437b8.jpg"></a>
+                                                </div>
+                                                <div class="jz_zj_wz">
+                                                    <h1>张雷  </h1>
+                                                    <p>主治医师 dental health口腔丁字桥门诊部主任</p>
+                                                    <br>
+                                                    <p>擅长各类固定义齿、活动义齿的诊疗与制作，各类常见牙颌畸形的诊疗及矫正</p>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a class="jz_05_more" href="http://www.chinadzyl.com/index.php/category/team"></a>
+                                </div>
+                                <img class="jz_zjBtnR next" src="~/images/JZ05_btnR.png">
+                            </div>
+                            <script language="javascript">
+                                $(".jz_zjUl ul li img").hover(function () { $(this).css("border-color", "#A0C0EB"); }, function () { $(this).css("border-color", "#d8d8d8") });
+                                jQuery(".jz_zjbox").slide({ titCell: "", mainCell: ".jz_zjUl ul", autoPage: true, effect: "leftLoop", autoPlay: true, vis: 3 });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div id="o5">
+                    <div class="jz_01">
+                        <div class="jz_06_text">
+                            <div class="jz_06_lct">
+                                <h1>矫正流程图</h1>
+                                <img src="~/images/jz06_lct.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o6">
+                    <div class="jz_01">
+                        <div class="jz_07_text">
+                            <div class="jz_07_yxjz">
+                                <div class="jz_07_yxjz_L">
+                                    <h1>隐形矫正
+                                    </h1>
+                                    <h2>成人及明星矫正首选矫正方案
+                                    </h2>
+                                </div>
+                                <p>
+                                    隐形矫正是一种全新的牙齿矫正技术，它完全抛弃了传统的托槽和金属弓丝，通过佩戴一系列由高分子材料制成的透明矫治牙套，逐渐移动牙齿，从而达到矫正目的。隐形矫正使您彻底摆脱传统矫正“铁齿钢牙”的尴尬形象，可以在追求完美的过程中自信地绽放您的笑容。
+                                </p>
+                            </div>
+                            <div class="jz_07_line"></div>
+                            <div class="jz_07_fx">
+                                <img src="~/images/jz_07_tp01.jpg">
+                                <div class="jz_07_fx_R">
+                                    <h1>隐形矫正病例分析
+                                    </h1>
+                                    <ul>
+                                        <li>
+                                            <span>牙齿间隙</span>
+                                            <p>
+                                                牙齿间的间隙会影响您的面部美观，也会使牙齿受到龋齿的侵蚀。隐形矫正可以轻松地为您关闭牙齿的间隙，让您的笑容更美丽，牙齿更健康。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span>牙齿拥挤</span>
+                                            <p>
+                                                当牙齿过于拥挤，它们就会排列不齐，影响牙齿美观；同时也不利于清洁口腔，容易引起其它的口腔疾病。隐形矫正可以轻松地为您解决牙齿的拥挤，让您的笑容更灿烂，牙齿更健康。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span>牙齿错颌</span>
+                                            <p>
+                                                上、下颌牙齿咬合位置不对，就会引起咀嚼困难、颌关节疾病和其它一些口腔疾病。“地包天”就是一个典型的牙齿反颌。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span>深覆盖</span>
+                                            <p>
+                                                深覆盖是由于咬合位置过深，上颌盖住下颌过多而引起的牙齿畸形。除了外观不美外，深覆盖还可以引起其它口腔疾病。
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o7">
+                    <div class="jz_01">
+                        <div class="jz_07_text">
+                            <div class="jz_08_L">
+                                <div class="jz_08_L_tp">
+                                    <img src="~/images/jz07_tp01.jpg">
+                                    <img src="~/images/jz07_tp02.jpg">
+                                </div>
+                                <div class="jz_08_L_wz">
+                                    <p>
+                                        患者  ZY   年龄 10岁
+                                    <br>
+                                        主诉：地包天，双侧磨牙中性关系，前牙反覆盖-1mm，下颌可后退，替牙期<br>
+                                        反颌，上颌发育不足<br>
+                                        治疗方案：采用功能性矫治，前方牵引促进上颌发育解除反颌
+                                    </p>
+                                    <a href="http://kft.zoosnet.net/LR/Chatpre.aspx?id=KFT41922462" target="_blank"></a>
+                                </div>
+                                <div class="jz08_line">
+                                </div>
+                                <div class="jz_08_L_tp">
+                                    <img src="~/images/jz07_tp03.jpg">
+                                    <img src="~/images/jz07_tp04.jpg">
+                                </div>
+                                <div class="jz_08_L_wz">
+                                    <p>
+                                        患者： CBZ  年龄  12岁<br>
+                                        主诉：牙齿有缝隙，右侧磨牙中性关系，左侧磨牙远中关系，前牙深覆盖深覆<br>
+                                        合Ⅱ度，上下牙列散在间隙<br>
+                                        治疗方案：不拔牙矫治，直丝弓矫治技术
+                                    </p>
+                                    <a href="http://kft.zoosnet.net/LR/Chatpre.aspx?id=KFT41922462" target="_blank"></a>
+                                </div>
+                            </div>
+                            <div class="jz_08_R">
+                                <h1>温馨提示
+                                </h1>
+                                <h2>术前准备：
+                                </h2>
+                                <p>
+                                    术前一周应保持牙齿清洁，消除龋齿、牙周炎。男性最好刮脸、剃须。
+                                </p>
+                                <h2>术后护理:
+                                </h2>
+                                <p>
+                                    遵医嘱按规定佩戴矫治器，并按时复诊。保持口腔卫生并注意保护好牙齿，尽量勿咬硬物。
+                                </p>
+                                <h2>儿童牙齿矫正注意事项：
+                                </h2>
+                                <ul>
+                                    <li>出现托槽脱落，请及时到医院请专业医生修复。
+                                    </li>
+                                    <li>要注意口腔的卫生清洁，使用正畸专用牙刷或牙线来保持口腔卫生，避免出现蛀牙等牙齿疾病，从而保证孩子的口腔健康，达到矫正的理想效果。
+                                    </li>
+                                    <li>矫正时一定要控制孩子甜食的食用量。甜食对此时的牙齿破坏比较大。
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="08">
+                    <div class="jz_01">
+                        <div class="jz_08_text">
+                            <div class="jz_08_rmhd">
+
+                                <div class="rmhd_L ">
+                                    <img src="~/images/d44b705caafb97e79d979f039181be2a.jpg" height="100" width="280">
+                                    <h1>隐形矫正会痛吗？</h1>
+                                    <p>
+                                        导读：隐形矫正会痛吗？谈到牙齿，拔牙，修复牙，很多人都会跟痛感挂钩，隐形矫正越来越受欢迎了，各方面问题也随着担心起来，那么隐形矫正会痛吗？  
+ 隐形牙齿矫正没有托槽和钢丝，采用固定模...
+                                </div>
+                                <div class="rmhd_line jz09_line"></div>
+                                <div class="rmhd_L ">
+                                    <img src="~/images/8d1156e9d44fdd23e539d7e90be267ca.jpg" height="100" width="280">
+                                    <h1>牙齿拥挤有哪些危害</h1>
+                                    <p>
+                                        牙列拥挤分为单纯拥挤和复杂拥挤。单纯拥挤表现为牙齿因间隙不足而排列错乱，并因此影响到牙弓形态与咬合关系;单纯拥挤可视为牙性错合，一般不伴颌骨及牙弓间关系不调，也少有口颌系统功能异常...
+                                    </p>
+                                </div>
+                                <div class="rmhd_line jz09_line"></div>
+                                <div class="rmhd_L ">
+                                    <img src="~/images/862f73768f055623da53eb1f51e8ca45.jpg" height="100" width="280">
+                                    <h1>牙齿整形什么年龄最佳</h1>
+                                    <p>
+                                        有网友问我们dental health口腔的专家“我今年27岁了，因为牙齿不整齐至今未能找到女朋友，不知道我这个年龄还能做牙齿矫正吗，矫正效果好么？牙齿矫正的最佳年龄是多少呢?” 
+ 专家指出，27岁是可以做牙齿...
+                                </div>
+                            </div>
+                            <div class="rmhd_title " style="border-top: none; height: 67px; margin-bottom: 10px;">
+                                <img src="~/images/part_rmhd.jpg">
+                            </div>
+                            <div class="zhzl_rmwd_db_list">
+                                @foreach (var item in Model)
+                                {  
+                                    <ul class="ljgd_list">
+                                        <li><a href="~/mingpiao/zslj?zsid=@item.zsid" target="_blank">@item.zstitle</a></li>
+                                    </ul>
+                                }
+                                <a class="ljgd_btn" href="http://www.chinadzyl.com/index.php/category/jzwd">了解更多&gt;&gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+
+    <!--左侧微信-->
+    <div id="ewm">
+        <span>关闭</span>
+        <img src="images/weixin.jpg" alt="微信">
+    </div>
+    <!--右侧工具栏-->
+    <div id="sidebar">
+        <ul>
+            <li class="qq">
+                <span>咨询</span>
+                <div class="showbox">
+                    <div class="qqlist">
+                        <div class="qqtop">在线咨询</div>
+                        <div class="qqlist2">
+                            <a target="_blank" href="#" rel="nofollow">协会咨询</a><a target="_blank" href="#" rel="nofollow">网站咨询</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="qrcode">
+                <span>微信</span>
+                <div class="showbox">
+                    <img src="images/weixin.jpg" width="100" height="100" alt="微信">
+                </div>
+            </li>
+            <li class="share">
+                <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                    <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                </div>
+            </li>
+            <li class="gotop"><span>顶部</span></li>
+        </ul>
+        <style type="text/css">
+            #sidebar .bdshare-button-style0-16 .bds_more {
+                background: none;
+                display: block;
+                padding: 0px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px;
+                float: none;
+            }
+
+                #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+        </style>
+        <script type="text/javascript">
+            window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script src="#" type="text/javascript"></script>
+    </div>
+</body>
+</html>
+
+

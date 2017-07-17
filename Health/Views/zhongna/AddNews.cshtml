@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+@model Health.Models.S4news
+
+<html>
+<head>
+    <title></title>
+    <script src="~/UI/jquery.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="tj2">
+         <br />
+        编号：<input id="nid" name="nid" type="text" />
+        <br />
+        <br />
+        标题：<input id="nname" name="nname" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入标题！" />
+        <br />
+        <br />
+        内容：<input id="ninfo" name="ninfo" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入内容！" />
+        <br />
+        <br />
+        类型：@Html.DropDownListFor(n => n.ntid, ViewBag.mm as SelectList)
+        <br />
+        <br />
+        图片：<input id="pic" name="pic" type="file" class="easyui-validatebox" data-options="required:true" missingmessage="请选择图片！" />
+        <br />
+        <br />
+
+    </form>
+
+</body>
+</html>

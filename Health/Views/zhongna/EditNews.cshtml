@@ -1,0 +1,21 @@
+﻿@{
+    Layout=null;
+}
+@model Health.Models.S4news
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <form id="tj3">
+            新闻编号：@Html.EditorFor(n=>n.nid)        
+            <br /><br />
+            新闻标题：@Html.TextAreaFor(n=>n.nname)
+           <br /><br />
+            新闻内容：@Html.TextAreaFor(n=>n.ninfo)  <br /><br />
+            新闻类型：@Html.DropDownListFor(n=>n.ntid,ViewBag.mm as SelectList)<br /><br />
+            新闻图片：@Html.EditorFor(n=>n.pic)      
+            </form> 
+    </body>
+</html>

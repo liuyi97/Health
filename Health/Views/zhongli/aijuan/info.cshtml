@@ -1,0 +1,202 @@
+﻿@{
+    //ViewBag.Title = "info";
+    Layout = null;
+}
+@model Health.Models.S4doctors
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/templatemo_main.css" rel="stylesheet" />
+    <script src="../js/templatemo_script.js" type="text/javascript"></script>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Chart.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+
+    <script>
+        $("#Submit1").click(function () {
+            $.ajax({
+                url: '/zhongna/InfoList',
+                data: {
+                    tt: $("#tt").val(),
+                    name: $("#Text6").val(),
+                    zhanghao: $("#Text7").val(),
+                    mima: $("#Text8").val(),
+                    phone: $("#Text9").val(),
+                    img: $("#Text10").val()
+
+                },
+                success: function () {
+                    $.messager.alert("提示", "修改成功！");
+                }
+            })
+        })
+       
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <div class="logo">
+                <a href="#">
+                    <h1>Dental Health</h1>
+                </a>
+            </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </div>
+    <div class="template-page-wrapper">
+        <div class="navbar-collapse collapse templatemo-sidebar">
+            <ul class="templatemo-sidebar-menu">
+                <li>
+                    <form class="navbar-form">
+                        <input type="text" class="form-control" id="templatemo_search_box" placeholder="Search..." />
+                        <span class="btn btn-default">Go</span>
+                    </form>
+                </li>
+                <li><a href="~/aijuan/houtai"><i class="fa fa-home"></i>预约列表</a></li>
+                <li><a href="~/aijuan/check"><i class="fa fa-cubes"></i><span class="badge pull-right">9</span>审核</a></li>
+                <li><a href="~/aijuan/talk"><i class="fa fa-users"></i><span class="badge pull-right">NEW</span>回复留言</a></li>
+                <li class="active"><a href="~/aijuan/info"><i class="fa fa-home"></i>设置信息</a></li>
+                <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>退出</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--/.navbar-collapse -->
+
+    <div class="templatemo-content-wrapper">
+        <div class="templatemo-content">
+            <ol class="breadcrumb">
+                <li><a href="index.html">后台</a></li>
+                <li><a href="#">专家</a></li>
+                <li class="active">修改信息</li>
+            </ol>
+            <h1>完善信息</h1>
+            <p class="margin-bottom-15">在这里了解最真实的你</p>
+            <div class="row" id="ee">
+                <div class="col-md-12">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="row">
+
+                            <div class="col-md-4 margin-bottom-15">
+                                <label for="lastName" class="control-label">登录名：</label>
+                                @Html.EditorFor(n => n.dname)
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4 margin-bottom-15">
+                                <label for="password_2">登陆密码：</label>
+                                @Html.EditorFor(n => n.dpwd)
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 margin-bottom-15">
+                                <label for="notes">职位：</label>
+                                @Html.EditorFor(n => n.dzhicheng)
+
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 margin-bottom-15">
+                                <label for="notes">地址：</label>
+                                @Html.TextAreaFor(n => n.daddress)
+
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-5 margin-bottom-15">
+
+                                <label for="password_1">性&nbsp;&nbsp;&nbsp;别:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                @Html.RadioButton("dsex", "男", true) 男 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  @Html.RadioButton("dsex", "女") 女                           
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 margin-bottom-15">
+                                <label for="notes">介绍：</label>
+                                @Html.TextAreaFor(n => n.djianjie, 6, 80, null)
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 margin-bottom-15">
+                                <label for="notes">详情：</label>
+                                @Html.TextAreaFor(n => n.dxiangqing, 6, 80, null)
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 margin-bottom-15">
+                                <label for="singleSelect">诊疗人数：</label>
+                                <select id="shu" class="form-control margin-bottom-15">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="1">4</option>
+                                    <option value="2" selected="selected">5</option>
+                                    <option value="3">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 margin-bottom-15">
+                                <label for="singleSelect">诊疗时间：</label>
+                                <select id="tiname" class="form-control margin-bottom-15">
+                                    <option value="1">8：00-12：30</option>
+                                    <option value="2">14：00-17：30</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row templatemo-form-buttons">
+                            <div class="col-md-12">
+                                <input type="submit" id="submit1" value="更新" class="btn btn-primary" onclick="gxclick()" />
+                                <input type="submit" value="重置" class="btn btn-default" onclick="czclick()" />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="myModalLabel">确定退出吗?</h4>
+                </div>
+                <div class="modal-footer">
+                      <a href="~/zhongli/login" class="btn btn-primary">是</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="templatemo-footer">
+        <div class="templatemo-copyright">
+            <p>Copyright &copy; 2016 武汉船舶职业技术学院 <a href="#">无需等待，马上行动！</a> - Dental Health <a href="#">口腔健康之家</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

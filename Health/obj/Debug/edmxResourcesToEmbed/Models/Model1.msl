@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="S4HealthModelStoreContainer" CdmEntityContainer="S4HealthEntities">
+    <EntitySetMapping Name="S4anli">
+      <EntityTypeMapping TypeName="S4HealthModel.S4anli">
+        <MappingFragment StoreEntitySet="S4anli">
+          <ScalarProperty Name="liid" ColumnName="liid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="liqian" ColumnName="liqian" />
+          <ScalarProperty Name="lihou" ColumnName="lihou" />
+          <ScalarProperty Name="ajieshao" ColumnName="ajieshao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4doctors">
+      <EntityTypeMapping TypeName="S4HealthModel.S4doctors">
+        <MappingFragment StoreEntitySet="S4doctors">
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="dname" ColumnName="dname" />
+          <ScalarProperty Name="dpwd" ColumnName="dpwd" />
+          <ScalarProperty Name="dzhicheng" ColumnName="dzhicheng" />
+          <ScalarProperty Name="daddress" ColumnName="daddress" />
+          <ScalarProperty Name="djianjie" ColumnName="djianjie" />
+          <ScalarProperty Name="dxiangqing" ColumnName="dxiangqing" />
+          <ScalarProperty Name="dapic" ColumnName="dapic" />
+          <ScalarProperty Name="dxpic" ColumnName="dxpic" />
+          <ScalarProperty Name="dsex" ColumnName="dsex" />
+          <ScalarProperty Name="shu" ColumnName="shu" />
+          <ScalarProperty Name="tiid" ColumnName="tiid" />
+          <ScalarProperty Name="xid" ColumnName="xid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4huanjing">
+      <EntityTypeMapping TypeName="S4HealthModel.S4huanjing">
+        <MappingFragment StoreEntitySet="S4huanjing">
+          <ScalarProperty Name="hjid" ColumnName="hjid" />
+          <ScalarProperty Name="hjname" ColumnName="hjname" />
+          <ScalarProperty Name="hjimage" ColumnName="hjimage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4image">
+      <EntityTypeMapping TypeName="S4HealthModel.S4image">
+        <MappingFragment StoreEntitySet="S4image">
+          <ScalarProperty Name="Iid" ColumnName="Iid" />
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="Iimage" ColumnName="Iimage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4information">
+      <EntityTypeMapping TypeName="S4HealthModel.S4information">
+        <MappingFragment StoreEntitySet="S4information">
+          <ScalarProperty Name="iid" ColumnName="iid" />
+          <ScalarProperty Name="iname" ColumnName="iname" />
+          <ScalarProperty Name="ineirong" ColumnName="ineirong" />
+          <ScalarProperty Name="iimage" ColumnName="iimage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4liuyan">
+      <EntityTypeMapping TypeName="S4HealthModel.S4liuyan">
+        <MappingFragment StoreEntitySet="S4liuyan">
+          <ScalarProperty Name="lid" ColumnName="lid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="utalk" ColumnName="utalk" />
+          <ScalarProperty Name="dtalk" ColumnName="dtalk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4machine">
+      <EntityTypeMapping TypeName="S4HealthModel.S4machine">
+        <MappingFragment StoreEntitySet="S4machine">
+          <ScalarProperty Name="maid" ColumnName="maid" />
+          <ScalarProperty Name="maname" ColumnName="maname" />
+          <ScalarProperty Name="majieshao" ColumnName="majieshao" />
+          <ScalarProperty Name="maimage" ColumnName="maimage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4manager">
+      <EntityTypeMapping TypeName="S4HealthModel.S4manager">
+        <MappingFragment StoreEntitySet="S4manager">
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="macount" ColumnName="macount" />
+          <ScalarProperty Name="mpwd" ColumnName="mpwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4news">
+      <EntityTypeMapping TypeName="S4HealthModel.S4news">
+        <MappingFragment StoreEntitySet="S4news">
+          <ScalarProperty Name="nid" ColumnName="nid" />
+          <ScalarProperty Name="nname" ColumnName="nname" />
+          <ScalarProperty Name="ninfo" ColumnName="ninfo" />
+          <ScalarProperty Name="ntid" ColumnName="ntid" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4newstype">
+      <EntityTypeMapping TypeName="S4HealthModel.S4newstype">
+        <MappingFragment StoreEntitySet="S4newstype">
+          <ScalarProperty Name="ntid" ColumnName="ntid" />
+          <ScalarProperty Name="ntname" ColumnName="ntname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4orders">
+      <EntityTypeMapping TypeName="S4HealthModel.S4orders">
+        <MappingFragment StoreEntitySet="S4orders">
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="otid" ColumnName="otid" />
+          <ScalarProperty Name="tiid" ColumnName="tiid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4ordertype">
+      <EntityTypeMapping TypeName="S4HealthModel.S4ordertype">
+        <MappingFragment StoreEntitySet="S4ordertype">
+          <ScalarProperty Name="otid" ColumnName="otid" />
+          <ScalarProperty Name="otname" ColumnName="otname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4text">
+      <EntityTypeMapping TypeName="S4HealthModel.S4text">
+        <MappingFragment StoreEntitySet="S4text">
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="tabout" ColumnName="tabout" />
+          <ScalarProperty Name="tscore" ColumnName="tscore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4users">
+      <EntityTypeMapping TypeName="S4HealthModel.S4users">
+        <MappingFragment StoreEntitySet="S4users">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="uacount" ColumnName="uacount" />
+          <ScalarProperty Name="upwd" ColumnName="upwd" />
+          <ScalarProperty Name="uphone" ColumnName="uphone" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="uscore" ColumnName="uscore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4xiangmu">
+      <EntityTypeMapping TypeName="S4HealthModel.S4xiangmu">
+        <MappingFragment StoreEntitySet="S4xiangmu">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="xjieshao" ColumnName="xjieshao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S4zhishi">
+      <EntityTypeMapping TypeName="S4HealthModel.S4zhishi">
+        <MappingFragment StoreEntitySet="S4zhishi">
+          <ScalarProperty Name="zsid" ColumnName="zsid" />
+          <ScalarProperty Name="zstitle" ColumnName="zstitle" />
+          <ScalarProperty Name="zsdetail" ColumnName="zsdetail" />
+          <ScalarProperty Name="xid" ColumnName="xid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="S4HealthModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timetype">
+      <EntityTypeMapping TypeName="S4HealthModel.timetype">
+        <MappingFragment StoreEntitySet="timetype">
+          <ScalarProperty Name="tiid" ColumnName="tiid" />
+          <ScalarProperty Name="tiname" ColumnName="tiname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

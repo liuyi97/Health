@@ -1,0 +1,446 @@
+﻿@{
+    ViewBag.Title = "jzxm";
+    //Layout = null;
+}
+@model IEnumerable<Health.Models.S4zhishi>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+
+    @*  <link href="~/css/css2.css" rel="stylesheet" />*@
+    <script src="~/js/lxb.js" charset="utf-8"></script>
+    <script src="~/js/hm.js"></script>
+    <script src="~/js/jquery1.js"></script>
+    <script type="text/javascript" src="~/js/jquery1.js"></script>
+    <script src="~/js/foucs.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/superslide.js"></script>
+    <script type="text/javascript" src="~/js/ss.js"></script>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+</head>
+<body>
+    <!--主体部分-->
+    <div class="container clearfix" style="width: 1300px;">
+        <!--左侧导航栏-->
+        <div class="ltbox fl bd1">
+            <div class="ltmenu">
+                <div class="tit">
+                    <h2>儿童牙科</h2>
+                </div>
+                <ul class="menulist clearfix">
+                    <li class="current cli"><a href="#o1" class="scroll"><i></i>开展项目</a></li>
+                    <li class="cli"><a href="#o2" class="scroll"><i></i>儿童龋齿</a></li>
+                    <li class="cli"><a href="#o3" class="scroll"><i></i>早期矫治</a></li>
+                    @*  <li class="cli"><a href="#o4"><i></i>换牙错颌现象？</a></li>*@
+                    <li class="cli"><a href="#o5" class="scroll"><i></i>窝沟封闭</a></li>
+                    <li class="cli"><a href="#o6" class="scroll"><i></i>日常注意</a></li>
+                    <li class="cli"><a href="#o7" class="scroll"><i></i>热门问答</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/cur.js"></script>
+        <!--右侧内容栏-->
+        <div class="rtbox fr" style="width: 1060px;">
+            <div class="yczz_box">
+                <div id="o1">
+                    <div class="etyk_01">
+                        <div class="etyk_01_text">
+                            <div class="etyk_01_js">
+                                <p>
+                                    我国儿童乳牙患龋率为66%，美国仅为3%。在美国，孩子两岁就有自己的牙齿健康档案，窝沟封闭及牙齿矫正非常普遍，几乎所有孩子都有定期口腔检查的习惯。而在中国，大多数儿童没有很好的口腔卫生习惯，一些家长又不太重视孩子的牙齿问题，极易导致小问题严重化。
+                                </p>
+                                <p>
+                                    大众口腔医生除了有专业的技术，更重要的是有崇高的医德。他们非常注重与家长及患儿的沟通，让治疗的每一个环节都充满温暖，不仅排除儿童看牙的心理恐惧，也使父母的担忧化为无形。
+                                </p>
+                                <h1>开展项目：
+                                </h1>
+                                <p>
+                                    儿童口腔健康管理、儿童龋齿、儿童复杂根管、儿童牙龈炎、儿童牙髓炎、儿童错颌畸形、儿童牙外伤
+                                </p>
+                                <a href="#" target="_blank"></a>
+                            </div>
+                            <img src="~/images/etyk01_tp01.png">
+                        </div>
+                    </div>
+                    <div class="etyk_01">
+                        <div class="etyk_02_text">
+                            <div class="etyk_02_tp">
+                                <img src="~/images/etyk02_tp.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o2">
+                    <div class="etyk_01">
+                        <div class="etyk_03_text">
+                            <img class="etyk_03_text_tp" src="~/images/etyk03_tp.png">
+                            <div class="etyk_03_js">
+                                <p>
+                                    “龋齿”，俗称“虫牙”、“蛀牙”，是人类发病率极高的疾病。龋病是含糖食物（特别是蔗糖）进入口腔后，在牙菌斑内经致龋菌的作用，发酵产酸，这些酸（主
+要是乳酸）从牙面结构薄弱的地方侵入，溶解破坏牙的无机物而产生的。世界卫生组织（WHO）已将龋齿与肿瘤、心血管疾病并列为人类三大重点防治疾病。
+                                </p>
+                                <ul class="etyk_03_list">
+                                    龋齿常发部位：
+		<li style="margin-top: 30px;">
+            <img src="~/images/etyk03_list01.png">
+            <p>
+                乳磨牙和第一恒磨牙是窝沟龋的好发牙位。
+            </p>
+        </li>
+                                    <li>
+                                        <img src="~/images/etyk03_list02.png">
+                                        <p>
+                                            好发牙面依次为：咬合面、邻面、牙颈部根面、唇/颊面。
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/etyk03_list03.png">
+                                        <p>
+                                            龋齿的发生与年龄有关。3岁前的幼儿，多在前牙的邻面患龋；3~5岁则多见乳磨牙的窝沟龋；8岁左右，乳磨牙的邻面龋开始增多；青少年多发恒牙窝沟龋和上前牙的邻面龋。
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o3">
+                    <div class="etyk_01">
+                        <div class="etyk_04_text">
+                            <div class="etyk_04_js">
+
+                                <p class="etyk_04_js_text">
+                                    由于牙齿龋坏、乳牙过早缺失，需要矫正牙齿的孩子越来越多。有的孩子牙齿畸形已明显影响到颌骨发育和面容，如乳牙期最常见的"地包天"畸形。正畸专家认为3~5岁矫正是最好时机。
+                                </p>
+                                <div class="etyk_04_zz">
+                                    <img class="etyk_04_tp" src="~/images/etyk04_tp01.png">
+                                    <ul class="etyk_04_zz_list">
+                                        <li>
+                                            <img src="~/images/etyk04_tp02.jpg">
+                                            <p>
+                                                换牙期出现上颌前突(龅<br>
+                                                牙)、下颌后缩等牙<br>
+                                                齿畸形
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <img src="~/images/etyk04_tp03.jpg">
+                                            <p>
+                                                个别牙不在牙弓里(比如大<br>
+                                                门牙完全外翘)，容易磕<br>
+                                                碰断裂
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <img src="~/images/etyk04_tp04.jpg">
+                                            <p>
+                                                多生牙，也就是多长了<br>
+                                                一颗牙
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="etyk04_gn">
+                                <div class="etyk04_gn_title">什么是早期矫治？</div>
+                                <div class="etyk04_gn_js">
+                                    <img src="~/images/etyk04_gh_js.jpg">
+                                </div>
+                            </div>
+                            <div class="etyk04_bbff">
+                                <div class="etyk04_bbff_01">
+                                    <h1>
+                                        <span>NO.1 </span>最直观的方法就是看牙齿的整齐度
+                                    </h1>
+                                    <p>
+                                        看孩子的牙齿排列是否整齐。在6～12岁期间，一些简单的拥挤是可以自行调整的，但前提条件是要改变小朋友吃手指、咬嘴唇、口呼吸等不良习惯，这些习惯都
+可能使一些简单的拥挤变得更加复杂化。因此牙列不齐错颌畸形的形成有两大因素：一是环境因素，小朋友的不良习惯会从外界的因素影响错c颌牙列的形成。二是
+遗传因素，父母牙列不齐，以及不良的面型等，都会遗传给孩子。所以尽早对孩子的牙齿咬合进行调节，有利于孩子面部骨骼的生长发育、预防错颌畸形的发生。
+                                    </p>
+                                </div>
+                                <div class="etyk04_bbff_01 etyk04_bbff_02">
+                                    <h1>
+                                        <span>NO.2 </span>通过孩子的面型判断
+                                    </h1>
+                                    <p>
+                                        取一把直尺，用直尺的面轻轻地同时触及小朋友的鼻尖和颏部（下巴），正常情况下可以同时触及鼻尖和颏部，同时轻轻触及上下唇（上下嘴唇形态不会发生变
+化）。这是判断小朋友上下颌骨发育是否正常的一个简单测试的方法。如果上下颌骨头有一方发生了发育异常，则直尺触及不到或触及过多唇部。
+                                    </p>
+                                </div>
+                                <div class="etyk04_bbff_01 etyk04_bbff_03">
+                                    <h1>
+                                        <span>NO.3 </span>到专业的口腔机构进行检查
+                                    </h1>
+                                    <p>
+                                        我们建议孩子每3~6月检查一次，不仅仅是检查蛀牙的情况，同时请正畸专业医生会诊，检查孩子的牙齿、颌骨发育是否正常，是否需要介入治疗手段来改变牙齿对颌骨生长的限制。检查和预防对孩子来说，远比后期的治疗更加重要。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="etyk_04_cexx">
+                                <h1>儿童换牙容易出现错颌现象？
+                                </h1>
+                                <p>
+                                    儿童换牙容易出现错颌现象，儿童替牙期间牙颌的变化较大，需要细心观察，早期可以干预。如果是能够自行调整的暂时性错颌则不处理，反之需及时治疗。
+                                </p>
+                                <img src="~/images/etyk04_tp06.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o5">
+                    <div class="etyk_01">
+                        <div class="text_05">
+                            <div class="etyk_05_text">
+                                <img src="~/images/etyk05_tp01.png">
+                                <div>
+                                    <p>
+                                        窝沟封闭是针对儿童牙齿发育期进行的一种能有效增强牙齿抗龋能力的技术，具体说就是用一种高分子复合树脂材料，涂在儿童牙齿窝沟内，液态的树脂在进入窝沟
+后固化变硬，形成一层保护性的屏障，给有缺陷的牙齿穿上了一层保护衣，使牙齿免受食物和细菌的侵蚀，从而增强牙齿抗龋能力。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="etyk_05_text">
+                                <div style="margin-left: 20px;">
+                                    <h1>窝沟封闭的最佳年龄
+                                    </h1>
+                                    <p>
+                                        窝沟封闭是针对儿童牙齿发育期进行的一种能有效增强牙齿抗龋能力的技术，具体说就是用一种高分子复合树脂材料，涂在儿童牙齿窝沟内，液态的树脂在进入窝沟
+后固化变硬，形成一层保护性的屏障，给有缺陷的牙齿穿上了一层保护衣，使牙齿免受食物和细菌的侵蚀，从而增强牙齿抗龋能力。
+                                    </p>
+                                </div>
+                                <img style="margin-right: 0;" src="~/images/etyk05_tp02.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etyk_01">
+                        <ul class="etyk_06">
+                            <li>
+                                <div class="etyk_06_tp">
+                                    <img src="~/images/etyk06_tp01.jpg">
+                                    <h1>窝沟封闭
+                                    </h1>
+                                </div>
+                                <div class="etyk_06_text">
+                                    窝沟封闭是一种能有效增强儿童牙齿抗龋能力的技术，是用一种高分子复合树脂材料，涂在牙齿窝沟内，形成一层保护性的屏障，使牙齿免受食物和细菌的侵蚀，从而增强牙齿抗龋能力。
+                                </div>
+                            </li>
+                            <li>
+                                <div class="etyk_06_tp">
+                                    <img src="~/images/etyk06_tp02.jpg">
+                                    <h1>乳牙拔除
+                                    </h1>
+                                </div>
+                                <div class="etyk_06_text">
+                                    精细器械操作准确，能最大程度减轻患者损伤，操作中伤口创伤小，拔牙术后伤口感染机会大为减少，术后疼痛较轻，创口愈合较快。几乎无明显疼痛感，一般人群很容易接受。
+                                </div>
+                            </li>
+                            <li>
+                                <div class="etyk_06_tp">
+                                    <img src="~/images/etyk06_tp03.jpg">
+                                    <h1>窝洞充填
+                                    </h1>
+                                </div>
+                                <div class="etyk_06_text">
+                                    龋齿窝洞充填是采用手术切割、去净龋坏组织，并将洞制备成规定形状，在保护牙髓的情况下，用人工材料填充窝洞，以修复龋坏牙齿形态和功能的治疗方法。
+                                </div>
+                            </li>
+                            <li>
+                                <div class="etyk_06_tp">
+                                    <img src="~/images/etyk06_tp04.jpg">
+                                    <h1>乳牙根管治疗
+                                    </h1>
+                                </div>
+                                <div class="etyk_06_text">
+                                    乳牙根管治疗术是通过根管清理和药物消毒，去除感染物质并消除根尖周炎症，用易被吸收的充填材料充填根管，治疗根尖周病变的一种方法。
+                                </div>
+                            </li>
+                            <li>
+                                <div class="etyk_06_tp">
+                                    <img src="~/images/etyk06_tp05.jpg">
+                                    <h1>儿童牙齿矫正
+                                    </h1>
+                                </div>
+                                <div class="etyk_06_text">
+                                    根据顾客的脸型、牙齿畸形状况和程度进行综合考虑，量身设计个性化方案。错颌畸形患者早期矫治，一般可用较短时间、较简单方法就可得到矫正，取得事半功倍的效果。
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="o6">
+                    <div class="etyk_01">
+                        <div class="etyk_04_title etyk_08_title"></div>
+                        <div class="etyk_08">
+                            <div class="rmhd_list">
+                                <div class="rmhd_L">
+                                    <h1>1、控制孩子少吃甜食 </h1>
+                                    <p>
+                                        糖是公认的引发龋病的危险因素。如果经常摄入过多的含糖甜食或饮用过多的碳酸饮料会导致牙齿脱矿，引发龋病或产生牙齿敏感，所以家长应科学控制孩子的食糖量。
+                                    </p>
+                                </div>
+                                <div class="rmhd_line"></div>
+                                <div class="rmhd_L">
+                                    <h1>2、养成良好的口腔卫生习惯 </h1>
+                                    <p>
+                                        帮助孩子养成早晚刷牙、饭后漱口的好习惯，每次刷牙不少于3分钟；宝宝从两岁就应该开始刷牙，这时家长要帮助孩子刷牙，待孩子能独立刷牙后，还要监督和指导孩子刷牙。
+                                    </p>
+                                </div>
+                                <div class="rmhd_line"></div>
+                                <div class="rmhd_L">
+                                    <h1>3、定期口腔检查 </h1>
+                                    <p>
+                                        定期口腔检查可以做到有病早治、无病预防，观察儿童牙列、咬合情况、龋病与口腔软组织状况，纠正儿童发育期形成的不良口腔习惯，建议每隔半年检查一次。
+                                    </p>
+                                </div>
+                                <div class="rmhd_line"></div>
+                                <div class="rmhd_L">
+                                    <h1>4、及时窝沟封闭
+                                    </h1>
+                                    <p>
+                                        窝沟封闭是世界卫生组织推荐的预防牙齿咬合面龋的有效方法。是将窝沟封闭剂填入深的窝沟，对易患龋的窝沟起到物理性封闭屏障作用，防止菌斑和食物残渣在窝沟内堆积。
+                                    </p>
+                                </div>
+                                <div class="rmhd_line"></div>
+                                <div class="rmhd_L">
+                                    <h1>5、地包天  趁早治
+                                    </h1>
+                                    <p>
+                                        前牙反颌又称“地包天”，可限制上颌骨发育，导致下颌过度前伸造成颜面中部三分之一凹陷，明显影响面貌，早期矫治可纠正或减轻面貌改变，取得相对好的治疗效果。乳前牙反咬合的最佳矫治时间为3~4岁。
+                                    </p>
+                                </div>
+                                <div class="rmhd_line"></div>
+                                <div class="rmhd_L">
+                                    <h1>6、牙不齐  待时机
+                                    </h1>
+                                    <p>
+                                        孩子换牙期出现牙齿不齐和虎牙被挤出牙列的情况不要急于拔掉，在乳牙完全替换为恒牙时，即12岁左右进行矫正，易达到最佳效果。
+                                    </p>
+                                </div>
+                                <div class="rmhd_line"></div>
+                                <div class="rmhd_L">
+                                    <h1>7、磨牙噪  要警惕
+                                    </h1>
+                                    <p>
+                                        宝宝经常出现夜间磨牙症状，应引起家长注意，因为磨牙是一种咬合障碍，多是由于宝宝的牙齿咬合关系出现了异常，应及时带宝宝咨询专业牙医。
+                                    </p>
+                                </div>
+                                <div class="rmhd_line"></div>
+                                <div class="rmhd_L">
+                                    <h1>8、换牙期  要注意
+                                    </h1>
+                                    <p>
+                                        换牙期恒牙已萌出，乳牙迟迟不掉影响恒牙正常占位，易造成牙齿排列不齐。如有上述情况家长应带孩子到专业口腔医疗机构检查，必要时拔除滞留乳牙，不可“袖手旁观”。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etyk_09">
+                            <img src="~/images/etyk09_tp.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div id="o7">
+                    <div class="rmhd">
+                        <div class="rmhd_title">
+                            <img src="~/images/part_rmhd.jpg">
+                        </div>
+                    </div>
+                    <div class="zhzl_rmwd_db_list">
+                          @foreach (var item in Model)
+                        {  
+                            <ul class="ljgd_list">
+                                <li><a href="~/mingpiao/zslj?zsid=@item.zsid" target="_blank">@item.zstitle</a></li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--底部-->
+
+    <!--左侧微信-->
+    <div id="ewm">
+        <span>关闭</span>
+        <img src="images/weixin2.png" alt="微信">
+    </div>
+    <!--右侧工具栏-->
+    <div id="sidebar">
+        <ul>
+            <li class="qq">
+                <span>咨询</span>
+                <div class="showbox">
+                    <div class="qqlist">
+                        <div class="qqtop">在线咨询</div>
+                        <div class="qqlist2">
+                            <a target="_blank" href="#" rel="nofollow">协会咨询</a><a target="_blank" href="#" rel="nofollow">网站咨询</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="qrcode">
+                <span>微信</span>
+                <div class="showbox">
+                    <img src="images/weixin2.png" width="100" height="100" alt="微信">
+                </div>
+            </li>
+            <li class="share">
+                <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                    <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                </div>
+            </li>
+            <li class="gotop"><span>顶部</span></li>
+        </ul>
+        <style type="text/css">
+            #sidebar .bdshare-button-style0-16 .bds_more {
+                background: none;
+                display: block;
+                padding: 0px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px;
+                float: none;
+            }
+
+                #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+        </style>
+        <script type="text/javascript">
+            window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script src="#" type="text/javascript"></script>
+    </div>
+</body>
+</html>
+
+

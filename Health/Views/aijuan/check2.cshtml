@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "check2";
+    Layout = null;
+}
+
+@model Health.Models.S4orders
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<style type="text/css">
+    .editor-field {
+    
+    
+    }
+</style>
+@using (Html.BeginForm("check", "aijuan", FormMethod.Post, new { id = "checkform" }))
+{
+   <fieldset>
+        <legend>预约</legend>
+
+        <div class="editor-label">
+            用户编号：
+        </div>
+        <div style="margin-top:-20px;margin-left:70px;">
+            @Html.EditorFor(model => model.oid)
+            @Html.ValidationMessageFor(model => model.oid)
+        </div>
+       <br />
+        <div class="editor-label">
+           医生：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.DropDownList("did", String.Empty)
+            @Html.ValidationMessageFor(model => model.did)
+        </div>
+        <br />
+        <div class="editor-label">
+           用户：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.DropDownList("uid", String.Empty)
+            @Html.ValidationMessageFor(model => model.uid)
+        </div>
+        <br />
+        <div class="editor-label">
+           审核状态：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.DropDownList("otid", String.Empty)
+            @Html.ValidationMessageFor(model => model.otid)
+        </div>
+        <br />
+        <div class="editor-label">
+           预约时间：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.DropDownList("tiid", String.Empty)
+            @Html.ValidationMessageFor(model => model.tiid)
+        </div>
+    </fieldset>
+}

@@ -1,0 +1,552 @@
+﻿@{
+    ViewBag.Title = "jzxm";
+    //Layout = null;
+}
+@model IEnumerable<Health.Models.S4zhishi>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+
+    @*  <link href="~/css/css2.css" rel="stylesheet" />*@
+    <script src="~/js/lxb.js" charset="utf-8"></script>
+    <script src="~/js/hm.js"></script>
+    <script src="~/js/jquery1.js"></script>
+    <script type="text/javascript" src="~/js/jquery1.js"></script>
+    <script src="~/js/foucs.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/superslide.js"></script>
+    <script type="text/javascript" src="~/js/ss.js"></script>  
+
+             <!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+	    jQuery(document).ready(function ($) {
+	        $(".scroll").click(function (event) {
+	            event.preventDefault();
+	            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+	        });
+	    });
+	</script>
+<!-- //end-smoth-scrolling --> 
+</head>
+<body>
+    <script src="~/js/lrtk.js"></script>
+    <script>
+        $(function () {
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+            /*牙齿美容4大法宝*/
+            $(".ycxf_03_fb_text").hide();
+            $(".ycxf_03_fb_text").eq(0).show();
+
+            $(".ycxf_03_fb_01 li").hover(function () {
+                var x = $(".ycxf_03_fb_01 li").index(this)
+                $(".ycxf_03_fb_text").hide();
+                $(".ycxf_03_fb_text").eq(x).show();
+
+                $(".ycxf_03_fb_01 li h1").removeClass("current_fb")
+                $(this).addClass("current_fb")
+            })
+
+            /*选择dental health口腔的6大理由01*/
+            $(".ycxf_03_ys_R").hide();
+            $(".ycxf_03_ys_R").eq(0).show();
+
+            $(".ycxf_ly li").hover(function () {
+                var x = $(".ycxf_ly li").index(this)
+                $(".ycxf_03_ys_R").hide();
+                $(".ycxf_03_ys_R").eq(x).show();
+
+                $(".ycxf_ly li").removeClass("current_ly")
+                $(this).addClass("current_ly")
+            })
+
+            /*选择dental health口腔的6大理由*/
+            $(".ycxf_03_ys_L").hide();
+            $(".ycxf_03_ys_L").eq(0).show();
+
+            $(".ycxf_jsys li").hover(function () {
+                var x = $(".ycxf_jsys li").index(this)
+                $(".ycxf_03_ys_L").hide();
+                $(".ycxf_03_ys_L").eq(x).show();
+
+                $(".ycxf_jsys li").removeClass("current_ly02")
+                $(this).addClass("current_ly02")
+            })
+
+        })
+    </script>
+    <!--主体部分-->
+    <div class="container clearfix" style="width: 1300px;">
+        <!--左侧导航栏-->
+        <div class="ltbox fl bd1">
+            <div class="ltmenu">
+                <div class="tit">
+                    <h2>美容修复</h2>
+                </div>
+                <ul class="menulist clearfix">
+                    <li class="current cli"><a href="#o1" class="scroll"><i></i>牙齿美容适应症</a></li>
+                    <li class="cli"><a href="#o2"class="scroll"><i></i>多重美容</a></li>
+                    <li class="cli"><a href="#o3"class="scroll"><i></i>冷光美白适应症</a></li>
+                    <li class="cli"><a href="#o4"class="scroll"><i></i>牙齿美白步骤</a></li>
+                    <li class="cli"><a href="#o5"class="scroll"><i></i>热门问答</a></li>
+                    <li class="cli"><a href="#o6"class="scroll"><i></i>术后温馨提示</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/cur.js"></script>
+        <!--右侧内容栏-->
+        <div class="rtbox fr" style="width: 1060px;">
+            <div class="jz_box" style="margin-top: 20px">
+                <div id="o1">
+                    <div class="ycxf_01">
+                        <div class="ycxf_01_title">
+                            <a href="#">在线咨询</a>
+                        </div>
+                        <div class="ycxf_01_text">
+                            <div class="ycxf_01_L">
+                                <div class="ycxf_01_L_tp">
+                                    <img src="~/images/ycxf_01_tp01.png"><img src="~/images/ycxf_01_tp02.png">
+                                </div>
+                                <p>
+                                    明眸皓齿，自古以来就是美女的形容词，洁白整齐的牙齿，不仅展现了牙齿的健康，笑容也更加阳光灿烂，增添你的无穷魅力。dental health口腔医生可以让你重塑自我，展现迷人的微笑。
+                                </p>
+                                <p>
+                                    通过美容牙科治疗，改变牙齿色泽、形态或位置，从而使牙齿排列更整齐，色泽更美丽形态更满意。美容牙科治疗的方法包括瓷贴面、烤瓷牙、美容冠、牙齿美白等等，美容牙科治疗又俗称牙齿美容，它适用于四环素牙、氟斑牙、畸形牙、牙齿缺损、色素牙等一系列牙齿问题。
+                                </p>
+                            </div>
+                            <div class="ycxf_01_C"></div>
+                            <div class="ycxf_01_R">
+                                <h1>牙齿美容适应症</h1>
+                                <p>牙齿美容技术主要针对中度及重度四环素牙、氟斑牙 , 形态异常牙、牙釉质发育不良及过小牙, 龋蚀致切端缺损或牙体表面大范围龋蚀 , 咬合正常但牙缝稀疏、牙齿轻度歪扭、不愿做矫正的牙齿。</p>
+                                <ul>
+                                    <li>
+                                        <img src="~/images/ycxf_01_tp03.png"><h2>四环素牙</h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/ycxf_01_tp04.png"><h2>牙齿缺损</h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/ycxf_01_tp05.png"><h2>遗传性黄牙</h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/ycxf_01_tp06.png"><h2>畸形牙 </h2>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o2">
+                    <div class="ycxf_01">
+                        <div class="ycxf_01_text">
+                            <div class="ycxf_03_fb">
+                                <ul class="ycxf_03_fb_01">
+                                    <li>
+                                        <img src="~/images/ycxf_03_fb01.jpg">
+                                        <h1 class="current_fb">仿生美容冠<br>
+                                            3天高效解决多种丑牙问题
+                                        </h1>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/ycxf_03_fb02.jpg">
+                                        <h1>3D瓷贴面<br>
+                                            给牙齿做“面膜”一贴就变白
+                                        </h1>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/ycxf_03_fb03.jpg">
+                                        <h1>烤瓷牙<br>
+                                            美牙不伤牙，自信亮出来
+                                        </h1>
+                                    </li>
+                                    <li style="margin-right: 0px;">
+                                        <img src="~/images/ycxf_03_fb04.jpg">
+                                        <h1>牙齿美白<br>
+                                            冷光美白，让你从“齿”成为焦点
+                                        </h1>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="display: block;" class="ycxf_03_fb_text">
+                                <div class="ycxf_03_fb_L">
+                                    <div class="ycxf_03_fb_L_title">
+                                        <h1>仿生美容冠</h1>
+                                        <h2>3天高效解决多种丑牙问题</h2>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>安全无痛</h1>
+                                        <p>采用美国无痛技术，拥有头发丝细致针头。</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>坚固持久</h1>
+                                        <p>
+                                            以最小的牙齿损伤回复最大<br>
+                                            程度的美观效果。
+                                        </p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>色泽逼真</h1>
+                                        <p>
+                                            采用德国VITA3D比色技术，<br>
+                                            精确对比牙齿透明度、饱和度和色泽。
+                                        </p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>美观大方</h1>
+                                        <p>
+                                            3D数码定位分析，对牙齿的自然形态<br>
+                                            和颜色全面分析。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="ycxf_03_fb_R">
+                                    <img src="~/images/ycxf_03_tp04.jpg">
+                                    <div>
+                                        <p>
+                                            适应症<br>
+                                            牙疼、蛀牙、瓜子牙、牙缺损
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: none;" class="ycxf_03_fb_text">
+                                <div class="ycxf_03_fb_L">
+                                    <div class="ycxf_03_fb_L_title">
+                                        <h1>牙贴面</h1>
+                                        <h2>给牙齿做“面膜” 一贴就变白</h2>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>不伤原牙</h1>
+                                        <p>仅对不整齐的凸出部位进行精细打磨，无需磨牙</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>自然持久</h1>
+                                        <p>德国VITA比色技术，以26阶牙色层次化类比，为您调配最适合牙色</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>坚固耐磨</h1>
+                                        <p>选用国际顶级材料，令修复后的牙齿坚固耐磨，与原牙紧密贴合，自然</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>形态完美</h1>
+                                        <p>牙龈边缘无黑线，无厚重感</p>
+                                    </div>
+                                </div>
+                                <div class="ycxf_03_fb_R">
+                                    <img src="~/images/3dctm.jpg">
+                                    <div>
+                                        <p>
+                                            适应症<br>
+                                            牙齿部分缺损、四环素牙、氟斑牙
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: none;" class="ycxf_03_fb_text">
+                                <div class="ycxf_03_fb_L">
+                                    <div class="ycxf_03_fb_L_title">
+                                        <h1>烤瓷牙  </h1>
+                                        <h2>美牙不伤牙 3天快捷修复</h2>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>最新数码定位</h1>
+                                        <p>采用德国进口计算机操控，集3D勘测、3D成像、3D研磨、3D抛光于一体</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>最强仿真技术</h1>
+                                        <p>对顾客牙齿、牙冠、牙根、牙颈三部分形态进行全面分析</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>经验丰富的团队</h1>
+                                        <p>dental health口腔成立于2007年，累计了近10年的牙齿治疗方案和相关经验</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>最坚固的材料</h1>
+                                        <p>美容冠最外层采用了航天抗高压材料，在计算机控制之下精确设计和精确研磨</p>
+                                    </div>
+                                </div>
+                                <div class="ycxf_03_fb_R">
+                                    <img src="~/images/kcy.jpg">
+                                    <div>
+                                        <p>
+                                            适应症<br>
+                                            牙齿缺失修复、深龋冠修复、牙齿断裂
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: none;" class="ycxf_03_fb_text">
+                                <div class="ycxf_03_fb_L">
+                                    <div class="ycxf_03_fb_L_title">
+                                        <h1>冷光美白</h1>
+                                        <h2>让你从“齿”成为焦点</h2>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>安全舒适</h1>
+                                        <p>对牙龈没有任何损伤</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>快速美白</h1>
+                                        <p>30分钟即刻美白</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>效果显著</h1>
+                                        <p>可提高5-14个VITA色阶</p>
+                                    </div>
+                                    <div class="ycxf_03_fb_list">
+                                        <h1>疗效持久</h1>
+                                        <p>美白效果长达到五年</p>
+                                    </div>
+                                </div>
+                                <div class="ycxf_03_fb_R">
+                                    <img src="~/images/ycmb.jpg">
+                                    <div>
+                                        <p>
+                                            适应症<br>
+                                            烟牙、茶渍牙、可乐牙、咖啡牙
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="o3">
+                    <div class="ycxf_01">
+                        <div class="ycxf_mb_bz_title" style="height: 50px;">冷光美白</div>
+                        <div class="ycxf_mbjs_text">
+                            <div class="ycxf_mbjs_L">
+                                <div class="ycxf_mbjs_L_tp">
+                                    <img src="~/images/ycxf_05_tp01.jpg"><img src="~/images/ycxf_05_tp02.jpg">
+                                </div>
+                                <div class="ycxf_mbjs_L_wz">
+                                    <p>
+                                        牙齿美白是指通过专业的医学手段使黄牙、四环素牙、氟斑牙等一系列色素牙问题得以改善，恢复亮丽洁白的牙齿。
+                                    </p>
+                                    <p>
+                                        冷光美白，是一项风靡欧美的最新一代的牙齿美白技术，具有公认的安全、无痛、高效、持久的特点，它可以有效去除附着在牙齿表面及深层的色素沉着，其中最为方便有效的就是目前最受欢迎的美国Beyond冷光美白！
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="ycxf_mbjs_C"></div>
+                            <div class="ycxf_mbjs_R">
+                                <h1>冷光美白适应症</h1>
+                                <p>外源性色素牙（咖啡牙、烟渍牙、茶渍牙）、中轻度四环素牙、遗传性黄牙、氟斑牙、牙齿先天性色泽不均、增龄性黄牙以及对牙齿色泽不满意者。</p>
+                                <ul>
+                                    <li>
+                                        <h2>色素牙</h2>
+                                        <img src="~/images/ycxf_05_tp03.jpg"></li>
+                                    <li>
+                                        <h2>四环素牙</h2>
+                                        <img src="~/images/ycxf_05_tp04.jpg"></li>
+                                    <li>
+                                        <h2>氟斑牙</h2>
+                                        <img src="~/images/ycxf_05_tp05.jpg"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ycxf_mb_js">
+                            <img src="~/images/ycxf_06_tp01.jpg">
+                            <div class="ycxf_mb_jsR">
+                                <p>
+                                    Beyond冷光美白技术由美国普洋科技公司专家组精心研发，一次30分钟的治疗照射可以使全口16~20颗牙齿提高5~14个VITA色阶，平均提升8个VITA色阶以上，并使美白后的牙齿呈现自然的亮白光泽，展现迷人笑容。
+                                </p>
+                                <p>
+                                    经过在全球150多个国家及地区牙医，对超过200万人次患者的牙齿美白治疗验证，BEYOND已成为全球最有效、最安全的牙齿美白系统，如今已成功占领了美学牙科领域的领导地位。
+                                </p>
+                                <p>
+                                    根据多年为中国牙医提供美白产品服务的经验，通过对中国患者牙齿发育、变色等复杂因素进行分析和临床观察，Beyond为中国牙医研发了针对治疗不同牙齿特质、具有不同光照范围和强度的Beyond第二代冷光美白，更符合中国人的审美标准！
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ycxf_01">
+                    <div class="ycxf_mb_text">
+                        <div id="o4">
+                            <div class="ycxf_mb_bz">
+                                <div class="ycxf_mb_bz_title">牙齿美白步骤</div>
+                                <ul>
+                                    <li>
+                                        <img src="~/images/ycxf_06_tp07.jpg">
+                                        <p>
+                                            深层洁牙，清除牙结石和牙菌斑。
+                                        </p>
+                                    </li>
+                                    <li class="current_mbqbs">
+                                        <img src="~/images/ycxf_06_tp08.jpg">
+                                        <p>
+                                            Vita比色，找出牙齿自然色阶，并拍照。
+                                        </p>
+                                    </li>
+                                    <li class="current_hy">
+                                        <img src="~/images/ycxf_06_tp09.jpg">
+                                        <p>
+                                            涂抹牙龈保护剂，避免美白剂与牙龈接触。
+                                        </p>
+                                    </li>
+                                    <li class="current_lgmb">
+                                        <img src="~/images/ycxf_06_tp10.jpg">
+                                        <p>
+                                            均匀适量涂抹美国Beyond美白剂，使用冷光美白仪照射。
+                                        </p>
+                                    </li>
+                                    <li class="current_mbhbs">
+                                        <img src="~/images/ycxf_06_tp11.jpg">
+                                        <p>
+                                            牙齿清洁后，再次Vita比色，牙齿色阶明显提升。
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ycxf_lgmb_ys">
+                            <ul>
+                                <li>
+                                    <h1>安全可靠，轻松舒适
+                                    </h1>
+                                    <p>
+                                        由于采用的是低温冷光，不产生热效应，完全避免了操作过程中牙神经的不适，完全不伤害牙龈，对牙齿的结构和牙釉质也不会有任何伤害，在轻松舒适的过程中，牙齿悄然洁白光亮。
+                                    </p>
+                                    <img src="~/images/ycxf_06_tp12.jpg">
+                                </li>
+                                <li>
+                                    <h1>无刺激、无疼痛
+                                    </h1>
+                                    <p>
+                                        所使用的美白胶为BEYOND独家生产，不仅有不具有传统的过敏性药物分子，还拥有独特的牙齿保护剂可以很好的呵护牙龈与牙釉质，所以整个过程无刺激性和无疼痛感。
+                                    </p>
+                                    <img src="~/images/ycxf_06_tp13.jpg">
+                                </li>
+                                <li>
+                                    <h1>一次照射，瞬间美白
+                                    </h1>
+                                    <p>
+                                        在牙齿全面涂抹高效、安全的美白剂之后，全口牙齿一次照射即可，30分钟以后牙齿可以提高3~8个色阶，比传统方法更快，效果立竿见影。
+                                    </p>
+                                    <img src="~/images/ycxf_06_tp14.jpg">
+                                </li>
+                                <li style="margin-right: 0;">
+                                    <h1>深层脱色，彻底美白
+                                    </h1>
+                                    <p>
+                                        Beyond冷光美白剂是世界公认高效、安全的牙齿脱色美白剂，它不仅可以去除牙齿表面的色素沉积，同时可进入牙齿深层达到脱色的效果。一次疗程，治疗后能将牙齿表面提高5~14个VITA色阶，效果可维持两年以上。
+                                    </p>
+                                    <img src="~/images/ycxf_06_tp15.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="o6">
+                    <div class="ycxf_01">
+                        <div class="ycxf_al_title"><a href="http://www.chinadzyl.com/index.php/category/case">&gt;&gt; 了解更多案例</a></div>
+                        <div class="ycxf_al_text">
+                            <div class="ycxf_al_L">
+                                <div class="ycxf_al_L01">
+                                    <img src="~/images/ycxf_04_tp01.jpg">
+                                    <img src="~/images/ycxf_04_tp02.jpg">
+                                    <p>
+                                        患者：向女士    年龄：30岁<br>
+                                        主诉：上前牙外突、不齐<br>
+                                        治疗方案：通过全瓷冠修复，前牙外突的症状已解决，牙齿外形色泽美观，变得更自信了
+                                    </p>
+                                </div>
+                                <div class="ycxf_al_L01">
+                                    <img src="~/images/ycxf_04_tp03.jpg">
+                                    <img src="~/images/ycxf_04_tp04.jpg">
+                                    <p>
+                                        患者：肖女士    年龄：22岁<br>
+                                        主诉：右上前牙戴普通烤瓷冠五年后出现牙龈萎缩，龈缘明显黑线，牙色不美观<br>
+                                        治疗方案：拆除不良修复体后全瓷冠修复，边缘密合，外形美观，颜色通透
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="ycxf_al_R">
+                                <h1>温馨提示</h1>
+                                <ul>
+                                    <li>
+                                        <p>初戴美容冠时有轻度不适感患者应耐心练习使用，逐渐适应。</p>
+                                    </li>
+                                    <li>
+                                        <p>初戴时应吃软的食物，适应后再吃正常食物。</p>
+                                    </li>
+                                    <li>
+                                        <p>美容冠受到超过它的应力范围的压力会碎瓷，所以不要咬太硬的食物，比如核桃一类的东西。</p>
+                                    </li>
+                                    <li>
+                                        <p>初期与修复前相比，上下牙尖对位可能会有变化，要缓慢进食，逐渐适应，以免咬伤颊舌粘膜。</p>
+                                    </li>
+                                    <li>
+                                        <p>美容冠与基牙的接合处容易聚集菌斑，形成牙石，应注意 保持口腔清洁，养成餐后刷牙的习惯，牙缝间可以使用牙线清洁，并定期到医院检查、洁牙。</p>
+                                    </li>
+                                    <li>
+                                        <p>由于牙体预备时磨除了部分牙釉质，初戴美容冠时，会出现冷热敏感或疼痛，随时间推移会慢慢缓解。</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="o5">
+                    <div class="rmhd">
+                        <div class="rmhd_title">
+                            <img src="~/images/part_rmhd.jpg">
+                        </div>
+                        <div class="rmhd_list">
+
+                            <div class="rmhd_L">
+                                <h1>牙齿冷光美白要多久？</h1>
+                                <p>
+                                    冷光美白是目前牙齿美白的最佳修复方式，由于其美白速度快、效果明显等特点使得越来越多的患者加入到了牙齿美白的行列中来。那到底一次冷光美白牙齿需要多久可以完成呢？dental health口腔牙齿美容专家指...<a href="http://www.chinadzyl.com/index.php/detail/mrrmwd/235" target="_blank">&gt;&gt;&gt;点击咨询详情</a>
+                                </p>
+                            </div>
+                            <div class="rmhd_line"></div>
+                            <div class="rmhd_L">
+                                <h1>牙齿为什么不白？</h1>
+                                <p>
+                                    据专家介绍 ，牙齿不白的原因主要有两种，一种是外源性的，一种是内源性的。
+外源性色素牙主要是在日常生活饮食中形成的，吸烟、喝茶、饮咖啡、可乐及摄入有色食物，都会在我们的牙面上留下色素...<a href="http://www.chinadzyl.com/index.php/detail/mrrmwd/290" target="_blank">&gt;&gt;&gt;点击咨询详情</a>
+                                </p>
+                            </div>
+                            <div class="rmhd_line"></div>
+                            <div class="rmhd_L">
+                                <h1>氟斑牙应该如何美白呢？</h1>
+                                <p>
+                                    氟斑牙影响个人形象，长此以往势必造成心理伤害。严重的慢性氟中毒，有骨骼的增殖性变化，骨膜、韧带等均可钙化，并从而产生腰、腿和全身关节症状。急性中毒症状为恶心、呕吐、腹泻等。由于血钙...<a href="http://www.chinadzyl.com/index.php/detail/mrrmwd/232" target="_blank">&gt;&gt;&gt;点击咨询详情</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zhzl_rmwd_db_list">
+                          @foreach (var item in Model)
+                        {  
+                            <ul class="ljgd_list">
+                                <li><a href="~/mingpiao/zslj?zsid=@item.zsid" target="_blank">@item.zstitle</a></li>
+                            </ul>
+                        }
+                  
+                        <a class="ljgd_btn" href="http://www.chinadzyl.com/index.php/category/mrrmwd">了解更多&gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+</body>
+</html>
+

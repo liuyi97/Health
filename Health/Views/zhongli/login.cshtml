@@ -1,0 +1,71 @@
+﻿@{
+   
+    Layout = null;
+}
+@model Health.Models.sf
+
+<html>
+<head>
+    <title>login</title>
+    <link href="~/Content/login/default.css" rel="stylesheet" />
+    <link href="~/Content/login/styles.css" rel="stylesheet" />
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            show();
+        })
+        function show() {
+            alert($("#uacount").val());
+            url: '/Home/login?shengfen=' + $("#s").val() + '&name=' + $("#uacount").val() + '&pwd=' + $("#upwd").val();
+          
+
+        }
+    </script>
+</head>
+<body>
+    @using(Html.BeginForm()){
+        <article>
+            <header class="htmleaf-header">
+                <h1>Dental  Health<span></span></h1>
+            </header>
+            <div class="panel-lite">
+                <div class="thumbur">
+                    <div class="icon-lock"></div>
+                </div>
+                <h4>用户登录</h4>
+                <div class="form-group">
+                    <span style="color: #FF4081; letter-spacing: 4px;">*用户名: </span>
+                    <input id="uacount" name="uacount" type="text" value="" style="border-radius: 3px; border: 1px solid #b4afaf; width: 230px; height: 35px;" />
+                  <span style="color:#3d41f2;font-family:Arial;font-size:7.5px;">
+                      @Html.ValidationMessageFor(u => u.uacount)
+                      @Html.ValidationMessageFor(u=>u.macount)
+                      @Html.ValidationMessageFor(u=>u.dname)
+                  </span> 
+                </div>
+                <div class="form-group">
+                    <span style="color: #FF4081; letter-spacing: 9.5px;">*密码:</span>
+                    <input id="upwd" name="upwd" type="password" value="" style="border-radius: 3px; border: 1px solid #b4afaf; width: 230px; height: 35px;" />
+                   <span style="color:#3d41f2;font-family:Arial;font-size:7.5px;">
+                       @Html.ValidationMessageFor(u => u.upwd)
+                       @Html.ValidationMessageFor(u=>u.mpwd)
+                       @Html.ValidationMessageFor(u=>u.dpwd)
+                   </span> 
+                </div>
+                <div class="form-group">
+                    <span style="color: #FF4081; letter-spacing: 9.5px;">*身份:</span>                                      
+                    <select id="shengfen" name="shengfen"  style="border-radius: 3px; border: 1px solid #b4afaf; width: 100px; height: 35px;" >
+                        <option>-请选择-</option>
+                        <option>用户</option>
+                        <option>管理员</option>
+                        <option>专家</option>
+                    </select>
+                </div>             
+                <input id="btnOK" type="submit" value="登录" style="border-radius: 3px; border: 0px solid #b4afaf; background-color: #ff3f80; width: 100px; height: 35px; color: white; font-size: 14px; font-family: Arial; margin-left: 81.4px;" onclick="show()" />
+              <a href="/zhongli/resigter" style="letter-spacing: 3px;">注册 </a>
+                <br />
+                @Html.ValidationSummary(true)
+            </div>
+        </article>	
+    }
+</body>
+</html>

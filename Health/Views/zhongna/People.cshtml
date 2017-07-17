@@ -1,0 +1,645 @@
+﻿@{
+    Layout = null;
+}
+
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<link href="~/Content/darkwash.css" rel="stylesheet" />
+<script src="~/UI/jquery.min.js"></script>
+<script src="~/UI/jquery.easyui.min.js"></script>
+<script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+<link href="~/UI/themes/icon.css" rel="stylesheet" />
+<link href="~/UI/themes/black/easyui.css" rel="stylesheet" />
+<style>
+    #all {
+        height: 1400px;
+        width: 100%;
+    }
+
+    * {
+        margin: 0px auto;
+        padding: 0px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: 微软雅黑;
+    }
+
+        a:hover {
+            color: #faa629;
+        }
+
+    #zuo {
+        background-color: #e64e91;
+        height: 1400px;
+        width: 200px;
+        float: left;
+    }
+
+    #you {
+        float: left;
+        height: 1400px;
+        width: 1147px;
+        background-image: url('/img/背景.jpg');
+    }
+
+    #xiugai {
+        height: 500px;
+        width: 1100px;
+    }
+
+    #chakan {
+        float: left;
+        width: 700px;
+        height: 400px;
+        margin-top: 55px;
+    }
+
+    #ck {
+        width: 700px;
+        height: 300px;
+        /*border: 4px solid #e64e91;*/
+    }
+    /*图片轮播*/
+    .zx_slider {
+        position: relative;
+        margin: 40px auto 0 auto;
+        width: 1002px;
+        height: 350px;
+        overflow: hidden;
+        border-radius: 5px;
+        margin-left: 70px;
+    }
+
+    #lb {
+        width: 3750px;
+        height: 310px;
+        position: absolute;
+        left: 5px;
+        top: 4px;
+    }
+
+    .zx_slider #lb {
+        width: 3750px;
+        height: 310px;
+        position: absolute;
+        left: 5px;
+        top: 4px;
+    }
+
+        .zx_slider #lb img {
+            float: left;
+            width: 750px;
+            height: 310px;
+        }
+
+    .zx_slider .png {
+        width: 1002px;
+        height: 350px;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        background: url(../img/slider_bg.png);
+        _background: none;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/slider_bg.png");
+    }
+
+    .zx_slider .lbtn {
+        cursor: pointer;
+        width: 45px;
+        height: 55px;
+        position: absolute;
+        left: 0px;
+        bottom: -3px;
+        background: url(../img/slider_l_btn.png);
+        _background: none;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/slider_l_btn.png");
+    }
+
+    .zx_slider .rbtn {
+        cursor: pointer;
+        width: 45px;
+        height: 55px;
+        position: absolute;
+        left: 718px;
+        bottom: -3px;
+        background: url(../img/slider_r_btn.png);
+        _background: none;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/slider_r_btn.png");
+    }
+
+    .zx_slider .btnbox {
+        width: 750px;
+        height: 60px;
+        position: absolute;
+        left: 30px;
+        bottom: 0px;
+    }
+
+        .zx_slider .btnbox a {
+            cursor: pointer;
+            display: inline-block;
+            float: left;
+            width: 126px;
+            height: 54px;
+            margin: 0 0 0 10px;
+        }
+
+            .zx_slider .btnbox a img {
+                position: relative;
+                display: inline;
+                width: 120px;
+                height: 48px;
+                float: left;
+                border: 3px solid #392101;
+                border-radius: 2px;
+            }
+
+            .zx_slider .btnbox a .img_hover {
+                border: 3px solid #e4471f;
+                border-radius: 2px;
+            }
+
+    .zx_slider .slider_p {
+        overflow: hidden;
+        width: 220px;
+        height: 290px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+        .zx_slider .slider_p h3 {
+            margin: 20px 0 10px 0;
+            font-size: 20px;
+            text-align: center;
+            color: #faa629;
+        }
+
+        .zx_slider .slider_p p {
+            line-height: 26px;
+            font-size: 14px;
+            color: #faa629;
+        }
+
+    .hi_btn {
+        width: 740px;
+        height: 330px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        display: block;
+    }
+
+    #xia {
+        height: 300px;
+        width: 120px;
+    }
+
+
+        #xia ul li {
+            list-style: none;
+            padding-top: 20px;
+            margin-top: 70px;
+        }
+
+    #tp {
+        height: 150px;
+        width: 170px;
+        /*border: 1px solid #b6ff00;*/
+        border-radius: 60px 60px 60px 60px;
+    }
+
+        #tp img {
+            height: 150px;
+            width: 170px;
+            /*border: 1px solid #b6ff00;*/
+            border-radius: 60px 60px 60px 60px;
+        }
+
+    #up {
+        height: 200px;
+        width: 170px;
+        margin: 10px auto;
+        border-radius: 5px;
+    }
+
+    　 #up p {
+        font-family: "微软雅黑";
+        color: white;
+    }
+
+    p {
+        font-family: "微软雅黑";
+        color: white;
+    }
+
+    #ly {
+        height: 500px;
+        width: 1050px;
+        /*border :1px solid #faa629;*/
+        margin-left: 75px;
+    }
+
+    .contact-textarea input[type="text"] {
+        width: 300px;
+        color: white;
+        outline: none;
+        font-size: 17px;
+        padding: 20px 20px;
+        border: none;
+        margin-bottom: 1em;
+        -webkit-appearance: none;
+        background: none;
+        border: 1px solid white;
+        border-radius: 0.3em;
+        -webkit-border-radius: 0.3em;
+        -moz-border-radius: 0.3em;
+        -o-border-radius: 0.3em;
+        -ms-border-radius: 0.3em;
+        margin-top: 30px;
+    }
+
+    .contact-textarea textarea {
+        resize: none;
+        width: 100%;
+        height: 300px;
+        color: white;
+        font-size: 17px;
+        outline: none;
+        padding: 20px 20px;
+        border: none;
+        min-height: 13em;
+        -webkit-appearance: none;
+        background: none;
+        border: 1px solid white;
+        border-radius: 0.3em;
+        -webkit-border-radius: 0.3em;
+        -moz-border-radius: 0.3em;
+        -o-border-radius: 0.3em;
+        -ms-border-radius: 0.3em;
+    }
+
+    .contact-textarea input[type="submit"] {
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #e64e91;
+        width: 300px;
+        padding: 15px 0px;
+        font-size: 18px;
+        margin: 10px 2px 0px 0px;
+        -webkit-appearance: none;
+        border-radius: 0.3em;
+        -webkit-border-radius: 0.3em;
+        -moz-border-radius: 0.3em;
+        -o-border-radius: 0.3em;
+        -ms-border-radius: 0.3em;
+    }
+
+        .contact-textarea input[type="submit"]:hover {
+            background: #146eb4;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+            -o-transition: 0.5s all;
+        }
+
+    .contact-textarea input[type="reset"] {
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #e64e91;
+        width: 300px;
+        padding: 15px 0px;
+        font-size: 18px;
+        margin: 10px 0px 0px 0px;
+        -webkit-appearance: none;
+        border-radius: 0.3em;
+        -webkit-border-radius: 0.3em;
+        -moz-border-radius: 0.3em;
+        -o-border-radius: 0.3em;
+        -ms-border-radius: 0.3em;
+        cursor: pointer;
+    }
+
+        .contact-textarea input[type="reset"]:hover {
+            background: #146eb4;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+            -o-transition: 0.5s all;
+        }
+    #ck {
+        background-color:black;
+    }
+</style>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        $(function () {
+            $("#submit").click(function () {
+                $.ajax({
+                    url: '/zhongna/Addly',
+                    data: {
+                        name1: $("#name1").val(),
+                        phone1: $("#phone1").val(),
+                        dname1: $("#dname1").val(),
+                        neirong1: $("#neirong1").val()
+                    },
+                    success: function () {
+                        $.messager.alert("提示", "留言成功！");
+
+                    }
+                })
+
+            })
+            $("#Submit1").click(function () {
+                $.ajax({
+                    url: '/zhongna/Edityh',
+                    data: {
+                        tt: $("#tt").val(),
+                        name: $("#Text6").val(),
+                        zhanghao: $("#Text7").val(),
+                        mima: $("#Text8").val(),
+                        phone: $("#Text9").val(),
+                        img: $("#Text10").val()
+
+                    },
+                    success: function () {
+                        $.messager.alert("提示", "修改成功！");
+                    }
+                })
+            })
+            //留言
+
+            $("#ck").datagrid({
+                url: '/zhongna/cly',
+                pagination: true,
+                pageSize: 10,
+                pageList: [5, 10, 15],
+                height: 400,
+                width: 700,
+                method: "post",
+                fitColumns: true,
+                columns: [[
+                     { field: "uname", title: "用户名", width: 20, align: "center" },
+                     { field: "utalk", title: "留言内容", width: 20, align: "center" },
+                     { field: "dname", title: "专家名", width: 20, align: "center" },
+                     { field: "dtalk", title: "回复内容", width: 20, align: "center" },
+                ]],
+            });
+
+        })
+
+    </script>
+    @*图片轮播js代码*@
+    <script type="text/javascript">
+        var slider_count = 4;
+        $(".slider_p_div").hide();
+        $("#slider_p0").show();
+        $(".hi_btn").hide();
+        $("#hi_btn0").show();
+        $(".img_hover").animate({ bottom: '10px' });
+        var slider_i = 1;
+        var m_over = true;
+
+        function zx_slider() {
+            if (m_over) {
+                if (slider_i < 0) { slider_i = slider_count; }
+                //p
+                $(".slider_p_div").hide();
+                $("#slider_p" + slider_i).show();
+                //p end
+                //hi_btn
+                $(".hi_btn").hide();
+                $("#hi_btn" + slider_i).show();
+                //hi_btn end
+                //btn
+                $(".btnbox img").stop(true, true);
+                $(".btnbox img").removeClass("img_hover");
+                $(".btnbox img").animate({ bottom: '0px' }, 200);
+                $("#btn_img" + slider_i).addClass("img_hover");
+                $("#btn_img" + slider_i).animate({ bottom: '10px' }, 200);
+                //btn end
+                $("#lb").stop();
+                $("#lb").animate({ left: '-750' * slider_i + 'px' });
+                if (slider_i < slider_count) {
+                    slider_i++;
+                } else {
+                    slider_i = 0;
+                }
+            }
+        }
+
+        $(".lbtn").click(function () {
+            m_over = true;
+            if (slider_i == 0) { slider_i = slider_count - 1 } else { slider_i = slider_i - 2; }
+            zx_slider();
+            m_over = false;
+        });
+
+        $(".rbtn").click(function () {
+            m_over = true;
+            zx_slider();
+            m_over = false;
+        });
+
+        function btn_m_over(btn_i) {
+            if (slider_i - 1 != btn_i) {
+                m_over = true;
+                slider_i = btn_i;
+                zx_slider();
+                m_over = false;
+            }
+        }
+
+        zx_timer = setInterval("zx_slider();", 3000);
+        $(".zx_slider").mouseover(function () {
+            m_over = false;
+        });
+        $(".zx_slider").mouseout(function () {
+            m_over = true;
+        });
+    </script>
+    <div id="all">
+        <div id="zuo">
+            <div id="up">
+
+                <div id="tp">
+                    <a href="~/mingpiao/shouye">
+                        <img src="~/img/@ViewBag.m6" /></a>
+
+
+                </div>
+                <p>@ViewBag.m2</p>
+                <p>You are welcome</p>
+            </div>
+            <div id="xia">
+                <ul>
+                    <li>
+                    <li><a href="#lb">
+                        <img src="~/img/1181367.png" style="height: 50px; width: 50px;" />健康指数</a></li>
+                    <li><a href="#xiugai">
+                        <img src="~/img/1176093.png" style="height: 50px; width: 50px;" />修改信息</a></li>
+                    <li><a href="#ly">
+                        <img src="~/img/1108800.png" style="height: 40px; width: 40px;" />留言</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="you">
+
+            <div class="zx_slider">
+                <div id="lb">
+                    <img alt="Danx" src="~/img/lunbo1.jpg" width="750" height="310" />
+                    <img alt="Danx" src="~/img/lunbo2.jpg" width="750" height="310" />
+                    <img alt="Danx" src="~/img/lunbo3.jpg" width="750" height="310" />
+                    <img alt="Danx" src="~/img/lunbo4.jpg" width="750" height="310" />
+                    <img alt="Danx" src="~/img/手术室.jpg" width="750" height="310" />
+                </div>
+                <div class="png"></div>
+                <a href="#" id="hi_btn0" class="hi_btn"></a>
+                <a href="#" id="hi_btn1" class="hi_btn"></a>
+                <a href="#" id="hi_btn2" class="hi_btn"></a>
+                <a href="#" id="hi_btn3" class="hi_btn"></a>
+                <a href="#" id="hi_btn4" class="hi_btn"></a>
+
+                <div class="btnbox">
+                    <a onmouseover="btn_m_over(0)">
+                        <img alt="Danx" id="btn_img0" class="thumb img_hover" src="~/img/lunbo1.jpg" /></a>
+                    <a onmouseover="btn_m_over(1)">
+                        <img alt="Danx" id="btn_img1" class="thumb" src="~/img/lunbo2.jpg" /></a>
+                    <a onmouseover="btn_m_over(2)">
+                        <img alt="Danx" id="btn_img2" class="thumb" src="~/img/lunbo3.jpg" /></a>
+                    <a onmouseover="btn_m_over(3)">
+                        <img alt="Danx" id="btn_img3" class="thumb" src="~/img/lunbo4.jpg" /></a>
+                    <a onmouseover="btn_m_over(4)">
+                        <img alt="Danx" id="btn_img4" class="thumb" src="~/img/手术室.jpg" /></a>
+                </div>
+
+                <div class="lbtn"></div>
+                <div class="rbtn"></div>
+
+                <div class="slider_p">
+
+                    <div id="slider_p0" class="slider_p_div">
+                        <h3>健康指数：若得分为0</h3>
+                        <p>代表“绿灯”，说明现在没有牙周病，但也不能大意，仍要坚持刷牙，定期做牙科检查来维持现状。</p>
+                    </div>
+
+                    <div id="slider_p1" class="slider_p_div">
+                        <h3>健康指数：若得分为1~4分</h3>
+                        <p>代表“绿灯转黄灯”，说明即将得牙周病，或已具备得牙周病的条件。务必每天认真刷牙，如果出现口臭、牙龈不适应及时到牙科检查。　　</p>
+                    </div>
+
+                    <div id="slider_p2" class="slider_p_div">
+                        <h3>健康指数：若得分为5~9分</h3>
+                        <p>代表“黄灯”，说明很可能已经罹患牙周病，需要去医院确诊。</p>
+                    </div>
+
+                    <div id="slider_p3" class="slider_p_div">
+                        <h3>健康指数：若得分10分以上</h3>
+                        <p>代表“红灯”警告，说明牙周患病程度不轻，必须马上诊治，饭后要认真刷牙。</p>
+                    </div>
+
+                    <div id="slider_p4" class="slider_p_div">
+                        <h3>爱护口腔卫生</h3>
+                        <p>刷牙护齿点滴行，每日三次坚持行，饭后睡前常叮咛，牙膏常换要说明，刷足三分钟才行，请勿大意不履行，牙齿健康生活才能赢！</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="xiugai">
+                <div id="container">
+                    <div class="tab-container">
+                        <div id="c1">
+                            <a href="#c1" title="First">显示个人信息</a>
+                            <div class="tab-content">
+                                姓名：
+                                <input id="Text1"  type="text" value="@ViewBag.m2"/><br />
+                                <br />
+                                <br />
+                                <br />
+                                账号：
+                                <input id="Text2" type="text"  value="@ViewBag.m5"/><br />
+                                <br />
+                                <br />
+                                <br />
+                                密码：
+                                <input id="Text3" type="text"  value="@ViewBag.m4"/><br />
+                                <br />
+                                <br />
+                                <br />
+                                电话：
+                                <input id="Text4" type="text"  value="@ViewBag.m3"/><br />
+                                <br />
+                                <br />
+                                <br />
+                                图片：
+                                <input id="Text5" type="text"  value="@ViewBag.m6"/>
+                            </div>
+                        </div>
+
+                        <div id="c2">
+                            <a href="#c2" title="Second">修改个人信息</a>
+                            <div class="tab-content">
+                                <p style="display: none">
+                                    <input id="tt" type="text"  value="@ViewBag.m1"/>
+                                </p>
+                                姓名：<input id="Text6" type="text"  value="@ViewBag.m2"/><br />
+                                <br />
+                                <br />
+                                <br />
+
+                                账号：<input id="Text7" type="text"  value="@ViewBag.m5"/><br />
+                                <br />
+                                <br />
+                                <br />
+                                密码：
+                                <input id="Text8" type="text"  value="@ViewBag.m4"/><br />
+                                <br />
+                                <br />
+                                <br />
+                                电话：
+                                <input id="Text9" type="text"  value="@ViewBag.m3"/><br />
+                                <br />
+                                <br />
+                                <br />
+                                图片：
+                                <input id="Text10" type="text"  value="@ViewBag.m6"/><br />
+                                <br />
+                                <input id="Submit1" type="submit" value="修改" style="width: 90px; height: 30px; margin-top: 10px; margin-left: 40px; background-color: #4C4648; color: white;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chakan">
+                    <div id="ck"></div>
+                </div>
+            </div>
+            <div id="ly">
+                <div class="col-md-6 contact-top-right">
+                    <div class="contact-textarea">
+                        @* <form>*@
+                        <input type="text" value="@ViewBag.m2" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '@ViewBag.m2';}" name="name1" id="name1"  />
+                        <input type="text" value="@ViewBag.m3" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '@ViewBag.m3';}" id="phone1" name="phone1" />
+                        <input type="text" value="专家名:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '专家名:';}" id="dname1" name="dname1" />
+                        <textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入要回复的内容…';}" id="neirong1" name="neirong1">请输入要回复的内容..</textarea>
+                        <input type="submit" id="submit" value="留言" />
+                        <input type="reset" value="重置" />
+                        @* </form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

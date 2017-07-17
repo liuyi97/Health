@@ -1,0 +1,235 @@
+﻿@{
+    //ViewBag.Title = "anli";
+    Layout = null;
+}
+@model IEnumerable<Health.Models.S4anli>
+<html>
+<head>
+    <title>doctor</title>
+    <link href="~/Content/doctor2/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/doctor2/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/Content/common2.css" rel="stylesheet" />
+    <link href="~/Content/doctor2/style2.css" rel="stylesheet" />
+    <link href="~/Content/expert2.css" rel="stylesheet" />
+    <script src="~/Scripts/doctor/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="~/Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="headtp">
+            <div class="container">
+                <div class="fl">
+                    <a href="#" onclick="AddFavorite(window.location,document.title)">收藏首页</a>
+                    <a href="/zhongli/resigter">免费注册</a>
+                    <a href="/zhongli/login" target="_blank">会员登录</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="headcon">
+            <div class="container">
+                <a href="index.html" target="_blank"></a>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <div class="navbar container">
+                <ul>
+                    <li><a href="/mingpiao/shouye">首页</a></li>
+                    <li id="m_about"><a href="~/mingpiao/jzxm">精专项目</a></li>
+                    <li id="m_news"><a href="~/zhongli/doctor">专家团队</a></li>
+                    <li id="m_member"><a href="~/zhongli/anli">成功案例</a></li>
+                    <li id="m_committee"><a href="/mingpiao/shouye">环境设备</a>                     
+                    <li><a href="/mingpiao/lylx">来院路线</a></li>
+                    <li><a href="#">个人中心</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--主体部分-->
+    <div class="container clearfix">
+        <script type="text/javascript" src="js/cur.js"></script>
+        <!--右侧内容栏-->
+        <div class="rtbox fr">
+            <div class="rtit">
+                <div class="srtit">
+                    <h2 class="fl"><i>
+                        <img src="~/img/line_red.png"></i>协会专家&nbsp;|&nbsp;成功案例</h2>
+                    <p class="fr">当前位置：<a href="#">首页</a> &gt; <a href="#">专家智库</a> &gt;<a href="#">成功案例</a></p>
+                </div>
+            </div>
+            <!--公告内容-->
+            <div class="rtcon abtbg">
+                <div class="rtcontain aboutbox">       
+			<div class="col-md-12">
+				<div style="">
+                    <img src="~/img/doctor/d.png" /><h3 style="margin-top:-34px;margin-left:71px"><i style="color:#09b51d;font-size:30px;font-weight:200" >1.</i>齿科介绍</h3></div>
+				<br/>
+			</div>
+		
+                    <section id="services" class="page-section colord">
+                        <div class="container">
+                            <div class="row">
+                                <!-- item -->
+                                <div class="col-md-3 text-center">
+                                    <div class="b1">
+                                        <i class="circle">
+                                            <img src="~/img/doctor/a1.jpg" alt="" /></i>
+                                        <h3>口腔种植</h3>
+                                        <p>种植牙齿也叫人工种植牙，并不是真的种上自然牙齿，而是通过医学方式，将与人体骨质兼容性高的纯钛金属经过精密的设计，制造成类似牙根的圆柱体或其他形状，以外科小手术的方式植入缺牙区的牙槽骨内，经过 1～3 个月后，当人工牙根与牙槽骨密合后，再在人工牙根上制作烤瓷牙冠</p>
+                                    </div>
+                                </div>
+                                <!-- end: -->
+                                <!-- item -->
+                                <div class="col-md-3 text-center">
+                                    <div class="b1">
+                                        <i class="circle">
+                                            <img src="~/img/doctor/a2.jpg" alt="" /></i>
+                                        <h3>口腔修复</h3>
+                                        <p>口腔美容修复是近年来发展特别迅速的一个口腔前沿学科，除了恢复口腔的功能，还以美观为主要目的。对于四环素牙、氟斑牙等牙色改变具有非常高效的作用。雅悦口腔美容修复专业团队有很强的技术实力，拥有多年齿科美容的临床经验。雅悦口腔美容齿科医生认为美容齿科在某种程度上讲是一种艺术，含了齿科医生、技师和患者本人对于美的一种鉴赏</p>
+                                    </div>
+                                </div>
+                                <!-- end: -->
+                                <!-- item -->
+                                <div class="col-md-3 text-center">
+                                    <div class="b1">
+                                        <i class="circle">
+                                            <img src="~/img/doctor/a3.jpg" alt="" /></i>
+                                        <h3>牙周病</h3>
+                                        <p>牙周炎主要是由局部因素引起的牙周支持组织的慢性炎症。发病年龄以35岁以后较为多见。如龈炎未能及时治疗，炎症可由牙龈向深层扩散到牙周膜、牙槽骨和牙骨质而发展为牙周炎。由于早期多无明显自觉症状而易被忽视，待有症状时已较严重，甚至已不能保留牙齿。因而必须加强宣教，使患者早期就诊和及时治疗。失牙是未经治疗的牙周炎的最终结果</p>
+                                    </div>
+                                </div>
+                                <!-- end: -->
+                                <!-- item -->
+                                <div class="col-md-3 text-center">
+                                    <div class="b1">
+                                        <i class="circle">
+                                            <img src="~/img/doctor/a4.jpg" alt="" /></i>
+                                        <h3>综合齿科</h3>
+                                        <p>雅悦齿科特设综合齿科，包括项目有美国3M纳米树脂补牙，微创拔牙技术，360°超声波无创洗牙（进口）等，这些是雅悦齿科综合治疗效果的保障。我们日常生活中长见的牙科疾病都是通过综合治疗来治愈的。无论是牙疼，牙痛，牙齿敏感，智齿疼痛，牙结石，牙菌斑等都可以在雅悦齿科得到帮助和解决</p>
+                                    </div>
+                                </div>
+                                <!-- end:-->
+                            </div>
+                        </div>
+                    </section>
+                    <div class="col-md-12">
+				<div style="">
+                    <img src="~/img/doctor/d.png" /><h3 style="margin-top:-34px;margin-left:71px"><i style="color:#09b51d;font-size:30px;font-weight:200" >2.</i>齿科案例</h3></div>
+                     <br />
+			</div>
+                    @foreach (var item in Model)
+                    {
+                            <div class="col-lg-3">
+                        <div class="pricing-box-item">
+                            <div class="pricing-heading">                              
+                             <img src="~/img/doctor/@item.lihou">                             
+                            </div>
+                            <div class="pricing-terms">
+                                <h5 style="letter-spacing:1px;font-size:16px;font-family:'微软雅黑';color:#f54eb4">@item.ajieshao</h5>
+                            </div>
+                            <div class="pricing-container">
+                                <div class="pricing-action">
+                                    <a href="~/zhongli/doctor" class="btn btn-medium"><i class="icon-bolt"></i>咨询医生</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                    }
+                
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--底部-->
+        <footer id="footer">
+            <div class="fttool">
+                <div class="container">
+                    <a href="#" target="_blank">关于我们</a> - <a href="#" target="_blank">办事指南</a> - <a href="#" target="_blank">在线咨询</a> - <a href="#" target="_blank">网站管理</a> - 欢迎您，您是第28735位访问者！
+                </div>
+            </div>
+            <div class="ftbt container">
+                <div class="ftbt_left fl">
+                    <p>武汉市大数据研究与应用协会  版权所有</p>
+                    <p>地址：中国湖北省武汉船舶职业技术学院临江N8</p>
+                    <p>联系方式：17762479829</p>
+                </div>
+                <div class="ftbt_right fr">
+                    <p>客服QQ：2324387748</p>
+                    <p>邮箱：2324387748@163.com</p>
+                    <p>官方微博：15971819640</p>
+                </div>
+                <div class="middle fr">
+                    <img src="~/img/weixin2.png" width="90" height="90" />
+                </div>
+            </div>
+            <div class="copyright container">
+                Copyright © 2013-2015 gdccia.org All rights reserved.&nbsp;&nbsp;&nbsp;粤ICP备15048364号-1&nbsp;&nbsp;&nbsp;技术支持：武汉船舶教育机构
+            </div>
+        </footer>
+        <!--左侧微信-->
+        <div id="ewm">
+            <span>关闭</span>
+            <img src="~/img/weixin2.png" alt="微信">
+        </div>
+        <!--右侧工具栏-->
+        <div id="sidebar">
+            <ul>
+                <li class="qq">
+                    <span>咨询</span>
+                    <div class="showbox">
+                        <div class="qqlist">
+                            <div class="qqtop">在线咨询</div>
+                            <div class="qqlist2">
+                                <a target="_blank" href="#" rel="nofollow">协会咨询</a><a target="_blank" href="#" rel="nofollow">网站咨询</a>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="qrcode">
+                    <span>微信</span>
+                    <div class="showbox">
+                        <img src="~/img/weixin2.png" width="100" height="100" alt="微信">
+                    </div>
+                </li>
+                <li class="share">
+                    <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                        <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                    </div>
+                </li>
+                <li class="gotop"><span>顶部</span></li>
+            </ul>
+            <style type="text/css">
+                #sidebar .bdshare-button-style0-16 .bds_more {
+                    background: none;
+                    display: block;
+                    padding: 0px;
+                    height: 40px;
+                    line-height: 40px;
+                    margin: 0px;
+                    float: none;
+                }
+
+                    #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+            </style>
+            <script type="text/javascript">
+                window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+            </script>
+            <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script src="#" type="text/javascript"></script>
+        </div>
+</body>
+</html>

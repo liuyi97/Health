@@ -1,0 +1,52 @@
+﻿@model Health.Models.S4users
+@{
+    //ViewBag.Title = "resigter";
+    Layout = null;
+}
+<html>
+<head>
+    <title>resigter</title>
+    <link href="~/Content/login/default.css" rel="stylesheet" />
+    <link href="~/Content/login/styles.css" rel="stylesheet" />
+</head>
+<body>
+@using (Html.BeginForm())
+{
+   <article>
+            <header class="htmleaf-header">
+                <h1>Dental  Health<span></span></h1>
+            </header>
+            <div class="panel-lite">
+                <div class="thumbur">
+                    <div class="icon-lock"></div>
+                </div>
+                <h4>用户注册</h4>
+                <div class="form-group">
+                    <span style="color: #FF4081; letter-spacing:6px;">*用户名:</span>
+                    <input id="uname" name="uname" type="text" value="" style="border-radius: 3px; border: 1px solid #b4afaf; width: 230px; height: 35px;" /><span style="color:#3d41f2;font-family:Arial;font-size:7.5px;">@Html.ValidationMessageFor(u => u.uname)</span>
+                </div>
+                <div class="form-group">
+                    <span style="color: #FF4081; letter-spacing: 11px;">*账号:</span>
+                    <input id="uacount" name="uacount" type="text" value="" style="border-radius: 3px; border: 1px solid #b4afaf; width: 230px; height: 35px;" /><span style="color:#3d41f2;font-family:Arial;font-size:7.5px;">@Html.ValidationMessageFor(u => u.uacount)</span>
+                </div>
+                <div class="form-group">
+                    <span style="color: #FF4081; letter-spacing: 9px;">*密码: </span>
+                    <input id="upwd" name="upwd" type="password" value="" style="border-radius: 3px; border: 1px solid #b4afaf; width: 230px; height: 35px;" /><span style="color:#3d41f2;font-family:Arial;font-size:7.5px;">@Html.ValidationMessageFor(u => u.upwd)</span>
+                </div>
+                <div class="form-group">
+                    <span style="color: #FF4081; letter-spacing: 2px;">*电话号码: </span>
+                    <input id="uphone" name="uphone" type="text" value="" style="border-radius: 3px; border: 1px solid #b4afaf; width: 230px; height: 35px;" /><span style="color:#3d41f2;font-family:Arial;font-size:7.5px;">@Html.ValidationMessageFor(u => u.uphone)</span>
+                </div>
+                <a href="~/zhongli/login">
+                    <input id="btnOK" type="submit" value="注册" style="border-radius: 3px; border: 0px solid #b4afaf; background-color: #ff3f80; width: 100px; height: 35px; color: white; font-size: 14px; font-family: Arial; margin-left: 87px;" /></a><br />    
+              <br />
+               <br />
+            
+            </div>
+        </article>	
+
+
+}
+    	
+</body>
+</html>

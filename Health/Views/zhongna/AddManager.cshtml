@@ -1,0 +1,21 @@
+﻿@{
+    Layout=null;
+}
+<script src="~/UI/jquery.min.js"></script>
+<script src="~/UI/jquery.easyui.min.js"></script>
+<script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+<link href="~/UI/themes/icon.css" rel="stylesheet" />
+<link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form id="tjgly">
+               编号：<input type="text" id="mid" name="mid"/><br /><br />
+               账号：<input  class="easyui-validatebox" type="text" id="macount" name="macount" data-options="required:true" missingmessage="请输入账号！"/><br /><br />
+               姓名：<input  class="easyui-validatebox" type="text" id="mname" name="mname" data-options="required:true" missingmessage="请输入姓名！"/><br /><br />
+               密码：<input  class="easyui-validatebox" type="text" id="mpwd" name="mpwd" data-options="required:true" missingmessage="请输入密码！"/>
+        </form>
+    </body>
+</html>

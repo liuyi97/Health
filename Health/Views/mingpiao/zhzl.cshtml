@@ -1,0 +1,776 @@
+﻿@{
+    ViewBag.Title = "jzxm";
+    //Layout = null;
+}
+@model IEnumerable<Health.Models.S4zhishi>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+
+    <script src="~/js/lxb.js" charset="utf-8"></script>
+    <script src="~/js/hm.js"></script>
+    <script src="~/js/jquery1.js"></script>
+    <script type="text/javascript" src="~/js/jquery1.js"></script>
+    <script src="~/js/foucs.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/superslide.js"></script>
+    <script language="javascript" type="text/javascript" src="~/js/ss.js"></script>
+    <script>
+        $(function () {
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+            /*dental health新闻*/
+            $(".news_text_list li a").hover(function () {
+                var x = $(".news_text_list li a").index(this)
+                $(".dzxw_text").hide();
+                $(".dzxw_text").eq(x).show();
+
+                $(".news_text_list li a").removeClass("current_news")
+                $(this).addClass("current_news")
+            })
+            /*案例展示*/
+            $(".alzs_title li").hover(function () {
+                var x = $(".alzs_title li").index(this)
+                $(".case_box").hide();
+                $(".case_box").eq(x).show();
+
+                $(".alzs_title li").removeClass("current_alzs")
+                $(this).addClass("current_alzs")
+            })
+            /*医疗设备*/
+            $(".picMarquee-sb").hide();
+            $(".picMarquee-sb").eq(0).show();
+
+            $(".ylsb_bt a").hover(function () {
+                var x = $(".ylsb_bt a").index(this)
+                $(".picMarquee-sb").hide();
+                $(".picMarquee-sb").eq(x).show();
+
+                $(".ylsb_bt a").removeClass("current_ylsb")
+                $(this).addClass("current_ylsb")
+            })
+            /*合作伙伴*/
+            $(".link_title li").hover(function () {
+                var x = $(".link_title li").index(this)
+                $(".link_tp_box").hide();
+                $(".link_tp_box").eq(x).show();
+
+                $(".link_title li").removeClass("current_link")
+                $(this).addClass("current_link")
+            })
+            /*活动专区*/
+            $(".ylsb_bt a").hover(function () {
+                var x = $(".ylsb_bt a").index(this)
+                $(".ylsb_tp").hide();
+                $(".ylsb_tp").eq(x).show();
+
+                $(".ylsb_bt a").removeClass("current_ylsb")
+                $(this).addClass("current_ylsb")
+            })
+
+            $(".gfwx").hover(function () {
+
+                $(".kf_ewm").show();
+            }, function () {
+                $(".kf_ewm").hide();
+            })
+
+
+        })
+    </script>
+    
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+</head>
+<body>
+    <!--主体部分-->
+    <div class="container clearfix" style="width: 1300px;">
+        <!--左侧导航栏-->
+        <div class="ltbox fl bd1">
+            <div class="ltmenu">
+                <div class="tit">
+                    <h2>综合治疗</h2>
+                </div>
+                <ul class="menulist clearfix">
+                    <li class="current cli"><a href="#o1" class="scroll"><i></i>适应症</a></li>
+                    <li class="cli"><a href="#o2" class="scroll"><i></i>先进仪器</a></li>
+                    <li class="cli"><a href="#o3" class="scroll"><i></i>根管治疗技术</a></li>
+                    <li class="cli"><a href="#o4" class="scroll"><i></i>病牙危害</a></li>
+                    <li class="cli"><a href="#o5" class="scroll"><i></i>无痛拔牙</a></li>
+                    <li class="cli"><a href="#o6" class="scroll"><i></i>无痛洁牙</a></li>
+                    <li class="cli"><a href="#o7" class="scroll"><i></i>热门问答</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/cur.js"></script>
+        <!--右侧内容栏-->
+        <div class="rtbox fr" style="width: 1060px;">
+            <!--综合治疗-->
+            <div class="zhzl_box">
+                <div id="o1">
+                    <div class="zhzk_01">
+                        <h1 class="zhzk_01_title02"></h1>
+                        <div class="zhzk_01_ggzl">
+                            <div class="zhzk_01_ggzl_L">
+                                <p>
+                                    根管治疗是牙髓病和根尖周病最常用的有效治疗方法。根管治疗术的原理是通过机械和化学方法去除根管内的大部分感染物，并通过严密充填根管、封闭冠部，治愈牙髓炎，防止发生根尖周病变或促进已经发生的根尖周病变愈合。
+                                </p>
+                            </div>
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <img src="~/images/zhzl_01_tp01.jpg">
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <div class="zhzk_01_ggzl_R">
+                                <ul>
+                                    根管治疗适应症
+		<li>1、 各型牙髓病变人群；
+        </li>
+                                    <li>2、 各型根尖周炎人群；
+                                    </li>
+                                    <li>3、 再植牙和移植牙人群；
+                                    </li>
+                                    <li>4、 义齿修复需要的健康牙齿的人群；
+                                    </li>
+                                    <li>5、 颌面外科手术涉及的邻近健康牙的人群。
+                                    </li>
+                                </ul>
+                                <ul>
+                                    为什么要做根管治疗？
+		<li>1、减轻患者的病痛；
+        </li>
+                                    <li>2、防止感染的蔓延；
+                                    </li>
+                                    <li>3、防止牙髓的坏死；
+                                    </li>
+                                    <li>4、避免牙齿的拔除。
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="zhzl_01_ggzl_bz">
+                            <h1></h1>
+                            <ul class="zhzl_ggzl_bz_list">
+                                <li>
+                                    <img src="~/images/zhzl_01_tp08.jpg">
+                                    <p>
+                                        <span>患牙诊断</span><br>
+                                        根尖周病或者牙髓病明确诊断后则须作根管治疗。
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span>根管预备</span><br>
+                                        揭髓顶，进入髓腔，清除坏死组织，扩大根管，冲洗及测量根管长度等。
+                                    </p>
+                                    <img src="~/images/zhzl_01_tp09.jpg">
+                                </li>
+                                <li>
+                                    <img src="~/images/zhzl_01_tp10.jpg">
+                                    <p>
+                                        <span>根管消毒</span><br>
+                                        常用的消毒药物为醛和酚类。
+                                    </p>
+                                </li>
+                                <li>
+                                    <p style="margin-bottom: 30px;">
+                                        <span>根管充填</span><br>
+                                        封消毒药3-5天后，如无症状，则进行根管充填。
+                                    </p>
+                                    <img src="~/images/zhzl_01_tp11.jpg">
+                                </li>
+                                <li>
+                                    <img src="~/images/zhzl_01_tp12.jpg">
+                                    <p>
+                                        <span>封髓备牙</span><br>
+                                        封好髓顶，防止细菌和病毒的侵入。
+                                    </p>
+                                </li>
+                                <li>
+                                    <p style="margin-bottom: 30px;">
+                                        <span>牙冠修复</span><br>
+                                        可选择各种类型的烤瓷牙修复，保护牙齿，预防牙齿折裂。
+                                    </p>
+                                    <img src="~/images/zhzl_01_tp13.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="o2">
+                        <div class="zhzl_01_ggzl_sb">
+
+                            <div class="zhzl_ggzl_sb_list">
+                                <div class="zhzl_ggzl_sb_list_L">
+                                    <h2>登士柏X-Smart plus根管治疗马达
+                                    </h2>
+                                    <img src="~/images/zhzl_01_tp15.jpg">
+                                    <p>
+                                        登士柏根管马达“X-Smart 
+plus”，时尚高档的外观，彩色的LED显示屏，不仅可以用于传统的360度旋转的镍钛系统，还增加了独特的适用于单支锉系统的往复式旋转模式。6个预
+设的镍钛系统设计及7个可调节存储的个性化系统，为医生提供了更加简单、方便的治疗过程。
+                                    </p>
+                                </div>
+                                <img class="zhzl_ggzl_sb_list_C" src="~/images/zhzl_01_tp14.jpg">
+                                <div class="zhzl_ggzl_sb_list_R">
+                                    <h2>登士柏X-Smart plus根管治疗马达
+                                    </h2>
+                                    <img src="~/images/zhzl_01_tp16.jpg">
+                                    <p>
+                                        可以根据蜂鸣音的变化即时判断和显示根管工作针的位置，精确的检测出根尖的位置；无论根管内是干燥的，还是充满了电解质溶液，都能自动的精确的测定根管长度，在设定的长度范围内，可以精确有效的进行根管扩大。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="zhzk_01_title06"></h1>
+                        <div class="zhzk_01_ggzl">
+                            <div class="zhzk_01_ggzl_L">
+                                <h1>显微根管治疗是显微镜技术<br>
+                                    和医学技术的完美结合
+                                </h1>
+                                <p style="margin: 10px 20px;">
+                                    由于牙根埋在牙槽骨内，肉眼无法看见，且根管系统很复杂，有的根管细如发丝，治疗前需要拍X光片确定根管的位置和大概走向。即便如此，牙科医生在进行根管
+治疗时仍需相当的经验，凭借有限的肉眼观察和手感去探查根管。当遇到复杂根管，如钙化、细小的根管或根管内有充填物不能扩通，器械折断在根管内等情况时，
+医生们往往束手无策，这样的牙齿或姑息保留或拔除。但如果采用国际先进的显微根管治疗技术，就能明显提高疑难牙病治疗的成功率和保存率。
+                                </p>
+                            </div>
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <img src="~/images/zhzl_01_tp19.jpg">
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <div class="zhzk_01_ggzl_R zhzk_01_ggzl_L">
+                                <h1>显微根管治疗为患者挽救<br>
+                                    被判“死刑”的患牙
+                                </h1>
+                                <p style="margin: 10px 20px;">
+                                    采用显微根管治疗技术，使根管治疗在放大的视野和聚焦的照明下进行，加上超声系统和显微根管治疗器械的应用，医生能够更清楚地看到髓腔根管系统的细微结
+构，分辨出正常组织与钙化组织或充填材料，可以直观器械工作端作用的方向，使临床操作更为方便，视野更清晰，同时也增强了牙科医生的信心及操作的方向感。
+此外，还能即刻检查治疗效果，减少治疗的不确定性，提高牙髓病和根尖周病的诊断和治疗成功率，从而为患者挽救了许多被判“死刑”的患牙。
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="zhzl_01_tp">
+
+                            <ul>
+                                <li>它能精确而清晰地观<br>
+                                    察牙齿的解剖结构和所有的<br>
+                                    根管形态。无论是常规的根管治<br>
+                                    疗术还是根尖的显微外科手<br>
+                                    术，都非常适用。
+                                </li>
+                                <li>能满足患者日益增长<br>
+                                    希望最小损伤和最大限度保<br>
+                                    留患牙的要求，使得医生能够<br>
+                                    最好地保护病人的口腔正常组织，并达到最佳的审美<br>
+                                    效果。
+                                </li>
+                                <li>在显微镜的帮助下，<br>
+                                    医生可以做全面可靠的诊断，<br>
+                                    从而为病人提供完善的牙齿<br>
+                                    修复方案。
+                                </li>
+                                <li style="margin-right: 0;">应用显微镜技术会<br>
+                                    帮助医生建立新的<br>
+                                    治疗标准。
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="zhzl_01_pk">
+                            <img src="~/images/zhzl_01_tp20.jpg">
+                            <div class="zhzl_01_pk_text">
+                                <div class="zhzl_01_pk_tp">
+                                    <img src="~/images/zhzl_01_tp21.png">
+                                    <img src="~/images/zhzl_01_tp22.png">
+                                    <img src="~/images/zhzl_01_tp23.png">
+                                    <img src="~/images/zhzl_01_tp24.png">
+                                    <img src="~/images/zhzl_01_tp25.png">
+                                </div>
+                                <p>
+                                    dental health口腔引入显微根管治疗技术，为众多患者提供了完美服务，挽救了病牙。显微根管治疗技术不仅大大提高了根管治疗的成功率，还使许多以往不可能的治疗成为可能，使被认为只能拔除的牙齿能够被治疗保留。可以说，牙科显微治疗技术的出现，带来了根管治疗的革命性变化。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="o3">
+                        <div class="zhzl_01_wxts">
+                            <h1>根管治疗技术 </h1>
+                            <div class="zhzl_01_wxts_text">
+                                <img src="~/images/zhzl_01_tp26.png">
+                                <ul>
+                                    <li>根管治疗时间较长，一般需三到四次的复诊，但因个体差异复诊时间会有不同，患者需遵照医嘱按时复诊。
+                                    </li>
+                                    <li>根管治疗封药后出现疼痛等不适症状多属封药后反应，若疼痛较为剧烈请及时就诊。
+                                    </li>
+                                    <li>治疗过程中，避免用患牙食用太硬和太黏食物，以免发生劈裂或暂封药物脱落。
+                                    </li>
+                                    <li>牙髓治疗过程中和治疗后，牙齿脆性增大，容易劈裂，严重者可导致患牙无法保留，建议遵医嘱及时行全冠修复或桩冠修复。
+                                    </li>
+                                    <li>如有需要可配合口服止痛药和消炎药。
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zhzk_01">
+                        <h1 class="zhzk_02_title02"></h1>
+                        <div class="zhzk_01_ggzl">
+                            <div class="zhzk_01_ggzl_L zhzk_02_wtby_L">
+                                <p>
+                                    口腔治疗会令大多数人心生恐惧，尤其是拔牙和往口腔内注射麻药，让人不寒而栗，很多人因害怕而贻误拔牙和其他牙科治疗。在治疗前对疼痛和焦虑的有效控制，
+是很多患者的期盼。目前，笑气吸入镇静镇痛的应用使拔牙更加人性化和舒适化。患者只需吸入少量的笑气，就可以在轻松、无痛的状态下完成复杂牙的拔除。该技
+术对特别害怕打针和对疼痛特别敏感的患者，甚至对有高血压、心脏病患者的拔牙都可应用。应用于牙科焦虑症患者，呕吐反射明显，儿童或正畸拔牙，口腔小手术
+等，可使患者远离恐惧，轻轻松松完成牙科治疗。
+                                </p>
+                            </div>
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <img src="~/images/zhzl_02_tp01.png">
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <div class="zhzk_01_ggzl_R zhzl_02_wtby_R">
+                                <ul>
+                                    哪些牙齿需要拔掉?
+		<li>1、各种不能治愈保存的病牙(如晚期牙周病牙、严重龋坏无法修补的患牙、折裂至龈下的创伤牙、不能做根管治疗的根尖周病牙)。
+        </li>
+                                    <li>2、不能正常长出、本身有问题、对其他牙齿造成不良影响、反复发炎疼痛的智齿。
+                                    </li>
+                                    <li>3、到换牙年龄仍不脱落，影响下方恒牙长出的乳牙。
+                                    </li>
+                                    <li>4、发生严重移位、错位，影响美观，并刺激口唇黏膜的歪牙，以及多长出的牙齿。
+                                    </li>
+                                    <li>5、为治疗需要应拔掉的牙( 因正畸需要进行减数的牙；因义齿修复需要拔除的牙；放疗前为预防严重并发症而需拔除的牙；良性囊肿或肿瘤波及的牙。)
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="o4">
+                        <div class="zhzl_02_wh">
+                            <ul>
+                                <li style="margin-top: 30px;">
+                                    <div class="zhzl_02_wh_list">
+                                        <img src="~/images/zhzl_02_wh01.jpg">
+                                        <h1>影响咀嚼功能
+                                        </h1>
+                                    </div>
+                                    <p>
+                                        有些因装假牙而需拔除的牙，若不拔，会影响义齿的修复，并造成咬合关系紊乱，引起牙周病、颞颌关节疾病，影响咀嚼功能。
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="zhzl_02_wh_list">
+                                        <img src="~/images/zhzl_02_wh02.jpg">
+                                        <h1>容易导致崩牙
+                                        </h1>
+                                    </div>
+                                    <p>
+                                        长期蛀牙如不及时处理，不仅容易诱发牙龈炎、牙髓炎，还有可能波及牙周，引发根尖周炎，疼痛难忍之余，使得牙槽骨渐渐被吸收，牙齿出现松动，一旦咀嚼硬物易崩牙或脱落。
+                                    </p>
+                                </li>
+                            </ul>
+                            <img class="zhzl_02_wh_C" src="~/images/zhzl_02_tp02.jpg">
+                            <ul>
+                                <li>
+                                    <div class="zhzl_02_wh_list">
+                                        <img src="~/images/zhzl_02_wh03.jpg">
+                                        <h1>损伤口腔黏膜
+                                        </h1>
+                                    </div>
+                                    <p>
+                                        由病牙引起的、固定在一个位置的长期反复摩擦，会让娇嫩的口腔黏膜吃不消。
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="zhzl_02_wh_list">
+                                        <img src="~/images/zhzl_02_wh04.jpg">
+                                        <h1>引发全身病灶
+                                        </h1>
+                                    </div>
+                                    <p>
+                                        病牙的慢性炎症还可以引起全身性疾病的病灶，如引起或加重风湿性关节炎、细菌性心内膜炎、肾炎、虹膜睫状体炎等全身疾病。
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="zhzl_02_wh_list">
+                                        <img src="~/images/zhzl_02_wh05.jpg">
+                                        <h1>导致口腔癌变
+                                        </h1>
+                                    </div>
+                                    <p>
+                                        有些不能修复的残根、残冠，会刺激舌、颊黏膜，形成溃疡或白斑，这些长期不良刺激可导致口腔内的癌变。
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="zhzl_02_zc">
+                            <h1 class="zhzl_02_zc_title"></h1>
+                            <div class="zhzl_02_zc_sm">
+                                <p>
+                                    智齿即人的第三磨牙，一般在18-25岁萌出。由于人类颌骨退化变小，而牙齿的大小及数量未发生相应的变化，因此最后萌出的第三磨牙因为没有了萌出空间而发生阻生，表现为部分萌出、萌出不正、完全埋伏阻生。
+                                </p>
+                                <p>
+                                    智齿不但无咀嚼功能，而且存在一系列危害或潜在危害，主要表现在：
+                                </p>
+                            </div>
+                            <div class="zhzl_02_zc_list">
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <span>反复发作的冠周炎：</span>阻生的智齿牙冠周围软组织与牙齿之间形成一盲袋，引起食物、细菌的积存，抵抗力下降时，出现冠周炎是必然的。一般的消炎治疗治标不治本，因此冠周炎会反复发作。
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <span>影响咬合关系：</span>阻生的智齿往往不能与对颌牙齿建立正常的咬合关系，长时间可导致颞下颌关节弹响、张口疼痛，夜磨牙等症状，对青壮年的身心健康影响较大。
+                                        </p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <span>龋齿：</span>位置不正的智齿与第二磨牙之间容易积存食物残渣，而且不易清洁，一般数月可形成龋齿，直接破坏牙体组织。
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <span>三叉神经痛：</span>有证据表明一些阻生智齿是某些三叉神经痛的病灶所在。许多人虽然知晓智齿的危害和必须拔除的道理，但是因怕疼迟迟不愿就诊。其实只要局麻，拔牙几乎无疼感，因此担心拔牙疼是多虑。
+                                        </p>
+                                    </li>
+                                </ul>
+                                <img src="~/images/jz03_tp06.jpg" style="margin-left: 60px; margin-top: 30px;" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="o5">
+                        <img src="~/images/zhzl_02_tp04.jpg">
+                        <div class="zhzl_02_ys">
+                            <h1>无痛拔牙4大优势 </h1>
+                            <ul>
+                                <li>
+                                    <h2>
+                                        <span>Part-1</span> 舒适无痛
+                                    </h2>
+                                    <p>
+                                        手术中使用的器械均为精细器械，操作准确，能最大程度减轻患者牙龈、牙槽骨和邻牙的损伤；采用先进的镇痛技术，无明显疼痛感觉，使您在温馨舒适的环境中让拔牙过程轻松完成。
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <span>Part-2</span> 精准定位
+                                    </h2>
+                                    <p>
+                                        借助德国sirona全景数字化3D影像诊断系统，精确定位患牙所在，避免肉眼目测的误差，使操作更精细准确，最大限度的减轻患者牙龈、牙槽骨和邻牙的损伤。
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <span>Part-3</span> 省时高效
+                                    </h2>
+                                    <p>
+                                        由于使用高速涡轮钻可准确去骨，避免了使用骨凿去骨的时间，手术视野清楚，手术时间明显缩短，拔牙时间一般只有传统拔牙时间的1/3左右。
+                                    </p>
+                                </li>
+                                <li style="background: none;">
+                                    <h2>
+                                        <span>Part-4</span> 恢复快速
+                                    </h2>
+                                    <p>
+                                        拔牙后，创伤小，术后局部肿胀及疼痛明显减轻，伤口愈合更快。
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="o6">
+                    <div class="zhzk_01">
+                        <h1 class="zhzk_03_title02"></h1>
+                        <div class="zhzk_01_ggzl">
+                            <div class="zhzk_01_ggzl_L">
+                                <p>
+                                    洁牙，俗称洗牙，是通过专用的器械来清除口腔内牙菌斑，牙结石（牙垢）及烟斑、茶垢，保持牙周组织健康的有效方法。洁牙既是牙周病（包括牙龈炎／牙周炎）
+最基本的治疗方法，也是预防牙周疾病的重要措施。洁牙主要针对牙结石、软垢、烟垢、茶斑、食物色素等，适用于大部分人群，尤其是爱抽烟饮茶的人更应该定期
+（一般为3-6个月）洁牙。
+                                </p>
+                            </div>
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <img src="~/images/zhzl_03_tp01.jpg">
+                            <div class="zhzk_01_ggzl_dotted">
+                            </div>
+                            <div class="zhzk_01_ggzl_R ">
+                                <ul>
+                                    为什么洁牙？
+		<li style="text-indent: 26px;">洁牙不仅能祛除因吸烟、喝茶等在牙齿上形成的黑褐色斑迹，使牙齿亮白如初，而且能彻底清除牙齿表面的牙菌斑和结石，促进牙龈血液循环，消退口臭、牙龈出血
+和肿胀的症状，有效预防和治疗牙周疾病。因此，洁牙绝不单纯是为了好看，而是一种重要的口腔保健手段，也是治疗牙周疾病的首要措施，洁牙还可以发现许多平
+时不易察觉的牙病，这样就可以起到早发现早治疗的积极作用。因此，口腔专家呼吁，成年人最好每年洁牙1-2次。
+        </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="zhzl_03_title03">
+                            <h1>黄牙 黑牙 烟牙 牙结石通通都不要  </h1>
+                            <br />
+                            <br />
+                            <div class="zhzl_03_title03_tp">
+                                <img src="~/images/zhzl_03_tp02.jpg">
+                                <img src="~/images/zhzl_03_tp03.jpg">
+                                <img src="~/images/zhzl_03_tp04.jpg">
+                                <img style="margin-right: 0;" src="~/images/zhzl_03_tp05.jpg">
+                            </div>
+                        </div>
+                        <div class="zhzl_03_wtjy">
+                            <h1 class="zhzk_03_title03"></h1>
+                            <div class="zhzk_01_ggzl">
+
+                                <div class="zhzk_01_ggzl_L">
+                                    <p>
+                                        无痛洁牙，是采用专门设计的无痛洁牙机洁牙，无痛洁牙机产生的高频、高能振动通过光滑的无痛洁治机工作头把牙齿表面的牙结石、牙渍击碎，然后通过洁治机产
+生的水雾把碎石、菌斑冲刷下来，还您一口清洁、光滑、清新洁白的牙齿，是一种高效、卫生、方便、舒适的牙齿洁治手段，在临床中得到广泛应用。
+                                    </p>
+                                </div>
+                                <div class="zhzk_01_ggzl_dotted">
+                                </div>
+                                <img src="~/images/zhzl_03_tp06.jpg">
+                                <div class="zhzk_01_ggzl_dotted">
+                                </div>
+                                <div class="zhzk_01_ggzl_R ">
+                                    <ul>
+                                        无痛洁牙禁忌症
+		<li style="text-indent: 26px;">无痛洗牙禁用于置有心脏起搏器、血液病如急性白血病、再生障碍性贫血，艾滋病等患者。病情未得到有效控制的糖尿病、高血压、急性牙周脓肿不宜洗牙。
+        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zhzl_03_wtjy_lc">
+                            <h1></h1>
+                            <ul>
+                                <li>
+                                    <h2>1</h2>
+                                    <h3>洁牙</h3>
+                                    <p>通过无痛的高频震荡作用，去除牙齿上的牙结石、烟渍和茶斑，可以防止牙龈出血或者牙齿松动的情况，帮助治疗牙周炎等口腔疾病，对牙面的损害小，效果明显，不会伤害到口腔健康。</p>
+                                </li>
+                                <li>
+                                    <h2>2</h2>
+                                    <h3>抛光</h3>
+                                    <p>就是用非常软的橡皮蘸着像牙膏一样的抛光膏，即含有细砂的膏剂在牙面低速旋转摩擦，这样可以去除牙齿上的划痕，使得牙齿的表面变得非常光滑。抛光过的牙齿不易附着“脏东西”，因而也就能较长时间保持白净了。</p>
+                                </li>
+                                <li>
+                                    <h2>3</h2>
+                                    <h3>上药</h3>
+                                    <p>牙龈上会有一些微小的创面，通过“牙周药浴”是使用专门的药水对牙龈进行安抚和护理，给牙龈消炎，保护牙龈。</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 40px;">
+                            <img src="~/images/zhzl_03_tp07.jpg">
+                        </div>
+
+                        <div class="zhzl_03_wtjy_ys">
+                            <h1></h1>
+                            <ul>
+                                <li>
+                                    <h2>舒适无痛、无损伤
+                                    </h2>
+                                    <p>
+                                        无痛洁牙术是通过高频震荡作用，震碎和去除结石，不刺激患者口腔，不损伤牙龈及牙体组织，不会产生疼痛不适，治疗方便，效果明显，不会伤害到口腔健康。
+                                    </p>
+                                    <img src="~/images/zhzl_03_tp08.png">
+                                </li>
+                                <li>
+                                    <h2>无需麻醉、无副作用
+                                    </h2>
+                                    <p>
+                                        dental health口腔无痛洁牙独有的智能化操作系统，完全符合人体工程学要求，无需麻醉，无副作用，有效避免牙齿的酸痛感觉，您可轻松感受牙齿“SPA”。
+                                    </p>
+                                    <img src="~/images/zhzl_03_tp09.png">
+                                </li>
+                                <li>
+                                    <h2>快捷高效
+                                    </h2>
+                                    <p>
+                                        dental health口腔无痛洁牙系统配合口腔数码内窥镜，通过诊疗椅前的液晶显示器放大显示，能进行360°全方位的细密清洗，瞬间彻底击碎顽固牙结石，一次洗牙，清洁、保健、美齿只需30分钟, 对牙结石、黄牙、烟斑牙等洗后即刻体验牙齿的美白蜕变。
+                                    </p>
+                                    <img src="~/images/zhzl_03_tp10.png">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="zhzl_03_zysx">
+                            <h1></h1>
+                            <div class="zhzl_03_zysx_list">
+                                <div class="zhzl_03_zysx_text">
+                                    <h2>
+                                        <span>NO.1</span> 洁牙前
+                                    </h2>
+                                    <p>
+                                        <span></span>超声洁牙机头须在牙齿局部操作，有时会有出血，由于血液和唾液是某些传染病传播的重要媒介，如乙肝、性病等，所以洁牙一定要到消毒严格的口腔医疗机构进行，避免出现感染。
+                                    </p>
+                                    <p>
+                                        <span></span>当牙龈有感染时，牙龈易出血或肿胀，应及时到医院治疗和清洁牙齿，或先用2～3天抗生素(应加用抗厌氧菌药物)和局部用消炎含漱液及冲洗，然后再及时洁牙。
+                                    </p>
+                                    <p>
+                                        <span></span>当我们选择无痛洁牙时，不仅要考虑美容因素，更应注重消毒隔离等因素，应由受过系统训练的医务人员施行。
+                                    </p>
+                                </div>
+                                <img src="~/images/zhzl_03_tp11.png">
+                            </div>
+                            <div class="zhzl_03_zysx_list zhzl_03_zysx_list02">
+                                <img src="~/images/zhzl_03_tp12.png">
+                                <div class="zhzl_03_zysx_text">
+                                    <h2>
+                                        <span>NO.2</span> 洁牙后
+                                    </h2>
+                                    <p>
+                                        <span></span>洗牙后一般不影响进食，但部分牙龈炎症明显或牙石堆积过多者，洁牙后会出现冷热过敏症状，一般不需特殊处理，多在2周到1个月左右可以逐渐消失。如较严重而影响进食者可作脱敏治疗。
+                                    </p>
+                                    <p>
+                                        <span></span>洗牙后要重视自我口腔卫生维护，如采用正确的方法刷牙，使用牙线，牙间刷等，以控制菌斑的形成，减缓牙石的再堆积。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="o7">
+                    <div class="zhzl_rmwd">
+                        <ul class="zhzl_rmwd_top">
+
+                            <li>
+                                <img src="~/images/cbab2f47e6f720858e0fb80ad8098ef6.jpg" height="100" width="280">
+                                <h1>根管治疗大概费用</h1>
+                                <p>
+                                    根管治疗大概费用
+ 
+ 
+  根管治疗是针对牙齿、牙髓、根尖病变的一个治疗过程。根管治疗术是通过清除根管内的坏死物质，进行适当的消毒，充填根管，以去除根管内容物对根尖周Χ组织的不良刺激...
+                                </p>
+                            </li>
+                            <li>
+                                <img src="~/images/7b41427749a0b351f3bf881fdcda9758.jpg" height="100" width="280">
+                                <h1>拔牙后牙疼该怎么办？</h1>
+                                <p>
+                                    大家都知道，口腔中的牙齿能够咬(咀嚼)很多种食物，包括米饭、馒头、各种蔬菜、肉类、水果等等。一是因为牙齿组织是身体中最坚硬的组织;二是因为牙齿很牢固。而牙齿牢固的程度主要看牙根和牙槽骨...
+                                </p>
+                            </li>
+                            <li>
+                                <img src="~/images/5e03cf7ce07a36962766e5267a34842c.jpg" height="100" width="280">
+                                <h1>病牙不拔有哪些危害？</h1>
+                                <p>
+                                    由于畏惧拔牙、能忍则忍的传统思想观念，而贻误治疗时机的牙病患者在临床上十分常见，让病牙“带病坚守岗位”有碍身体健康，最后只会加重患者的痛苦，增加将来的治疗负担。 
+ 1、损伤口腔黏膜 
+...
+                                </p>
+                            </li>
+
+
+                        </ul>
+                        <div class="zhzl_rmwd_db">
+
+                            <div class="zhzl_rmwd_db_list">
+                                 @foreach (var item in Model)
+                        {  
+                            <ul class="ljgd_list">
+                                <li><a href="~/mingpiao/zslj?zsid=@item.zsid" target="_blank">@item.zstitle</a></li>
+                            </ul>
+                        }
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+
+    <!--左侧微信-->
+    <div id="ewm">
+        <span>关闭</span>
+        <img src="images/weixin.jpg" alt="微信">
+    </div>
+    <!--右侧工具栏-->
+    <div id="sidebar">
+        <ul>
+            <li class="qq">
+                <span>咨询</span>
+                <div class="showbox">
+                    <div class="qqlist">
+                        <div class="qqtop">在线咨询</div>
+                        <div class="qqlist2">
+                            <a target="_blank" href="#" rel="nofollow">协会咨询</a><a target="_blank" href="#" rel="nofollow">网站咨询</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="qrcode">
+                <span>微信</span>
+                <div class="showbox">
+                    <img src="images/weixin.jpg" width="100" height="100" alt="微信">
+                </div>
+            </li>
+            <li class="share">
+                <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                    <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                </div>
+            </li>
+            <li class="gotop"><span>顶部</span></li>
+        </ul>
+        <style type="text/css">
+            #sidebar .bdshare-button-style0-16 .bds_more {
+                background: none;
+                display: block;
+                padding: 0px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px;
+                float: none;
+            }
+
+                #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+        </style>
+        <script type="text/javascript">
+            window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script src="#" type="text/javascript"></script>
+    </div>
+</body>
+</html>
+
+

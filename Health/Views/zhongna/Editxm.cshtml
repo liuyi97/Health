@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+@model Health.Models.S4xiangmu
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form id="xgxm">
+        <br />
+       项目编号： <p style="display:none">@Html.TextBoxFor(n => n.xid)</p>
+        <br />
+        <br />
+        项目名： @Html.EditorFor(n => n.xname)
+        <br />
+        <br />
+        项目简介：  @Html.TextAreaFor(n => n.xjieshao)
+    </form>
+</body>
+</html>

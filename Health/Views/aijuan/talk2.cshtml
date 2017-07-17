@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "talk2";
+    Layout = null;
+}
+@model Health.Models.S4liuyan
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@using (Html.BeginForm("talk","aijuan",FormMethod.Post,new { id="form1"}))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>留言</legend>
+
+        <div class="editor-label">
+            留言编号：
+        </div>
+        <div class="editor-field"style="margin-top:-20px;margin-left:70px;">
+            @Html.EditorFor(model => model.lid)
+            @Html.ValidationMessageFor(model => model.lid)
+        </div>
+        <br />
+        <div class="editor-label">
+            患者姓名：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.EditorFor(model=>model.uid)
+            @Html.ValidationMessageFor(model => model.uid)
+        </div>
+        <br />
+        <div class="editor-label">
+          医生姓名：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.EditorFor(model=>model.did)
+            @Html.ValidationMessageFor(model => model.did)
+        </div>
+        <br />
+        <div class="editor-label">
+            留言：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.EditorFor(model => model.utalk)
+            @Html.ValidationMessageFor(model => model.utalk)
+        </div>
+        <br />
+        <div class="editor-label">
+            回复：
+        </div>
+        <div class="editor-field" style="margin-top:-20px;margin-left:70px;">
+            @Html.EditorFor(model => model.dtalk)
+            @Html.ValidationMessageFor(model => model.dtalk)
+        </div>
+        <br />
+       
+    </fieldset>
+}

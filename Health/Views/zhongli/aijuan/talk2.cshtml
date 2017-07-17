@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "talk2";
+    Layout = null;
+}
+@model Health.Models.S4liuyan
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@using (@Html.BeginForm("talk", "aijuan", FormMethod.Post, new { id = "liuyanform" }))
+{
+    <p style="display:none">患者编号：@Html.EditorFor(u => u.S4users.uid) </p>
+    <br />
+    <p style="display:none">留言编号：@Html.EditorFor(u => u.lid) </p>
+    <br />
+     <p style="display:none">专家编号：@Html.EditorFor(u => u.did) </p>
+    <br />
+    <p>患者姓名：@Html.EditorFor(u =>u.S4users.uname)</p>
+    <br />
+    <p>留言内容：</p>
+    <p>@Html.TextAreaFor(u => u.utalk,4,40,null)</p>
+    <br />
+    <p>回复内容：</p>
+    <p>@Html.TextAreaFor(u => u.dtalk,4,40,null)</p>
+}

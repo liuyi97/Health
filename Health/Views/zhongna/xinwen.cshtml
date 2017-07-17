@@ -1,0 +1,297 @@
+﻿
+@{
+    Layout = null;
+}
+<script src="~/UI/jquery.min.js"></script>
+<script src="~/UI/jquery.easyui.min.js"></script>
+<script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+<link href="~/UI/themes/icon.css" rel="stylesheet" />
+
+<link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/templatemo_main.css" rel="stylesheet" />
+<script src="../../js/templatemo_script.js"></script>
+<script src="~/js/templatemo_script.js"></script>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+     <script>
+         $(function () {
+             ckxw();
+         })
+         function ckxw() {
+
+             $("#t").datagrid({
+                 url: "/zhongna/cxw?mm=" + $("#mm").val(),
+                 nowrap: true,
+                 height: 600,
+                 width: 1120,
+                 method: "post",
+                 fitColumns: true,
+                 pagination: true,
+                 pageSize: 10,
+                 pageList: [5, 10, 15, 20, 25, 30],
+                 idField: "nid",
+                 striped: true,
+                 singleSelect: false,
+                 rownumbers: true,
+                 columns: [[
+                      { field: 'ck', checkbox: true },
+                      { field: "nname", title: "新闻标题", width: 20, align: "center" },
+                      { field: "ninfo", title: "新闻内容", width: 20, align: "center" },
+                      { field: "ntname", title: "新闻类型", width: 20, align: "center" },
+                      { field: "pic", title: "新闻图片", width: 20, align: "center" },
+                 ]],
+                 toolbar: '#t5',
+             })
+             $("#Addbtn5").click(function () {
+                 $("#tj").dialog({
+                     title: '添加新闻',
+                     height: 330,
+                     width: 330,
+                     href: '/zhongna/AddNews',
+                     buttons: [{
+                         text: '保存',
+                         iconCls: "icon-save",
+                         handler: function () {
+                             $("#tj2").form("submit", {
+                                 url: "/zhongna/AddNews2",
+                                 success: function () {
+                                     $("#tj").dialog("close");
+                                     $("#t").datagrid("reload");
+                                     $.messager.alert("提示", "添加成功！");
+                                 }
+                             })
+                         }
+                     }],
+
+                 })
+
+             })
+             $("#Delbtn5").click(function () {
+                 var chk = $("#t").datagrid("getChecked");
+                 if (chk.length == 0) {
+                     $.messager.alert("提示", "请选择一行！");
+                 }
+                 else {
+                     $.messager.confirm("提示", "是否确认删除选中项？", function (r) {
+                         if (r) {
+                             var nid = "";
+                             for (i = 0; i < chk.length; i++) {
+                                 if (i < chk.length - 1) {
+                                     nid += chk[i].nid + ',';
+                                 } else {
+                                     nid += chk[i].nid;
+                                 }
+                             }
+                             $.ajax({
+                                 url: '/zhongna/DelNews?nid=' + nid,
+                                 success: function () {
+                                     $.messager.alert("提示", "删除成功！");
+                                     $("#t").datagrid("reload");
+                                 }
+                             })
+                         }
+                     })
+
+                 }
+             })
+
+             $("#Editbtn5").click(function () {
+                 var chk = $("#t").datagrid("getChecked");
+                 if (chk.length == 0) {
+                     $.messager.alert("提示", "请选择一行！");
+                 }
+                 else if (chk.length > 1) {
+                     $.messager.alert("提示", "您选择了多行！");
+                 }
+                 else {
+                     $("#tj").dialog({
+                         title: '修改新闻',
+                         modal: true,
+                         width: 300,
+                         height: 400,
+                         href: "/zhongna/EditNews?nid=" + chk[0].nid,
+                         buttons: [{
+                             text: '保存',
+                             iconCls: "icon-save",
+                             handler: function () {
+                                 $("#tj3").form("submit", {
+                                     url: "/zhongna/EditNews2",
+                                     success: function () {
+                                         $.messager.alert("提示", "修改成功！");
+                                         $("#tj").dialog("close");
+                                         $("#t").datagrid("reload");
+                                     }
+                                 })
+                             }
+                         }]
+
+                     })
+                 }
+             })
+
+
+             $("#btnReload").click(function () {
+                 $("#t").datagrid("reload");
+             })
+         }
+
+
+    </script>
+
+    <div id="main-wrapper">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <div class="logo">
+                    <a href="~/mingpiao/shouye">
+                        <h1>Dental Health</h1>
+                    </a>
+                    <p style="margin-left: 1000px; margin-top: -22px; color: white">
+                      
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="template-page-wrapper">
+            <div class="navbar-collapse collapse templatemo-sidebar">
+           <ul class="templatemo-sidebar-menu">
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-table"></i>用户管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/guanliyuan">用户列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-user"></i>管理员管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                          <li><a href="~/zhongna/guanliyuan2">管理员列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-toggle-left"></i>新闻管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/xinwen">新闻列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-eye"></i>测试管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/ceshi">测试列表</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-star-half-full"></i>专家管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/zhuanjia">专家列表</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-pencil"></i>留言管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/liuyan">留言列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-table"></i>成功案例
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/Success">成功案例列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                              <i class="fa fa-star-half-full"></i>项目管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/xiangmu">项目列表</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="~/zhongli/login"><i class="fa fa-sign-out"></i>退出</a></li>
+
+                </ul>
+            </div>
+            <div class="templatemo-content-wrapper">
+                <div class="templatemo-content">
+
+
+                    <div class="row">
+                     @* <table id="tab"></table>
+           <div id="gly"></div>
+            <table id="yh">
+            
+            </table>*@
+                        <table id="t"></table>
+    <div id="tj"></div>
+    <div id="t5">
+        <a id="Addbtn5" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
+        <a id="Delbtn5" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a>
+        <a id="Editbtn5" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">修改</a>
+        <a id="btnReload" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'">刷新</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       新闻类型：
+            @Html.DropDownList("mm",string.Empty)
+        <input id="Submit1" type="submit" value="查询"  onclick="ckxw()"/>
+      
+    </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="templatemo-footer">
+                <div class="templatemo-copyright">
+                    <p>Copyright &copy; 2016 武汉船舶职业技术学院 <a href="#">无需等待，马上行动！</a> - Dental Health <a href="#">口腔健康之家</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,1045 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="S4HealthModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="S4HealthModelStoreContainer">
+          <EntitySet Name="S4anli" EntityType="S4HealthModel.Store.S4anli" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4doctors" EntityType="S4HealthModel.Store.S4doctors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4huanjing" EntityType="S4HealthModel.Store.S4huanjing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4image" EntityType="S4HealthModel.Store.S4image" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4information" EntityType="S4HealthModel.Store.S4information" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4liuyan" EntityType="S4HealthModel.Store.S4liuyan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4machine" EntityType="S4HealthModel.Store.S4machine" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4manager" EntityType="S4HealthModel.Store.S4manager" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4news" EntityType="S4HealthModel.Store.S4news" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4newstype" EntityType="S4HealthModel.Store.S4newstype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4orders" EntityType="S4HealthModel.Store.S4orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4ordertype" EntityType="S4HealthModel.Store.S4ordertype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4text" EntityType="S4HealthModel.Store.S4text" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4users" EntityType="S4HealthModel.Store.S4users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4xiangmu" EntityType="S4HealthModel.Store.S4xiangmu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="S4zhishi" EntityType="S4HealthModel.Store.S4zhishi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="S4HealthModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="timetype" EntityType="S4HealthModel.Store.timetype" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_S4anli_S4anli" Association="S4HealthModel.Store.FK_S4anli_S4anli">
+            <End Role="S4users" EntitySet="S4users" />
+            <End Role="S4anli" EntitySet="S4anli" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4anli_S4xiangmu" Association="S4HealthModel.Store.FK_S4anli_S4xiangmu">
+            <End Role="S4xiangmu" EntitySet="S4xiangmu" />
+            <End Role="S4anli" EntitySet="S4anli" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4doctors_S4xiangmu" Association="S4HealthModel.Store.FK_S4doctors_S4xiangmu">
+            <End Role="S4xiangmu" EntitySet="S4xiangmu" />
+            <End Role="S4doctors" EntitySet="S4doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4doctors_timetype" Association="S4HealthModel.Store.FK_S4doctors_timetype">
+            <End Role="timetype" EntitySet="timetype" />
+            <End Role="S4doctors" EntitySet="S4doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4liuyan_S4doctors" Association="S4HealthModel.Store.FK_S4liuyan_S4doctors">
+            <End Role="S4doctors" EntitySet="S4doctors" />
+            <End Role="S4liuyan" EntitySet="S4liuyan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4liuyan_S4users" Association="S4HealthModel.Store.FK_S4liuyan_S4users">
+            <End Role="S4users" EntitySet="S4users" />
+            <End Role="S4liuyan" EntitySet="S4liuyan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4news_S4newstype1" Association="S4HealthModel.Store.FK_S4news_S4newstype1">
+            <End Role="S4newstype" EntitySet="S4newstype" />
+            <End Role="S4news" EntitySet="S4news" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_S4doctors" Association="S4HealthModel.Store.FK_S4orders_S4doctors">
+            <End Role="S4doctors" EntitySet="S4doctors" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_S4ordertype" Association="S4HealthModel.Store.FK_S4orders_S4ordertype">
+            <End Role="S4ordertype" EntitySet="S4ordertype" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_S4users" Association="S4HealthModel.Store.FK_S4orders_S4users">
+            <End Role="S4users" EntitySet="S4users" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_timetype" Association="S4HealthModel.Store.FK_S4orders_timetype">
+            <End Role="timetype" EntitySet="timetype" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4users_S4doctors" Association="S4HealthModel.Store.FK_S4users_S4doctors">
+            <End Role="S4doctors" EntitySet="S4doctors" />
+            <End Role="S4users" EntitySet="S4users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4zhishi_S4xiangmu" Association="S4HealthModel.Store.FK_S4zhishi_S4xiangmu">
+            <End Role="S4xiangmu" EntitySet="S4xiangmu" />
+            <End Role="S4zhishi" EntitySet="S4zhishi" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="S4anli">
+          <Key>
+            <PropertyRef Name="liid" />
+          </Key>
+          <Property Name="liid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="int" />
+          <Property Name="xid" Type="int" />
+          <Property Name="liqian" Type="nvarchar" MaxLength="50" />
+          <Property Name="lihou" Type="nvarchar" MaxLength="50" />
+          <Property Name="ajieshao" Type="text" />
+        </EntityType>
+        <EntityType Name="S4doctors">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dname" Type="nvarchar" MaxLength="50" />
+          <Property Name="dpwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="dzhicheng" Type="nvarchar" MaxLength="50" />
+          <Property Name="daddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="djianjie" Type="nvarchar" MaxLength="50" />
+          <Property Name="dxiangqing" Type="nvarchar(max)" />
+          <Property Name="dapic" Type="nvarchar" MaxLength="50" />
+          <Property Name="dxpic" Type="nvarchar" MaxLength="50" />
+          <Property Name="dsex" Type="nvarchar" MaxLength="50" />
+          <Property Name="shu" Type="nvarchar" MaxLength="50" />
+          <Property Name="tiid" Type="int" />
+          <Property Name="xid" Type="int" />
+        </EntityType>
+        <EntityType Name="S4huanjing">
+          <Key>
+            <PropertyRef Name="hjid" />
+          </Key>
+          <Property Name="hjid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="hjname" Type="nvarchar" MaxLength="100" />
+          <Property Name="hjimage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4image">
+          <Key>
+            <PropertyRef Name="Iid" />
+          </Key>
+          <Property Name="Iid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="did" Type="int" />
+          <Property Name="Iimage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4information">
+          <Key>
+            <PropertyRef Name="iid" />
+          </Key>
+          <Property Name="iid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="iname" Type="nvarchar" MaxLength="50" />
+          <Property Name="ineirong" Type="nvarchar(max)" />
+          <Property Name="iimage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4liuyan">
+          <Key>
+            <PropertyRef Name="lid" />
+          </Key>
+          <Property Name="lid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="int" />
+          <Property Name="did" Type="int" />
+          <Property Name="utalk" Type="nvarchar" MaxLength="50" />
+          <Property Name="dtalk" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4machine">
+          <Key>
+            <PropertyRef Name="maid" />
+          </Key>
+          <Property Name="maid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="maname" Type="nvarchar" MaxLength="50" />
+          <Property Name="majieshao" Type="nvarchar" MaxLength="300" />
+          <Property Name="maimage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4manager">
+          <Key>
+            <PropertyRef Name="mid" />
+          </Key>
+          <Property Name="mid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="mname" Type="nvarchar" MaxLength="50" />
+          <Property Name="macount" Type="nvarchar" MaxLength="50" />
+          <Property Name="mpwd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4news">
+          <Key>
+            <PropertyRef Name="nid" />
+          </Key>
+          <Property Name="nid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nname" Type="nvarchar" MaxLength="50" />
+          <Property Name="ninfo" Type="nvarchar(max)" />
+          <Property Name="ntid" Type="int" />
+          <Property Name="pic" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4newstype">
+          <Key>
+            <PropertyRef Name="ntid" />
+          </Key>
+          <Property Name="ntid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ntname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4orders">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="did" Type="int" />
+          <Property Name="uid" Type="int" />
+          <Property Name="otid" Type="int" />
+          <Property Name="tiid" Type="int" />
+        </EntityType>
+        <EntityType Name="S4ordertype">
+          <Key>
+            <PropertyRef Name="otid" />
+          </Key>
+          <Property Name="otid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="otname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4text">
+          <Key>
+            <PropertyRef Name="tid" />
+          </Key>
+          <Property Name="tid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tabout" Type="nvarchar" MaxLength="50" />
+          <Property Name="tscore" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4users">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uname" Type="nvarchar" MaxLength="50" />
+          <Property Name="uacount" Type="nvarchar" MaxLength="50" />
+          <Property Name="upwd" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="uphone" Type="nvarchar" MaxLength="50" />
+          <Property Name="img" Type="nvarchar" MaxLength="50" />
+          <Property Name="did" Type="int" />
+          <Property Name="uscore" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="S4xiangmu">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="nvarchar" MaxLength="50" />
+          <Property Name="xjieshao" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="S4zhishi">
+          <Key>
+            <PropertyRef Name="zsid" />
+          </Key>
+          <Property Name="zsid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="zstitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="zsdetail" Type="nvarchar(max)" />
+          <Property Name="xid" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="timetype">
+          <Key>
+            <PropertyRef Name="tiid" />
+          </Key>
+          <Property Name="tiid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tiname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_S4anli_S4anli">
+          <End Role="S4users" Type="S4HealthModel.Store.S4users" Multiplicity="0..1" />
+          <End Role="S4anli" Type="S4HealthModel.Store.S4anli" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4users">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="S4anli">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4anli_S4xiangmu">
+          <End Role="S4xiangmu" Type="S4HealthModel.Store.S4xiangmu" Multiplicity="0..1" />
+          <End Role="S4anli" Type="S4HealthModel.Store.S4anli" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4xiangmu">
+              <PropertyRef Name="xid" />
+            </Principal>
+            <Dependent Role="S4anli">
+              <PropertyRef Name="xid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4doctors_S4xiangmu">
+          <End Role="S4xiangmu" Type="S4HealthModel.Store.S4xiangmu" Multiplicity="0..1" />
+          <End Role="S4doctors" Type="S4HealthModel.Store.S4doctors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4xiangmu">
+              <PropertyRef Name="xid" />
+            </Principal>
+            <Dependent Role="S4doctors">
+              <PropertyRef Name="xid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4doctors_timetype">
+          <End Role="timetype" Type="S4HealthModel.Store.timetype" Multiplicity="0..1" />
+          <End Role="S4doctors" Type="S4HealthModel.Store.S4doctors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="timetype">
+              <PropertyRef Name="tiid" />
+            </Principal>
+            <Dependent Role="S4doctors">
+              <PropertyRef Name="tiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4liuyan_S4doctors">
+          <End Role="S4doctors" Type="S4HealthModel.Store.S4doctors" Multiplicity="0..1" />
+          <End Role="S4liuyan" Type="S4HealthModel.Store.S4liuyan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4doctors">
+              <PropertyRef Name="did" />
+            </Principal>
+            <Dependent Role="S4liuyan">
+              <PropertyRef Name="did" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4liuyan_S4users">
+          <End Role="S4users" Type="S4HealthModel.Store.S4users" Multiplicity="0..1" />
+          <End Role="S4liuyan" Type="S4HealthModel.Store.S4liuyan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4users">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="S4liuyan">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4news_S4newstype1">
+          <End Role="S4newstype" Type="S4HealthModel.Store.S4newstype" Multiplicity="0..1" />
+          <End Role="S4news" Type="S4HealthModel.Store.S4news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4newstype">
+              <PropertyRef Name="ntid" />
+            </Principal>
+            <Dependent Role="S4news">
+              <PropertyRef Name="ntid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_S4doctors">
+          <End Role="S4doctors" Type="S4HealthModel.Store.S4doctors" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.Store.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4doctors">
+              <PropertyRef Name="did" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="did" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_S4ordertype">
+          <End Role="S4ordertype" Type="S4HealthModel.Store.S4ordertype" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.Store.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4ordertype">
+              <PropertyRef Name="otid" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="otid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_S4users">
+          <End Role="S4users" Type="S4HealthModel.Store.S4users" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.Store.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4users">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_timetype">
+          <End Role="timetype" Type="S4HealthModel.Store.timetype" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.Store.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="timetype">
+              <PropertyRef Name="tiid" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="tiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4users_S4doctors">
+          <End Role="S4doctors" Type="S4HealthModel.Store.S4doctors" Multiplicity="0..1" />
+          <End Role="S4users" Type="S4HealthModel.Store.S4users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4doctors">
+              <PropertyRef Name="did" />
+            </Principal>
+            <Dependent Role="S4users">
+              <PropertyRef Name="did" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4zhishi_S4xiangmu">
+          <End Role="S4xiangmu" Type="S4HealthModel.Store.S4xiangmu" Multiplicity="0..1" />
+          <End Role="S4zhishi" Type="S4HealthModel.Store.S4zhishi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4xiangmu">
+              <PropertyRef Name="xid" />
+            </Principal>
+            <Dependent Role="S4zhishi">
+              <PropertyRef Name="xid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="S4HealthModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="S4HealthEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="S4anli" EntityType="S4HealthModel.S4anli" />
+          <EntitySet Name="S4doctors" EntityType="S4HealthModel.S4doctors" />
+          <EntitySet Name="S4huanjing" EntityType="S4HealthModel.S4huanjing" />
+          <EntitySet Name="S4image" EntityType="S4HealthModel.S4image" />
+          <EntitySet Name="S4information" EntityType="S4HealthModel.S4information" />
+          <EntitySet Name="S4liuyan" EntityType="S4HealthModel.S4liuyan" />
+          <EntitySet Name="S4machine" EntityType="S4HealthModel.S4machine" />
+          <EntitySet Name="S4manager" EntityType="S4HealthModel.S4manager" />
+          <EntitySet Name="S4news" EntityType="S4HealthModel.S4news" />
+          <EntitySet Name="S4newstype" EntityType="S4HealthModel.S4newstype" />
+          <EntitySet Name="S4orders" EntityType="S4HealthModel.S4orders" />
+          <EntitySet Name="S4ordertype" EntityType="S4HealthModel.S4ordertype" />
+          <EntitySet Name="S4text" EntityType="S4HealthModel.S4text" />
+          <EntitySet Name="S4users" EntityType="S4HealthModel.S4users" />
+          <EntitySet Name="S4xiangmu" EntityType="S4HealthModel.S4xiangmu" />
+          <EntitySet Name="S4zhishi" EntityType="S4HealthModel.S4zhishi" />
+          <EntitySet Name="sysdiagrams" EntityType="S4HealthModel.sysdiagrams" />
+          <EntitySet Name="timetype" EntityType="S4HealthModel.timetype" />
+          <AssociationSet Name="FK_S4anli_S4anli" Association="S4HealthModel.FK_S4anli_S4anli">
+            <End Role="S4users" EntitySet="S4users" />
+            <End Role="S4anli" EntitySet="S4anli" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4anli_S4xiangmu" Association="S4HealthModel.FK_S4anli_S4xiangmu">
+            <End Role="S4xiangmu" EntitySet="S4xiangmu" />
+            <End Role="S4anli" EntitySet="S4anli" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4doctors_S4xiangmu" Association="S4HealthModel.FK_S4doctors_S4xiangmu">
+            <End Role="S4xiangmu" EntitySet="S4xiangmu" />
+            <End Role="S4doctors" EntitySet="S4doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4doctors_timetype" Association="S4HealthModel.FK_S4doctors_timetype">
+            <End Role="timetype" EntitySet="timetype" />
+            <End Role="S4doctors" EntitySet="S4doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4liuyan_S4doctors" Association="S4HealthModel.FK_S4liuyan_S4doctors">
+            <End Role="S4doctors" EntitySet="S4doctors" />
+            <End Role="S4liuyan" EntitySet="S4liuyan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_S4doctors" Association="S4HealthModel.FK_S4orders_S4doctors">
+            <End Role="S4doctors" EntitySet="S4doctors" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4users_S4doctors" Association="S4HealthModel.FK_S4users_S4doctors">
+            <End Role="S4doctors" EntitySet="S4doctors" />
+            <End Role="S4users" EntitySet="S4users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4liuyan_S4users" Association="S4HealthModel.FK_S4liuyan_S4users">
+            <End Role="S4users" EntitySet="S4users" />
+            <End Role="S4liuyan" EntitySet="S4liuyan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4news_S4newstype1" Association="S4HealthModel.FK_S4news_S4newstype1">
+            <End Role="S4newstype" EntitySet="S4newstype" />
+            <End Role="S4news" EntitySet="S4news" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_S4ordertype" Association="S4HealthModel.FK_S4orders_S4ordertype">
+            <End Role="S4ordertype" EntitySet="S4ordertype" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_S4users" Association="S4HealthModel.FK_S4orders_S4users">
+            <End Role="S4users" EntitySet="S4users" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4orders_timetype" Association="S4HealthModel.FK_S4orders_timetype">
+            <End Role="timetype" EntitySet="timetype" />
+            <End Role="S4orders" EntitySet="S4orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S4zhishi_S4xiangmu" Association="S4HealthModel.FK_S4zhishi_S4xiangmu">
+            <End Role="S4xiangmu" EntitySet="S4xiangmu" />
+            <End Role="S4zhishi" EntitySet="S4zhishi" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="S4anli">
+          <Key>
+            <PropertyRef Name="liid" />
+          </Key>
+          <Property Name="liid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="xid" Type="Int32" />
+          <Property Name="liqian" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lihou" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ajieshao" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="S4users" Relationship="S4HealthModel.FK_S4anli_S4anli" FromRole="S4anli" ToRole="S4users" />
+          <NavigationProperty Name="S4xiangmu" Relationship="S4HealthModel.FK_S4anli_S4xiangmu" FromRole="S4anli" ToRole="S4xiangmu" />
+        </EntityType>
+        <EntityType Name="S4doctors">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dpwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dzhicheng" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="daddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="djianjie" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dxiangqing" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dapic" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dxpic" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dsex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="shu" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="tiid" Type="Int32" />
+          <Property Name="xid" Type="Int32" />
+          <NavigationProperty Name="S4xiangmu" Relationship="S4HealthModel.FK_S4doctors_S4xiangmu" FromRole="S4doctors" ToRole="S4xiangmu" />
+          <NavigationProperty Name="timetype" Relationship="S4HealthModel.FK_S4doctors_timetype" FromRole="S4doctors" ToRole="timetype" />
+          <NavigationProperty Name="S4liuyan" Relationship="S4HealthModel.FK_S4liuyan_S4doctors" FromRole="S4doctors" ToRole="S4liuyan" />
+          <NavigationProperty Name="S4orders" Relationship="S4HealthModel.FK_S4orders_S4doctors" FromRole="S4doctors" ToRole="S4orders" />
+          <NavigationProperty Name="S4users" Relationship="S4HealthModel.FK_S4users_S4doctors" FromRole="S4doctors" ToRole="S4users" />
+        </EntityType>
+        <EntityType Name="S4huanjing">
+          <Key>
+            <PropertyRef Name="hjid" />
+          </Key>
+          <Property Name="hjid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hjname" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="hjimage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4image">
+          <Key>
+            <PropertyRef Name="Iid" />
+          </Key>
+          <Property Name="Iid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="did" Type="Int32" />
+          <Property Name="Iimage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4information">
+          <Key>
+            <PropertyRef Name="iid" />
+          </Key>
+          <Property Name="iid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ineirong" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="iimage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4liuyan">
+          <Key>
+            <PropertyRef Name="lid" />
+          </Key>
+          <Property Name="lid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="did" Type="Int32" />
+          <Property Name="utalk" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dtalk" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="S4doctors" Relationship="S4HealthModel.FK_S4liuyan_S4doctors" FromRole="S4liuyan" ToRole="S4doctors" />
+          <NavigationProperty Name="S4users" Relationship="S4HealthModel.FK_S4liuyan_S4users" FromRole="S4liuyan" ToRole="S4users" />
+        </EntityType>
+        <EntityType Name="S4machine">
+          <Key>
+            <PropertyRef Name="maid" />
+          </Key>
+          <Property Name="maid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="maname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="majieshao" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="maimage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4manager">
+          <Key>
+            <PropertyRef Name="mid" />
+          </Key>
+          <Property Name="mid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="macount" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mpwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4news">
+          <Key>
+            <PropertyRef Name="nid" />
+          </Key>
+          <Property Name="nid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ninfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ntid" Type="Int32" />
+          <Property Name="pic" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="S4newstype" Relationship="S4HealthModel.FK_S4news_S4newstype1" FromRole="S4news" ToRole="S4newstype" />
+        </EntityType>
+        <EntityType Name="S4newstype">
+          <Key>
+            <PropertyRef Name="ntid" />
+          </Key>
+          <Property Name="ntid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ntname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4orders">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="did" Type="Int32" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="otid" Type="Int32" />
+          <Property Name="tiid" Type="Int32" />
+          <NavigationProperty Name="S4doctors" Relationship="S4HealthModel.FK_S4orders_S4doctors" FromRole="S4orders" ToRole="S4doctors" />
+          <NavigationProperty Name="S4ordertype" Relationship="S4HealthModel.FK_S4orders_S4ordertype" FromRole="S4orders" ToRole="S4ordertype" />
+          <NavigationProperty Name="S4users" Relationship="S4HealthModel.FK_S4orders_S4users" FromRole="S4orders" ToRole="S4users" />
+          <NavigationProperty Name="timetype" Relationship="S4HealthModel.FK_S4orders_timetype" FromRole="S4orders" ToRole="timetype" />
+        </EntityType>
+        <EntityType Name="S4ordertype">
+          <Key>
+            <PropertyRef Name="otid" />
+          </Key>
+          <Property Name="otid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="otname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4text">
+          <Key>
+            <PropertyRef Name="tid" />
+          </Key>
+          <Property Name="tid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tabout" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="tscore" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="S4users">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="uacount" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="upwd" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="uphone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="img" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="did" Type="Int32" />
+          <Property Name="uscore" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          </EntityType>
+        <EntityType Name="S4xiangmu">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="xjieshao" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          </EntityType>
+        <EntityType Name="S4zhishi">
+          <Key>
+            <PropertyRef Name="zsid" />
+          </Key>
+          <Property Name="zsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="zstitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="zsdetail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="xid" Type="Int32" />
+          <NavigationProperty Name="S4xiangmu" Relationship="S4HealthModel.FK_S4zhishi_S4xiangmu" FromRole="S4zhishi" ToRole="S4xiangmu" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="timetype">
+          <Key>
+            <PropertyRef Name="tiid" />
+          </Key>
+          <Property Name="tiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tiname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="S4doctors" Relationship="S4HealthModel.FK_S4doctors_timetype" FromRole="timetype" ToRole="S4doctors" />
+          <NavigationProperty Name="S4orders" Relationship="S4HealthModel.FK_S4orders_timetype" FromRole="timetype" ToRole="S4orders" />
+        </EntityType>
+        <Association Name="FK_S4anli_S4anli">
+          <End Role="S4users" Type="S4HealthModel.S4users" Multiplicity="0..1" />
+          <End Role="S4anli" Type="S4HealthModel.S4anli" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4users">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="S4anli">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4anli_S4xiangmu">
+          <End Role="S4xiangmu" Type="S4HealthModel.S4xiangmu" Multiplicity="0..1" />
+          <End Role="S4anli" Type="S4HealthModel.S4anli" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4xiangmu">
+              <PropertyRef Name="xid" />
+            </Principal>
+            <Dependent Role="S4anli">
+              <PropertyRef Name="xid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4doctors_S4xiangmu">
+          <End Role="S4xiangmu" Type="S4HealthModel.S4xiangmu" Multiplicity="0..1" />
+          <End Role="S4doctors" Type="S4HealthModel.S4doctors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4xiangmu">
+              <PropertyRef Name="xid" />
+            </Principal>
+            <Dependent Role="S4doctors">
+              <PropertyRef Name="xid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4doctors_timetype">
+          <End Role="timetype" Type="S4HealthModel.timetype" Multiplicity="0..1" />
+          <End Role="S4doctors" Type="S4HealthModel.S4doctors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="timetype">
+              <PropertyRef Name="tiid" />
+            </Principal>
+            <Dependent Role="S4doctors">
+              <PropertyRef Name="tiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4liuyan_S4doctors">
+          <End Role="S4doctors" Type="S4HealthModel.S4doctors" Multiplicity="0..1" />
+          <End Role="S4liuyan" Type="S4HealthModel.S4liuyan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4doctors">
+              <PropertyRef Name="did" />
+            </Principal>
+            <Dependent Role="S4liuyan">
+              <PropertyRef Name="did" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_S4doctors">
+          <End Role="S4doctors" Type="S4HealthModel.S4doctors" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4doctors">
+              <PropertyRef Name="did" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="did" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4users_S4doctors">
+          <End Role="S4doctors" Type="S4HealthModel.S4doctors" Multiplicity="0..1" />
+          <End Role="S4users" Type="S4HealthModel.S4users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4doctors">
+              <PropertyRef Name="did" />
+            </Principal>
+            <Dependent Role="S4users">
+              <PropertyRef Name="did" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4liuyan_S4users">
+          <End Role="S4users" Type="S4HealthModel.S4users" Multiplicity="0..1" />
+          <End Role="S4liuyan" Type="S4HealthModel.S4liuyan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4users">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="S4liuyan">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4news_S4newstype1">
+          <End Role="S4newstype" Type="S4HealthModel.S4newstype" Multiplicity="0..1" />
+          <End Role="S4news" Type="S4HealthModel.S4news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4newstype">
+              <PropertyRef Name="ntid" />
+            </Principal>
+            <Dependent Role="S4news">
+              <PropertyRef Name="ntid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_S4ordertype">
+          <End Role="S4ordertype" Type="S4HealthModel.S4ordertype" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4ordertype">
+              <PropertyRef Name="otid" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="otid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_S4users">
+          <End Role="S4users" Type="S4HealthModel.S4users" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4users">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4orders_timetype">
+          <End Role="timetype" Type="S4HealthModel.timetype" Multiplicity="0..1" />
+          <End Role="S4orders" Type="S4HealthModel.S4orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="timetype">
+              <PropertyRef Name="tiid" />
+            </Principal>
+            <Dependent Role="S4orders">
+              <PropertyRef Name="tiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S4zhishi_S4xiangmu">
+          <End Role="S4xiangmu" Type="S4HealthModel.S4xiangmu" Multiplicity="0..1" />
+          <End Role="S4zhishi" Type="S4HealthModel.S4zhishi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S4xiangmu">
+              <PropertyRef Name="xid" />
+            </Principal>
+            <Dependent Role="S4zhishi">
+              <PropertyRef Name="xid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="S4HealthModelStoreContainer" CdmEntityContainer="S4HealthEntities">
+          <EntitySetMapping Name="S4anli">
+            <EntityTypeMapping TypeName="S4HealthModel.S4anli">
+              <MappingFragment StoreEntitySet="S4anli">
+                <ScalarProperty Name="liid" ColumnName="liid" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="liqian" ColumnName="liqian" />
+                <ScalarProperty Name="lihou" ColumnName="lihou" />
+                <ScalarProperty Name="ajieshao" ColumnName="ajieshao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4doctors">
+            <EntityTypeMapping TypeName="S4HealthModel.S4doctors">
+              <MappingFragment StoreEntitySet="S4doctors">
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="dname" ColumnName="dname" />
+                <ScalarProperty Name="dpwd" ColumnName="dpwd" />
+                <ScalarProperty Name="dzhicheng" ColumnName="dzhicheng" />
+                <ScalarProperty Name="daddress" ColumnName="daddress" />
+                <ScalarProperty Name="djianjie" ColumnName="djianjie" />
+                <ScalarProperty Name="dxiangqing" ColumnName="dxiangqing" />
+                <ScalarProperty Name="dapic" ColumnName="dapic" />
+                <ScalarProperty Name="dxpic" ColumnName="dxpic" />
+                <ScalarProperty Name="dsex" ColumnName="dsex" />
+                <ScalarProperty Name="shu" ColumnName="shu" />
+                <ScalarProperty Name="tiid" ColumnName="tiid" />
+                <ScalarProperty Name="xid" ColumnName="xid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4huanjing">
+            <EntityTypeMapping TypeName="S4HealthModel.S4huanjing">
+              <MappingFragment StoreEntitySet="S4huanjing">
+                <ScalarProperty Name="hjid" ColumnName="hjid" />
+                <ScalarProperty Name="hjname" ColumnName="hjname" />
+                <ScalarProperty Name="hjimage" ColumnName="hjimage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4image">
+            <EntityTypeMapping TypeName="S4HealthModel.S4image">
+              <MappingFragment StoreEntitySet="S4image">
+                <ScalarProperty Name="Iid" ColumnName="Iid" />
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="Iimage" ColumnName="Iimage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4information">
+            <EntityTypeMapping TypeName="S4HealthModel.S4information">
+              <MappingFragment StoreEntitySet="S4information">
+                <ScalarProperty Name="iid" ColumnName="iid" />
+                <ScalarProperty Name="iname" ColumnName="iname" />
+                <ScalarProperty Name="ineirong" ColumnName="ineirong" />
+                <ScalarProperty Name="iimage" ColumnName="iimage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4liuyan">
+            <EntityTypeMapping TypeName="S4HealthModel.S4liuyan">
+              <MappingFragment StoreEntitySet="S4liuyan">
+                <ScalarProperty Name="lid" ColumnName="lid" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="utalk" ColumnName="utalk" />
+                <ScalarProperty Name="dtalk" ColumnName="dtalk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4machine">
+            <EntityTypeMapping TypeName="S4HealthModel.S4machine">
+              <MappingFragment StoreEntitySet="S4machine">
+                <ScalarProperty Name="maid" ColumnName="maid" />
+                <ScalarProperty Name="maname" ColumnName="maname" />
+                <ScalarProperty Name="majieshao" ColumnName="majieshao" />
+                <ScalarProperty Name="maimage" ColumnName="maimage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4manager">
+            <EntityTypeMapping TypeName="S4HealthModel.S4manager">
+              <MappingFragment StoreEntitySet="S4manager">
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="mname" ColumnName="mname" />
+                <ScalarProperty Name="macount" ColumnName="macount" />
+                <ScalarProperty Name="mpwd" ColumnName="mpwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4news">
+            <EntityTypeMapping TypeName="S4HealthModel.S4news">
+              <MappingFragment StoreEntitySet="S4news">
+                <ScalarProperty Name="nid" ColumnName="nid" />
+                <ScalarProperty Name="nname" ColumnName="nname" />
+                <ScalarProperty Name="ninfo" ColumnName="ninfo" />
+                <ScalarProperty Name="ntid" ColumnName="ntid" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4newstype">
+            <EntityTypeMapping TypeName="S4HealthModel.S4newstype">
+              <MappingFragment StoreEntitySet="S4newstype">
+                <ScalarProperty Name="ntid" ColumnName="ntid" />
+                <ScalarProperty Name="ntname" ColumnName="ntname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4orders">
+            <EntityTypeMapping TypeName="S4HealthModel.S4orders">
+              <MappingFragment StoreEntitySet="S4orders">
+                <ScalarProperty Name="oid" ColumnName="oid" />
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="otid" ColumnName="otid" />
+                <ScalarProperty Name="tiid" ColumnName="tiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4ordertype">
+            <EntityTypeMapping TypeName="S4HealthModel.S4ordertype">
+              <MappingFragment StoreEntitySet="S4ordertype">
+                <ScalarProperty Name="otid" ColumnName="otid" />
+                <ScalarProperty Name="otname" ColumnName="otname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4text">
+            <EntityTypeMapping TypeName="S4HealthModel.S4text">
+              <MappingFragment StoreEntitySet="S4text">
+                <ScalarProperty Name="tid" ColumnName="tid" />
+                <ScalarProperty Name="tabout" ColumnName="tabout" />
+                <ScalarProperty Name="tscore" ColumnName="tscore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4users">
+            <EntityTypeMapping TypeName="S4HealthModel.S4users">
+              <MappingFragment StoreEntitySet="S4users">
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="uname" ColumnName="uname" />
+                <ScalarProperty Name="uacount" ColumnName="uacount" />
+                <ScalarProperty Name="upwd" ColumnName="upwd" />
+                <ScalarProperty Name="uphone" ColumnName="uphone" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="uscore" ColumnName="uscore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4xiangmu">
+            <EntityTypeMapping TypeName="S4HealthModel.S4xiangmu">
+              <MappingFragment StoreEntitySet="S4xiangmu">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xname" ColumnName="xname" />
+                <ScalarProperty Name="xjieshao" ColumnName="xjieshao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S4zhishi">
+            <EntityTypeMapping TypeName="S4HealthModel.S4zhishi">
+              <MappingFragment StoreEntitySet="S4zhishi">
+                <ScalarProperty Name="zsid" ColumnName="zsid" />
+                <ScalarProperty Name="zstitle" ColumnName="zstitle" />
+                <ScalarProperty Name="zsdetail" ColumnName="zsdetail" />
+                <ScalarProperty Name="xid" ColumnName="xid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="S4HealthModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="timetype">
+            <EntityTypeMapping TypeName="S4HealthModel.timetype">
+              <MappingFragment StoreEntitySet="timetype">
+                <ScalarProperty Name="tiid" ColumnName="tiid" />
+                <ScalarProperty Name="tiname" ColumnName="tiname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

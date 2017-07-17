@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title></title>
+    <script src="~/UI/jquery.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="tjxm">
+        <br />
+        项目编号：<input type="text" id="xid" name="xid"  /><br />
+        <br />
+        项目名称： 
+        <input class="easyui-validatebox" type="text" id="xname" name="xname" data-options="required:true" missingmessage="请输入项目名！" /><br />
+        <br />
+        项目介绍：    
+        <input class="easyui-validatebox" type="text" id="xjieshao" name="xjieshao" data-options="required:true" missingmessage="请输入项目介绍！" />
+    </form>
+</body>
+</html>

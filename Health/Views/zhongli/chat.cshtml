@@ -1,0 +1,833 @@
+﻿@{
+    //ViewBag.Title = "chat";
+    Layout = null;
+}
+<html>
+<head>
+    <title>Dental Heath</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link href="~/Content/chat/blue22014.css" rel="stylesheet" id="chatCssFile" type="text/css" />
+    <style>
+        html, body {
+            font-size: 13px;
+            font-family: '微软雅黑';
+        }
+
+        .nicEdit-panelContain {
+            overflow: hidden;
+            padding-right: 124px;
+            margin-top: 4px;
+            *margin-top: 0px;
+            *margin-bottom: -4px;
+            *padding-top: 4px;
+        }
+
+        .oc_top_title {
+            box-shadow: 0px 0px 0px #79ccfe;
+            z-index: 1;
+            height: 54px;
+            line-height: 54px;      
+            background: url('http://kf7.kuaishang.cn/bs/images/dchat/newblue2/dir_title_bg.png') right top no-repeat;
+        }
+
+            .oc_top_title .icon {
+                background: url('http://kf7.kuaishang.cn/bs/images/dchat/comm/dir_logo.png') no-repeat;
+                height: 29px;
+                width: 24px;
+                margin: 12px -4px 12px 13px;
+                _margin-left: 6px;
+            }
+
+        #oc_top_title {
+            position: absolute;
+            top: 0px;
+            left: 35px;
+            right: 100px;
+            white-space: nowrap;
+        }
+
+        .oc_top_title .oc_top_close {
+            margin-right: 5px;
+            height: 54px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+            .oc_top_title .oc_top_close .close_icon {
+                color: #FFF;
+                background: url('http://kf7.kuaishang.cn/bs/images/dchat/comm/dir_close_btn.png') no-repeat;
+                height: 14px;
+                line-height: 14px;
+                cursor: pointer;
+                margin: 20px 5px 20px 0px;
+                _margin-right: 3px;
+            }
+
+                .oc_top_title .oc_top_close .close_icon p {
+                    margin-left: 16px;
+                }
+
+        .oc_top_title .bg {
+            background: transparent;
+            margin: 0px;
+            font-size: 16px;
+        }
+
+        #chatOutput {
+            top: 54px;
+            bottom: 165px;
+            *height: expression((document.body.clientHeight-218)+'px');
+        }
+
+        .welcom1, .welcom2 {
+            word-break: break-all;
+        }
+
+            .welcom1 .after, .welcom2 .after {
+                background: url('http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png') -300px -0px no-repeat;
+            }
+
+        .msg_tip {
+            padding: 12px 10px 0px 10px;
+        }
+
+        .msg_cs .msg {
+            background-color: #d2e8f8;
+            border-color: #9bccef;
+        }
+            /*.msg_cs .msg .before{background:url('http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png') -350px 0px;top:8px;}
+.msg_cus .msg .after{background:url('http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png') -400px 0px;top:8px;}
+.msg_cus .msg{background-color:#dbf6c1;border-color:#b7e888}*/
+            .msg_cs .msg .before {
+                background: url('http://kf7.kuaishang.cn/bs/images/dchat/newblue2/dir_msg.png') no-repeat;
+                top: 8px;
+            }
+
+        .msg_cus .msg .after {
+            background: url('http://kf7.kuaishang.cn/bs/images/dchat/comm/dir_msg_right.png') no-repeat;
+            top: 8px;
+        }
+
+        .msg_cus .msg {
+            border: 1px #dedede solid;
+            background-color: #fbfbfb;
+        }
+
+        #ks_dir_t_link {
+            width: 111px;
+            background: url('http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png') -250px -144px no-repeat;
+            right: 13px;
+        }
+
+        #userOptiv {
+            height: 165px;
+        }
+
+        #ksEditPanel {
+            height: 34px;
+        }
+
+        #ksEditInstance {
+            height: 91px;
+            max-height: 91px;
+        }
+
+        .nicEdit-emotionsOut {
+            background-color: #f8fbfd;
+            border-right: 1px solid #e2eef6;
+            border-top: 1px solid #e2eef6;
+        }
+
+        .nicEdit-fontpanel {
+            border-top: 1px solid #CCCCCC;
+            background-color: #ffffff;
+        }
+
+        .nicEdit-button {
+            color: #2D72E1;
+        }
+
+        #fontpanel_link .nicEdit-button-default {
+            border: 0px solid #3890E2;
+            padding: 2px;
+        }
+
+        #fontpanel_link .nicEdit-button-active {
+            border: 1px solid #fff;
+            background-color: #fff;
+            padding: 1px;
+        }
+
+        #fontpanel_link .nicEdit-button-hover {
+            border: 1px solid #fff;
+            background-color: #fff;
+            padding: 1px;
+        }
+
+        .oc_se {
+            bottom: 174px;
+        }
+
+        #ksAdDiv {
+            border-color: #FFF;
+            background-color: #FFF;
+            margin-right: 87px;
+            margin-left: 1px;
+        }
+
+        #ksDirSendBtnAea, #selSendBtn, #ksDirSendBtn {
+            border: 0px;
+        }
+
+            #ksDirSendBtnAea div.bd1 {
+                border: 0px;
+                height: 26px;
+                width: 81px;
+            }
+
+        #ksDirSendBtnAea {
+            background: url('http://kf7.kuaishang.cn/bs/images/dchat/newblue2/send_btn.png') -0px -0px no-repeat;
+            height: 26px;
+            width: 81px;
+            margin-bottom: 6px;
+            margin-right: 6px;
+            line-height: 26px;
+        }
+
+        .nicEdit-trans_ex_div .btn {
+            margin-top: 3px;
+            width: 15px;
+            height: 13px;
+            background: url("http://kf7.kuaishang.cn/bs/images/dchat/comm/new_oc_icon_translate_ex.png") no-repeat;
+        }
+
+        .nicEdit-trans_div .extBtn {
+            position: absolute;
+            top: 4px;
+            right: 10px;
+            width: 70px;
+            height: 24px;
+            border-radius: 3px;
+            background: transparent;
+            background: #6fc3f2;
+            border: 1px #6fc3f2 solid;
+            color: #FFFFFF;
+        }
+
+        .nicEdit-sendfile .extBtn {
+            border-radius: 2px;
+        }
+
+        .nicEdit-sendfile .file {
+            padding-left: 5px;
+        }
+
+            .nicEdit-sendfile .file .extBtnDiv input {
+                height: 25px;
+                width: 70px;
+            }
+
+        #selSendBtn {
+            height: 26px;
+            width: 25px;
+        }
+
+        #ksDirSendBtn {
+            width: 56px;
+            letter-spacing: 2px;
+        }
+
+        #scrollAd table {
+            margin: 0px;
+            padding: 0px;
+            height: 22px;
+        }
+
+        #scrollAd td.nScrollAd {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        #scrollAd, #scrollAd li {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            display: block;
+            overflow: hidden;
+            margin-right: -3px\9;
+            *margin-right: -3px;
+        }
+
+            #scrollAd li {
+                white-space: nowrap;
+                line-height: 22px;
+                height: 22px;
+                display: inline-block;
+                *float: left;
+                _float: left;
+                vertical-align: top;
+                width: 100%;
+            }
+
+        .csList {
+            margin: 0px 10px 3px 0px;
+            padding: 0px;
+        }
+
+            .csList .title {
+                float: left;
+                margin: 0px;
+                padding: 5px 0px 5px 10px;
+                color: #000;
+                font-weight: bold;
+            }
+
+            .csList .list {
+                clear: both;
+                margin: 0px;
+                padding: 3px 0px 3px 10px;
+                color: #5b5b5b;
+            }
+
+                .csList .list ul {
+                    list-style: none;
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                    .csList .list ul li {
+                        float: left;
+                        line-height: 140%;
+                        word-wrap: break-word;
+                    }
+
+                        .csList .list ul li .group .on {
+                            padding-left: 3px;
+                            color: #ee8541;
+                        }
+
+                        .csList .list ul li .group .busy {
+                            padding-left: 3px;
+                            color: #F49F00;
+                        }
+
+                        .csList .list ul li .group .off {
+                            padding-left: 3px;
+                            color: #b9b9b9;
+                        }
+
+                    .csList .list ul li {
+                        float: left;
+                        line-height: 200%;
+                    }
+
+        .ks-clear {
+            clear: both;
+        }
+
+        .msg_tip .msg {
+            background-color: #f9f9f9;
+            color: #161515;
+        }
+
+        .other_msg {
+            color: #9c9c9c;
+            font-size: 12px;
+        }
+
+        .nicEdit-sendfile .btn_file {
+            border: 1px #96a1a5 solid;
+        }
+
+
+
+
+
+
+
+
+        .oc_top_title {
+            background-color: #6ec3f3;
+        }
+
+        .nicEdit-sendfile .extBtn {
+            background: #6fc3f2;
+            border: 1px solid #6fc3f2;
+        }
+
+        .oc_comm_win_verify_t {
+            background: #;
+        }
+
+
+
+
+        .welcom1, .welcom2 {
+            margin: 0px 10px 3px 17px;
+            border: 0px;
+            background-color: transparent;
+        }
+
+            .welcom1 .after, .welcom2 .after {
+                background: transparent;
+            }
+
+        .msg_cs, .msg_cus {
+            padding: 5px 10px 3px 17px;
+            text-align: left;
+        }
+
+            .msg_cs .msg, .msg_cus .msg, .msg_cs .answer {
+                background-color: transparent;
+                border: 0px;
+                box-shadow: none;
+                padding: 3px;
+            }
+
+            .msg_cus .msg {
+                float: left;
+            }
+
+            .msg_cs .msg, .msg_cus .msg {
+                padding-left: 15px;
+            }
+
+
+
+
+        .msg_hashelp, .relatelist {
+            padding-top: 8px;
+        }
+
+        .msg_hashelp {
+            margin-top: 8px;
+            border-top: 1px dashed #dcdcdc;
+            text-align: right;
+            min-width: 250px;
+        }
+
+            .msg_hashelp img {
+                vertical-align: middle;
+            }
+
+        .relatelist .ansTitle a, .msg_cs .answer .ansTitle a {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        var KS = { "adMsg1": "<FORM name=f class=kst id=ff action=http://tel.kuaishang.cn/calld.php method=post target=ab>\r\n<FIELDSET style=\"BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px\"><LEGEND style=\"HEIGHT: 60px; WIDTH: 503px; BACKGROUND: #ced0f2; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px\">\r\n<H1><FONT face=KaiTi_GB2312><FONT color=red>\u62dc\u535a<SPAN style='FONT-SIZE: 10.5pt; FONT-FAMILY: Arial; VERTICAL-ALIGN: super; mso-spacerun: \"yes\"; mso-fareast-font-family: \u6977\u4f53; mso-font-kerning: 1.0000pt'><FONT color=#000000><SUP>®<\/SUP><\/FONT><\/SPAN>\u53e3\u8154<!--EndFragment--><\/FONT><FONT color=#ff0066>(\u62dc\u5c14\u53e3\u8154)<\/FONT><FONT color=#0080c0>\u670d\u52a1\u4e2d\u56fd23\u5e74<\/FONT><\/FONT><\/H1><\/LEGEND>\r\n<DIV style=\"PADDING-LEFT: 5px; BORDER-LEFT: #30a1bf 5px solid; MARGIN: 5px 0px\"><FONT color=black><FONT color=red size=3><FONT face=KaiTi_GB2312><FONT color=#cc0066>\u5168\u56fd200\u591a\u5bb6\u8fde\u9501\u54c1\u724c\uff1b\u4e0a\u6d77\u5206\u5e0325\u5bb6\u95e8\u8bca\uff01<\/FONT><FONT color=#000033>\u5982\u679c\u60a8\u4e0d\u65b9\u4fbf\u6253\u5b57\uff0c\u5b98\u65b9\u7535\u8bdd\uff1a<\/FONT><FONT color=#0000cc>400 0030101<\/FONT><\/FONT><\/FONT><\/FONT><\/DIV>\r\n<DIV style=\"PADDING-LEFT: 5px; BORDER-LEFT: #b23532 5px solid\"><FONT size=3><FONT color=black face=KaiTi_GB2312>\u60a8\u6b63\u5728\u4eab\u53d7<FONT color=#cc0066><FONT color=#cc0066><STRONG>\u62dc\u535a<\/STRONG><SPAN style='FONT-SIZE: 10.5pt; FONT-FAMILY: Arial; VERTICAL-ALIGN: super; mso-spacerun: \"yes\"; mso-fareast-font-family: \u6977\u4f53; mso-font-kerning: 1.0000pt'><FONT color=#000000><SUP>®<\/SUP><\/FONT><\/SPAN><STRONG>\u53e3\u8154<\/STRONG><\/FONT>(\u62dc\u5c14\u53e3\u8154)<\/FONT>\u7f51\u7edc\u54a8\u8be2、\u9884\u7ea6\u670d\u52a1\uff0c\u514d\u8d39\u4e3a\u60a8\u89e3\u7b54\u5404\u7c7b\u7259\u9f7f\u95ee\u9898!<\/FONT><\/FONT>&nbsp;&nbsp; <\/DIV><\/FIELDSET> <IFRAME name=ab width=0 height=0 id=ab frameBorder=0><\/IFRAME><\/FORM>\r\n<DIV>\r\n<P><FONT color=#339900>\u5982\u679c\u60a8\u6709<SPAN>\u7259\u9f7f\u4e0d\u9f50、\u7259\u9f7f\u6b6a\u659c、\u989c\u8272\u96be\u770b、\u7259\u9f7f\u7f3a\u635f、\u7259\u5468\u75be\u75c5<\/SPAN>\u7b49\u95ee\u9898\uff0c\u8bf7\u4e0e\u6211\u4eec\u7684\u4e13\u5bb6\u8be6\u8c08\uff01<\/FONT><\/P><\/DIV><A href=\"http://pqt.yiaitao.com.cn/LR/freetel.aspx?siteid=PQT37715135&amp;oname=%e6%99%8f%e8%87%a3%e8%87%a3\" target=_blank><\/A><A href=\"http://pqt.yiaitao.com.cn/LR/freetel.aspx?siteid=PQT37715135&amp;oname=%e6%99%8f%e8%87%a3%e8%87%a3\" target=_blank><\/A>", "adMsg2": "<P><STRONG><FONT color=#ff0033 size=2>[]\u62dc\u535a\u4f18‘\u7259’\u7b11\u5bb9\u5b63[]<\/FONT><\/STRONG><BR><FONT color=#0000ff>1.3D\u7f8e\u7259\u7279\u4ef7999\u5143&nbsp; \u544a\u522b\u9ec4\u7259\u9ed1\u7259　\u81ea\u4fe1\u5fae\u7b11\uff01<\/FONT><\/P>\r\n<P><FONT color=#0000ff>2.\u6b27\u6d32\u9996\u9009\u54c1\u8d28&nbsp; Noble\u6307\u5b9a\u79cd\u690d\u7259\u5168\u6c11\u666e\u53ca\u4f53\u9a8c\u4ef7\u9996\u98976\u6298 \uff01<BR>3.\u505a\u79cd\u690d\u7259\u514d\u6302\u53f7\u8d39\uff0c\u514dCT\u5168\u666f\u7247\uff0c\u514d\u8d39\u53e3\u8154\u68c0\u67e5\uff01<\/FONT><\/P>\r\n<P>&nbsp;<\/P>\r\n<P>*<FONT color=#669966>\u5982\u679c\u4e13\u5bb6\u5fd9\uff0c\u60a8\u5728\u8f83\u957f\u65f6\u95f4\u5185\u672a\u80fd\u83b7\u5f97\u5e94\u7b54\uff0c\u60a8\u4e5f\u53ef\u4ee5\u7559\u4e0b\u60a8\u7684\u7535\u8bdd\uff0c\u6211\u4eec\u4f1a\u7b2c\u4e00\u65f6\u95f4\u56de\u62e8\u7ed9\u4f60\uff0c\u6216\u8005\u60a8\u76f4\u63a5\u62e8\u6253\u9884\u7ea6\u54a8\u8be2\u70ed\u7ebf\uff1a400-003-0101<\/FONT><\/P>", "adScrollDir": 0, "adScrollInterval": 3, "addFavourite": false, "afCustomTitle": "\u5feb\u5546\u901a\u5728\u7ebf\u5ba2\u670d", "autoPrompt": false, "chatMsgStyle": 1, "chatStyle": 1, "chatWinStyle": 2, "cls": false, "connWaitTime": 0, "customeUrl": "http://www.kuaishang.cn", "customerMsg": "#000000", "customerName": "#008000", "cutpic": true, "cwAdvAuthCode": false, "cwAdvSound": false, "cwAdvVicDis": "", "cwAdvVicEnable": false, "cwAdvVicReq": "", "cwDisCsName": "", "cwMbInputFixed": false, "cwMbRetainHtml": false, "cwOffline": "\u6211\u4eec\u7684\u4e0a\u73ed\u65f6\u95f4\u662f8:30-24:00\uff0c\u8bf7\u60a8\u7559\u4e0b\u8054\u7cfb\u65b9\u5f0f\uff0c\u7ed9\u60a8\u56de\u62e8", "cwfcVisitorName": "#0000FF", "dialogCallVisible": false, "dialogChatSkin": "", "dialogEndContent": "\u611f\u8c22\u60a8\u7684\u4fe1\u4efb\u548c\u652f\u6301\uff0c\u62dc\u535a\u53e3\u8154\u795d\u60a8\u751f\u6d3b\u6109\u5feb\uff0c\u518d\u4f1a\uff01", "dialogEndEnable": true, "dialogSendImgVisible": false, "emotions": true, "enabled": false, "entAddr": "", "entFax": "", "entMsn": "", "entPhone": "", "entQq": "", "enterRobot": "\u60a8\u597d\uff0c\u6211\u662f{r}\uff0c\u60a8\u5df2\u8fdb\u5165\u81ea\u52a9\u670d\u52a1\uff0c\u5f88\u9ad8\u5174\u80fd\u4e3a\u60a8\u670d\u52a1\uff01", "exitPrompt": true, "faq": false, "fastask": false, "favouriteWindow": false, "fileServerPath": "http://file7.kuaishang.cn/", "fontset": true, "fpcConnType": 0, "fpcEnabled": false, "fpcUrl": "http://call.kuaishang.cn", "freeCall": false, "gcChatWinAdSetListForms": [], "groupCols": 0, "groupIds": "", "groupTitle": "", "hasOnlineFreePhone": false, "isExist": false, "keywords": "", "languageType": "zh_CN", "leaveMsg": true, "leaveWordurl": "http://kuaishang.cn", "leftAd1Custom": "<DIV style=\"HEIGHT: 100%; WIDTH: 170px; BACKGROUND-COLOR: #3da2dc\">\r\n<P><IMG alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_left.jpg\"><\/P><\/DIV>\r\n<DIV style=\"CURSOR: pointer; HEIGHT: 30px; WIDTH: 100px; BACKGROUND-IMAGE: url(data:image/gif;base64,AAAA); POSITION: absolute; LEFT: 35px; TOP: 504px\"><\/DIV><\/A>", "leftAd1Link": "", "leftAd1Type": 0, "leftAd1Url": "", "logoLink": "http://kf7.kuaishang.cn/bs/im.htm?cas=56306___596378&fi=66537", "logoUrl": "", "map": false, "maxViewNum": 5, "mcExchangePositionForms": [{ "id": 0, "itemType": "GROUP", "siteId": 0 }, { "id": 0, "itemType": "ADVERTISE1", "siteId": 0 }, { "id": 0, "itemType": "ADVERTISE2", "siteId": 0 }], "mcVisitorFastAskForms": [], "noAnswer": "\u5bf9\u4e0d\u8d77\uff0c\u6211\u8fd8\u4e0d\u4f1a\u56de\u7b54\u8fd9\u4e2a\u95ee\u9898\uff0c\u8bf7\u548c\u6211\u4eec\u7684\u5ba2\u670d\u4eba\u5458\u8054\u7cfb。", "noReceive": "\u60a8\u597d\uff01\u6211\u662f{r}\uff0c\u6682\u65f6\u65e0\u4eba\u63a5\u5f85\u60a8\u7684\u5bf9\u8bdd\uff0c\u5f88\u9ad8\u5174\u7531\u6211\u6765\u4e3a\u60a8\u670d\u52a1\uff01\r\n\u8bf7\u8f93\u5165\u60a8\u7684\u95ee\u9898\uff0c\u6211\u4f1a\u5e2e\u60a8\u641c\u7d22\u5230\u9002\u5408\u7684\u7b54\u6848。\r\n\u6211\u4eec\u7684\u5ba2\u670d\u4eba\u5458\u5c06\u5728\u7a7a\u95f2\u540e\u53ca\u65f6\u5730\u4e3a\u60a8\u670d\u52a1\uff01", "noReceiveTimeout": 0, "noResponse": "\u60a8\u597d\uff01\u6211\u662f{r}\uff0c\u5ba2\u670d\u4eba\u5458\u6682\u65f6\u5fd9\u788c\u4e2d\uff0c\u5f88\u9ad8\u5174\u7531\u6211\u6765\u4e3a\u60a8\u670d\u52a1\uff01\r\n\u8bf7\u8f93\u5165\u60a8\u7684\u95ee\u9898\uff0c\u6211\u4f1a\u5e2e\u60a8\u641c\u7d22\u5230\u9002\u5408\u7684\u7b54\u6848。\r\n\u6211\u4eec\u7684\u5ba2\u670d\u4eba\u5458\u5c06\u5728\u7a7a\u95f2\u540e\u53ca\u65f6\u5730\u4e3a\u60a8\u670d\u52a1\uff01", "noResponseTimeout": 0, "onlineConsult": true, "onlineFileNum": 4, "other": "#FF8000", "print": false, "r1AutoContent": "<P>\u7f51\u7edc\u7e41\u5fd9\uff0c\u60a8\u53ef\u4ee5\u7559\u4e2a\u7535\u8bdd\u7a0d\u7b49\u7ed9\u60a8\u53bb\u7535\u4e86\u89e3\u60c5\u51b5\uff0c<FONT style=\"BACKGROUND-COLOR: #cce8cf\">\u6216\u8005<\/FONT>\u76f4\u63a5\u62e8\u6253\u7535\u8bdd \u5feb\u901f\u54a8\u8be2\u9884\u7ea6。<BR><\/P>", "r1EnableTimeInterval": true, "r1TimeInterval": 120, "r2AutoContent": "\u7f51\u7edc\u7e41\u5fd9\uff0c\u60a8\u53ef\u4ee5\u7559\u4e2a\u7535\u8bdd\u7a0d\u7b49\u7ed9\u60a8\u53bb\u7535\u4e86\u89e3\u60c5\u51b5\uff0c<FONT style=\"BACKGROUND-COLOR: #cce8cf\">\u6216\u8005<\/FONT>\u76f4\u63a5\u62e8\u6253\u7535\u8bdd \u5feb\u901f\u54a8\u8be2\u9884\u7ea6。<BR>", "r2EnableTimeInterval": true, "r2TimeInterval": 120, "r3AutoContent": "\u5df2\u7ecf\u5f88\u4e45\u6ca1\u6709\u6536\u5230\u60a8\u7684\u6d88\u606f\u4e86\uff0c\u8bf7\u95ee\u60a8\u8fd8\u5728\u7535\u8111\u524d\u5417\uff1f", "r3EnableTimeInterval": true, "r3TimeInterval": 5, "r4AutoContent": "\u5df2\u7ecf\u5f88\u4e45\u6ca1\u6709\u6536\u5230\u60a8\u7684\u6d88\u606f\uff0c\u8bf7\u95ee\u60a8\u8fd8\u5728\u7535\u8111\u65c1\u5417\uff1f<BR>\u5982\u679c\u6ca1\u6709\u5176\u5b83\u95ee\u9898\uff0c\u7cfb\u7edf\u5c06\u4e3b\u52a8\u7ed3\u675f\u672c\u6b21\u5bf9\u8bdd。<BR>\u5982\u679c\u6709\u95ee\u9898\uff0c\u6b22\u8fce\u60a8\u518d\u6b21\u5411\u6211\u54a8\u8be2<BR>\u795d\u60a8\u6109\u5feb\uff0c\u518d\u89c1\uff01", "r4CloseTimeInterval": 120, "r4EnableClose": true, "r4EnableTimeInterval": true, "r4TimeInterval": 15, "r5AutoContent": "\u7f51\u7edc\u7e41\u5fd9\uff0c\u60a8\u53ef\u4ee5\u7559\u4e2a\u7535\u8bdd\u7a0d\u7b49\u7ed9\u60a8\u53bb\u7535\u4e86\u89e3\u60c5\u51b5\uff0c<FONT style=\"BACKGROUND-COLOR: #cce8cf\">\u6216\u8005<\/FONT>\u76f4\u63a5\u62e8\u6253\u7535\u8bdd<FONT color=red face=\u5b8b\u4f53 size=3> <\/FONT>\u5feb\u901f\u54a8\u8be2\u9884\u7ea6。<BR>", "r5EnableTimeInterval": true, "r5TimeInterval": 120, "repeatSend": "\u5bf9\u4e0d\u8d77\uff0c\u60a8\u53d1\u9001\u7684\u4fe1\u606f\u5df2\u91cd\u590d\uff0c\u8bf7\u67e5\u770b\u8bb0\u5f55。", "respCsLn": "", "responseText": "\u60a8\u53d1\u9001\u7684\u95ee\u9898\u5305\u542b\u654f\u611f\u5173\u952e\u8bcd\u4fe1\u606f\uff0c\u8be5\u5173\u952e\u8bcd\u5df2\u7ecf\u88ab\u8fc7\u6ee4\uff0c\u8bf7\u91cd\u65b0\u8f93\u5165\u65b0\u7684\u95ee\u9898", "rightAd1Custom": "<IMG width=170 alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_right.jpg\" border=0><\/A>&nbsp;<IMG width=170 alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_succ_case1.jpg\" border=0><\/A>&nbsp;<IMG width=170 alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_succ_case2.jpg\" border=0><\/A>&nbsp;<IMG width=170 alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_succ_case3.jpg\" border=0><\/A>&nbsp;<IMG width=170 alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_succ_case4.jpg\" border=0><\/A>&nbsp;<IMG width=170 alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_succ_case5.jpg\" border=0><\/A>&nbsp;<IMG width=170 alt=\"\" src=\"http://cdn.ibyersh.com/static/kst/ks_succ_case6.jpg\" border=0><\/A>&nbsp;", "rightAd1Link": "", "rightAd1Type": 0, "rightAd1Url": "", "rightAd2Link": "http://www.kuaishang.cn", "rightAd2Url": "http://file.kuaishang.cn/images/chat/ad/oc_ad2.gif", "robotBsEnabled": true, "robotEnabled": false, "robotMsg": true, "robotName": "\u62dc\u535a\u53e3\u8154\u5728\u7ebf\u54a8\u8be2\u533b\u751f", "saverecord": true, "selectedGroup": [], "sendfile": true, "sendimg": true, "serviceassess": true, "setId": 61215, "shortMsg": false, "showGroup": false, "skinId": "blue2", "smsNum": 50, "switchWinType": false, "title": "\u62dc\u535a\u53e3\u8154(\u62dc\u5c14\u53e3\u8154)\u5168\u56fd\u8fde\u9501 \u5728\u7ebf\u54a8\u8be2\u5bf9\u8bdd\u7a97\u53e3", "translate": true, "valuationItem": ["\u975e\u5e38\u6ee1\u610f", "\u6ee1\u610f", "\u4e00\u822c", "\u8f83\u5dee", "\u6781\u5dee"], "viewColumn": 1, "visitorMsg": "#000000", "__isDebug": false, "__isInTest": false, "iRepc": false, "__fi": 66537, "__gr": "", "__grs": "", "__gn": "", "__ln": "", "__si": 56306, "__ci": 596378, "__basePath": "http://kf7.kuaishang.cn/bs/", "__filePath": "http://kf7.kuaishang.cn/bs/onlinecs/visitorChat/visitorSendFile2.do", "__cDom": "kf7.kuaishang.cn", "__cPot": 80, "__cPat": "/bs/onlinecs/visitorChat/visitorSendImg.do", "__lng": "zh_CN", "__cas": "56306___596378", "__w": "", "__h": "", "__dp": "", "__fd": false, "__sid": "6334DEE4D3931162A22CAFBCBB1067CF-ALSH232", "__its": "", "__cd": "", "__isMobile": false, "ism": false, "useVCAPage": false, "isNewVs": false, "visitorSign": "627ee0117642489cab4495f7e1620dec", "__ref": "", "__cur": "", "__vt": 1465904859368, "__cs": "", "__valNums": 5, "__ri": "", "__entName": "", "__preKnow": true, "__ns": 2, "__cn": "\u9ed8\u8ba4\u4ee3\u7801", "__rns": 0, "ipCountry": "\u6e56\u5317\u7701\u6b66\u6c49\u5e02", "__showDpne": false, "__showDpnt": 0, "ksvcode": "oEYNKu1465904859368" };
+        KS.isDir = true;
+        KS.is2015 = true;
+        KS.cls = false;//清除屏幕强制不显示了
+        KS.ksJsonCountNum = 0;
+        KS.ksScriptId = 'k_s_o_pluploader';
+</script>
+    <script src="~/Scripts/chat/chatNew.js" type="text/javascript"></script>
+    <script src="~/Scripts/chat/common.js" type="text/javascript"></script>
+    <script src="~/Scripts/chat/langscript_zh_CN.js" type="text/javascript"></script>
+</head>
+
+<body onload="ksComm.showAlt();initAlt()">
+    <div id="ksSwfDivid">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="0" height="0" id="ksSwfObjid" class="noswap">
+            <param name="movie" value="http://kf7.kuaishang.cn/bs/js/online/code/test.swf">
+            <param name="FlashVars" value="fName=ks_56306___596378">
+            <param name="BGColor" value="FFFFFF">
+            <param name="quality" value="high">
+            <param name="Scale" value="NoBorder">
+            <param name="allowScriptAccess" value="always">
+            <embed src="http://kf7.kuaishang.cn/bs/js/online/code/test.swf" flashvars="fName=ks_56306___596378" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" name="ksSwfObjid" allowscriptaccess="always"></object></div>
+    <script src="~/Scripts/chat/playvoice.js" type="text/javascript"></script>
+    <!-- 	<script src="http://kf7.kuaishang.cn/bs/js/plupload/plupload.full.min.js?v=wx20151221" type="text/javascript"></script> -->
+    <!--[if IE 6]><script src="http://kf7.kuaishang.cn/bs/js/plupload/DD_belatedPNG.min.js" type="text/javascript"></script><![endif]-->
+    <script type="text/javascript">
+        if (ksComm.browser.msie6) {
+            function belatedPNG() {
+                DD_belatedPNG.fix(".k_s_ol_pngFix,.k_s_ol_pngFix:hover");
+            }
+            belatedPNG();
+        }
+        try {
+            //监听窗口信息
+            ksComm.addEvent(window, 'message', function (e) {
+                try {
+                    var msg = e.data;
+                    if (msg) eval(msg);
+                } catch (e) { }
+            });
+            parent.postMessage('KS.wins[4].show()', '*');
+        } catch (e) { }
+
+        function setMiniTitle() {
+            try {
+                parent.postMessage('document.getElementById("dirSmallTitle").innerHTML="' + (ksOnlineChat.curChatTitle || "") + '"', '*');
+            } catch (e) { }
+        }
+        function showSendSel() {
+            var o = document.getElementById('ocSendMsgDiv');
+            o.style.display = o.style.display == 'block' ? 'none' : 'block';
+        }
+        function send_c_click(o, t) {
+            var es = o.getElementsByTagName('div');
+            if (es && es[0]) es[0].className = 'cur';
+            if (t == 0) {
+                o.nextSibling.getElementsByTagName('div')[0].className = '';
+            } else {
+                o.previousSibling.getElementsByTagName('div')[0].className = '';
+            }
+        }
+        function evaluationOver(index) {
+            for (var i = 0; i < KS.__valNums; i++) {
+                var evaluationStar = ksComm.$('evaluationSpan' + i);
+                if (i < index) {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png) no-repeat';
+                } else if (i == index) {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_over.png) no-repeat';
+                } else {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_unchecked.png) no-repeat';
+                }
+            }
+            //this.style.background='url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_over.png)'
+        }
+        function evaluationOut(index) {
+            for (var i = 0; i < KS.__valNums; i++) {
+                var evaluationStar = ksComm.$('evaluationSpan' + i);
+                if (i < (index - 1)) {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png) no-repeat';
+                } else if (i == (index - 1)) {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_over.png) no-repeat';
+                } else {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_unchecked.png) no-repeat';
+                }
+            }
+        }
+        function evaluationCheck(index) {
+            for (var i = 0; i < KS.__valNums; i++) {
+                var r = ksComm.$('val' + i);
+                var evaluationStar = ksComm.$('evaluationSpan' + i);
+                if (i <= index) {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png) no-repeat';
+                } else {
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_unchecked.png) no-repeat';
+                }
+                if (i == index) r.checked = true;
+                else r.checked = false;
+            }
+        }
+        function evaluationDivOut() {
+            var check = false;
+            for (var i = 0; i < KS.__valNums; i++) {
+                var r = ksComm.$('val' + i);
+                if (r.checked == true) {
+                    for (var j = 0; j < KS.__valNums; j++) {
+                        var evaluationStar = ksComm.$('evaluationSpan' + j);
+                        if (j <= i) {
+                            evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png) no-repeat';
+                        } else {
+                            evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_unchecked.png) no-repeat';
+                        }
+                    }
+                    check = true;
+                    break;
+                }
+            }
+            if (!check) {
+                for (var j = 0; j < KS.__valNums; j++) {
+                    var evaluationStar = ksComm.$('evaluationSpan' + j);
+                    evaluationStar.style.background = 'url(http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_unchecked.png) no-repeat';
+                }
+            }
+        }
+        function initAlt() {
+            var _altlayer = ksComm.$('_altlayer');
+            _altlayer.style.cssText = _altlayer.style.cssText + 'z-index:99999;';
+        }
+	</script>
+
+
+
+    <div class="oc_top_title">
+        <div class="icon k_s_ol_pngFix"></div>
+        <div id="oc_top_title" class="bg">拜博口腔杨医生 正在为您服务</div>
+        <div class="oc_top_close">
+            <div id="dialog_close_btn" class="close_icon k_s_ol_pngFix">
+                <p>
+                    <ks:ln k="oc_icon_endChat">结束对话</ks:ln>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--  <div style=" position:absolute;width:170px;height:100%;left:0px;top:54px; background-color:#00F" id="leftAdDiv"></div>-->
+    <div style="position: relative; margin-right: 0px; margin-left: 170px; height: 100%;" id="centerMsg">
+
+        <div id="chatOutput">
+            <div id="chatContent" class="border1Content" style="position: relative; *height: expression((document.body.clientHeight-219)+&#39; px&#39; );">
+               <!--广告语1-->
+                <div class="welcom1">
+                    <div class="after k_s_ol_pngFix"></div>
+                    <form name="f" class="kst" id="ff" action="http://tel.kuaishang.cn/calld.php" method="post" target="ab">
+                        <fieldset style="BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">
+                            <legend style="HEIGHT: 60px; WIDTH: 503px; BACKGROUND: #ced0f2; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px">
+                                <h1><font face="KaiTi_GB2312"><font color="red">拜博<span style="FONT-SIZE: 10.5pt; FONT-FAMILY: Arial; VERTICAL-ALIGN: super; mso-spacerun: &quot;yes&quot;; mso-fareast-font-family: 楷体; mso-font-kerning: 1.0000pt"><font color="#000000"><sup>®</sup></font></span>口腔<!--EndFragment--></font><font color="#ff0066">(拜尔口腔)</font><font color="#0080c0">服务中国23年</font></font></h1>
+                            </legend>
+                            <div style="PADDING-LEFT: 5px; BORDER-LEFT: #30a1bf 5px solid; MARGIN: 5px 0px"><font color="black"><font color="red" size="3"><font face="KaiTi_GB2312"><font color="#cc0066">全国200多家连锁品牌；上海分布25家门诊！</font><font color="#000033">如果您不方便打字，官方电话：</font><font color="#0000cc">400 0030101</font></font></font></font></div>
+                            <div style="PADDING-LEFT: 5px; BORDER-LEFT: #b23532 5px solid"><font size="3"><font color="black" face="KaiTi_GB2312">您正在享受<font color="#cc0066"><font color="#cc0066"><strong>拜博</strong><span style="FONT-SIZE: 10.5pt; FONT-FAMILY: Arial; VERTICAL-ALIGN: super; mso-spacerun: &quot;yes&quot;; mso-fareast-font-family: 楷体; mso-font-kerning: 1.0000pt"><font color="#000000"><sup>®</sup></font></span><strong>口腔</strong></font>(拜尔口腔)</font>网络咨询、预约服务，免费为您解答各类牙齿问题!</font></font>&nbsp;&nbsp; </div>
+                        </fieldset>
+                        <iframe name="ab" width="0" height="0" id="ab" frameborder="0"><s/iframe>
+                    </form>
+                    <div>
+                        <p><font color="#339900">如果您有<span>牙齿不齐、牙齿歪斜、颜色难看、牙齿缺损、牙周疾病</span>等问题，请与我们的专家详谈！</font></p>
+                    </div>
+                    <a href="http://pqt.yiaitao.com.cn/LR/freetel.aspx?siteid=PQT37715135&amp;oname=%e6%99%8f%e8%87%a3%e8%87%a3" target="_blank"></a><a href="http://pqt.yiaitao.com.cn/LR/freetel.aspx?siteid=PQT37715135&amp;oname=%e6%99%8f%e8%87%a3%e8%87%a3" target="_blank"></a>
+                </div>
+                <!--广告语2-->
+                <div class="welcom2">
+                    <div class="after k_s_ol_pngFix"></div>
+                    <p><strong><font color="#ff0033" size="2">[]拜博优‘牙’笑容季[]</font></strong>
+                        <br>
+                        <font color="#0000ff">1.3D美牙特价999元&nbsp; 告别黄牙黑牙　自信微笑！</font></p>
+                    <p><font color="#0000ff">2.欧洲首选品质&nbsp; Noble指定种植牙全民普及体验价首颗6折 ！<br>3.做种植牙免挂号费，免CT全景片，免费口腔检查！</font></p>
+                    <p>&nbsp;</p>
+                    <p>*<font color="#669966">如果专家忙，您在较长时间内未能获得应答，您也可以留下您的电话，我们会第一时间回拨给你，或者您直接拨打预约咨询热线：400-003-0101</font></p>
+                </div>
+
+
+                <div id="onlineChatArea" style="position: relative">
+                    <div id="chatTopArea" style="position: relative">
+                        <div id="msgArea">
+                            <div class="msg_cs">
+                                <div class="title"><span style="color: #008000">拜博口腔杨医生 19:47:44</span></div>
+                                <div class="msg"><span style="color: #000000">
+                                    <div><font size="3" face="NSimSun"><strong>您好！这里是<font color="blue">★拜博<font color="#ff0033">(原拜尔)<font color="#0000ff">口腔</font><font color="#ff0033"></font></font>国际咨询预约中心★&nbsp;</font><u><font color="black">疾病咨询电话：<a href="tel:18302150287">18302150287</a>&nbsp;</font></u>微信号：18302150287</strong></font></div>
+                                </span></div>
+                                <div style="clear: both"></div>
+                                <span class="spanicon"></span></div>
+                            <div class="msg_cs">
+                                <div class="title"><span style="color: #008000">拜博口腔杨医生 19:47:54</span></div>
+                                <div class="msg"><span style="color: #000000"><span style="font-weight: bold; color: #000000; font-size: 14px; font-family: 宋体;"><font face="宋体">手机访问多有不便 请直接拨打杨医生电话：18302150287 或添加<font color="#ff0000" size="2">QQ：</font><font size="3"><font color="#ff0000">2957137565</font><font color="#000000">&nbsp;快速咨询</font></font>）</font></span></span></div>
+                                <div style="clear: both"></div>
+                                <span class="spanicon"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="userOptiv">
+            <div class="border1Content">
+
+                <div style="background-color: #f1f1f1;">
+                    <div id="ksEditPanel">
+                        <div unselectable="on" style="position: absolute; height: 0px;"></div>
+                        <div unselectable="on" class="nicEdit-panelContain" style="position: relative; height: 100%; padding-left: 5px;">
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_fontpanel_title&quot;&gt;设置字体&lt;/ks:ln&gt;" linkdiv="fontpanel_link" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -600px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_emotions_title&quot;&gt;表情&lt;/ks:ln&gt;" linkdiv="emotions_link" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) 0px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_saverecord_title&quot;&gt;保存记录&lt;/ks:ln&gt;" checkdisplay="true" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer; display: none;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -150px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_sendfile_title&quot;&gt;发送文件&lt;/ks:ln&gt;" linkdiv="sendfile_link" check="true" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -250px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_sendimg_title&quot;&gt;发送图片&lt;/ks:ln&gt;" linkdiv="sendimg_link" check="true" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -100px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_cutpic_title&quot;&gt;截图&lt;/ks:ln&gt;" checkdisplay="true" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer; display: none;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -300px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_serviceassess_title&quot;&gt;评价&lt;/ks:ln&gt;" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -50px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_undefined_title&quot;&gt;在线留言&lt;/ks:ln&gt;" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -500px -50px;"></div>
+                            </div>
+                            <div is="undefined" unselectable="on" class="nicEdit-button-default" title="&lt;ks:ln k=&quot;oc_editor_translate_title&quot;&gt;翻译&lt;/ks:ln&gt;" linkdiv="translate_link" check="true" style="font-size: 12px; position: relative; font-family: Tahoma; float: left; white-space: nowrap; margin: 2px 0px; cursor: pointer;">
+                                <div class="k_s_ol_pngFix" style="width: 32px; height: 24px; float: left; background: url(&quot;http://kf7.kuaishang.cn/bs/images/dchat/comm/qieqie.png&quot;) -550px -50px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="http://www.kuaishang.cn/" target="_blank">
+                        <div id="ks_dir_t_link" class="k_s_ol_pngFix"></div>
+                    </a></div>
+                <div id="sendMsgDiv">
+                    <div class="ksEditInstance_border">
+                        <div contenteditable="true" id="ksEditInstance" class="ks_dir_b_in" style="overflow-x: hidden; overflow-y: auto; word-wrap: break-word; border: 0px;"></div>
+                    </div>
+                    <div id="ksAdDiv">
+                        <div style="overflow: hidden; height: 22px; line-height: 22px; width: 100%; margin-top: 5px;">
+                            <ul id="scrollAd"></ul>
+                        </div>
+                    </div>
+                    <div id="ksDirSendBtnAea" unselectable="on">
+                        <div class="bd1">
+                            <div id="selSendBtn" onclick="showSendSel()" class="bt" unselectable="on" onmouseover="this.parentElement.parentElement.style.backgroundPosition=&#39;0px -26px&#39;" onmousedown="this.parentElement.parentElement.style.backgroundPosition=&#39;0px -52px&#39;" onmouseout="this.parentElement.parentElement.style.backgroundPosition=&#39;0px 0px&#39;" onmouseup="this.parentElement.parentElement.style.backgroundPosition=&#39;0px 0px&#39;"></div>
+                            <div id="ksDirSendBtn" class="bt" unselectable="on" onclick="onlineChatIns.sendMsg();" onmouseover="this.parentElement.parentElement.style.backgroundPosition=&#39;0px -78px&#39;" onmousedown="this.parentElement.parentElement.style.backgroundPosition=&#39;0px -104px&#39;" onmouseout="this.parentElement.parentElement.style.backgroundPosition=&#39;0px 0px&#39;" onmouseup="this.parentElement.parentElement.style.backgroundPosition=&#39;0px 0px&#39;">
+                                <div class="sendMsgBtnText">
+                                    <ks:ln k="oc_send">发 送</ks:ln>
+                                </div>
+                            </div>
+                        </div>
+                        <div unselectable="on" id="ocSendMsgDiv" class="nicEdit-ocSendMsgDiv" onclick="showSendSel()">
+                            <div class="oc_div_smt_in" unselectable="on">
+                                <table cellspacing="0" cellpadding="0" border="0" width="100%" onselectstart="return false">
+                                    <tbody>
+                                        <tr onmouseout="ksComm.send_c_out(this)" onmouseover="ksComm.send_c_over(this)" onclick="ksComm.send_c_click(this,0)" class="">
+                                            <td width="19" class="left" style="background-color: #eeeeee; padding: 0px 3px;">
+                                                <div class="cur"></div>
+                                            </td>
+                                            <td>&nbsp;<ks:ln k="oc_entersend">按Enter发送</ks:ln></td>
+                                        </tr>
+                                        <tr onmouseout="ksComm.send_c_out(this)" onmouseover="ksComm.send_c_over(this)" onclick="ksComm.send_c_click(this,1)" class="">
+                                            <td class="left" style="background-color: #eeeeee; padding: 0px 3px;">
+                                                <div></div>
+                                            </td>
+                                            <td>&nbsp;<ks:ln k="oc_ctrlentersend">按Ctrl+Enter发送</ks:ln></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <div id="oc_se_win" class="oc_se_win" style="display: none;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td class="oc_se_win_t" style="text-align: left;">评价
+	           
+                        <div id="oc_se_cancle" style="cursor: pointer; width: 24px; height: 18px; float: right; background: url(&#39;http://kf7.kuaishang.cn/bs/images/dchat/comm/dir_icons.gif&#39;) -93px 5px no-repeat;">
+                            <div style="width: 100%; height: 100%;" onmouseover="this.style.cssText=&#39;width:100%;height:100%;background-color:#FFF;filter:alpha(opacity=30);-moz-opacity:0.30;opacity:0.30;&#39;" onmouseout="this.style.cssText=&#39;width:100%;height:100%;&#39;"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="oc_se_topic1TR" style="display: none;">
+                    <td class="oc_se_win_n" style="font-size: 13px;">即将结束本次对话，请您对此次服务做出评价</td>
+                </tr>
+                <tr id="oc_se_topic2TR">
+                    <td class="oc_se_win_n" style="font-size: 13px;">感谢您的咨询，请您对此次服务做出评价</td>
+                </tr>
+                <tr>
+                    <td align="left" style="padding: 0px 0px 10px 15px">
+
+                        <div style="width: 160px" onmouseout="evaluationDivOut()">
+
+                            <span id="evaluationSpan0" class="evaluationStars k_s_ol_pngFix" title="极差" style="background: url(&#39;http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png&#39;) no-repeat" onmouseover="evaluationOver(0)" onmouseout="evaluationOut(0)" onclick="evaluationCheck(0)"></span>
+
+                            <span id="evaluationSpan1" class="evaluationStars k_s_ol_pngFix" title="较差" style="background: url(&#39;http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png&#39;) no-repeat" onmouseover="evaluationOver(1)" onmouseout="evaluationOut(1)" onclick="evaluationCheck(1)"></span>
+
+                            <span id="evaluationSpan2" class="evaluationStars k_s_ol_pngFix" title="一般" style="background: url(&#39;http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png&#39;) no-repeat" onmouseover="evaluationOver(2)" onmouseout="evaluationOut(2)" onclick="evaluationCheck(2)"></span>
+
+                            <span id="evaluationSpan3" class="evaluationStars k_s_ol_pngFix" title="满意" style="background: url(&#39;http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png&#39;) no-repeat" onmouseover="evaluationOver(3)" onmouseout="evaluationOut(3)" onclick="evaluationCheck(3)"></span>
+
+                            <span id="evaluationSpan4" class="evaluationStars k_s_ol_pngFix" title="非常满意" style="background: url(&#39;http://kf7.kuaishang.cn/bs/images/dchat/comm/stars_checked.png&#39;) no-repeat" onmouseover="evaluationOver(4)" onmouseout="evaluationOut(4)" onclick="evaluationCheck(4)"></span>
+
+                            <div style="clear: both"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="display: none">
+                    <td align="left">
+                        <input align="middle" type="radio" name="serviceEvaluate" id="val0" value="极差"><label for="val0">极差</label>&nbsp;			    			    
+                        <input align="middle" type="radio" name="serviceEvaluate" id="val1" value="较差"><label for="val1">较差</label>&nbsp;			    				    	
+                        <input align="middle" type="radio" name="serviceEvaluate" id="val2" value="一般"><label for="val2">一般</label>&nbsp;			    				    
+                        <input align="middle" type="radio" name="serviceEvaluate" id="val3" value="满意"><label for="val3">满意</label>&nbsp;			    				    	
+                        <input align="middle" type="radio" name="serviceEvaluate" id="val4" value="非常满意" checked="checked"><label for="val4">非常满意</label>&nbsp;		    	
+			    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <textarea name="serviceEvaluateDesc" id="serviceEvaluateDesc" defaultval="您觉得我们还有哪些地方需要改进呢？" onblur="ksComm.blurInputEvent(this)" onfocus="ksComm.focusInputEvent(this)">您觉得我们还有哪些地方需要改进呢？</textarea></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" align="center" height="40" class="oc_se_win_b">
+                        <input id="oc_se_submit" type="button" class="btn" value="评价" ksk="oc_evaluate"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="oc_endChat_win" class="oc_endChat_win" style="display: none;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td class="oc_endChat_win_t" style="text-align: left;">
+                        <div style="float: left; margin-right: 18px;">提示</div>
+                        <div id="oc_endChat_win_cancle" style="float: left; cursor: pointer; width: 24px; height: 18px; float: right; background: url(&#39;http://kf7.kuaishang.cn/bs/images/dchat/comm/dir_icons.gif&#39;) -93px 5px no-repeat;">
+                            <div style="width: 100%; height: 100%;" onmouseover="this.style.cssText=&#39;width:100%;height:100%;background-color:#FFF;filter:alpha(opacity=30);-moz-opacity:0.30;opacity:0.30;&#39;" onmouseout="this.style.cssText=&#39;width:100%;height:100%;&#39;"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="oc_endChat_win_n" style="font-size: 13px;">
+                        <img src="./拜博口腔(拜尔口腔)全国连锁 在线咨询对话窗口_files/code_icon.png" style="position: absolute; left: 18px; top: 55px;">
+                        确定要结束对话吗？</td>
+                </tr>
+                <tr>
+                    <td valign="middle" align="center" height="40" class="oc_endChat_win_b">
+                        <input id="oc_endChat_submit" type="button" class="btn" value="确定" ksk="oc_se_submit">
+                        <input id="oc_endChat_cancle" type="button" class="btn" value="取消" ksk="oc_se_cancle">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="oc_se_bgDiv"></div>
+    <iframe name="hidden_frame" id="hidden_frame" style="display: none;"></iframe>
+    <script language="javascript">
+        function resizeChatWin() {
+            var left = ksComm.$('leftAdDiv');
+            var right = ksComm.$('rightAdDiv');
+            var center = ksComm.$('centerMsg');
+            if (!left) center.style.marginLeft = '0px';
+            if (!right) center.style.marginRight = '0px';
+            if (center.offsetWidth < 320) {
+                if (left && left.style.display != 'none') {
+                    left.style.display = 'none';
+                    center.style.marginLeft = '0px';
+                } else {
+                    if (right && right.style.display != 'none') {
+                        if (right) right.style.display = 'none';
+                        center.style.marginRight = '0px';
+                    }
+                }
+            } else if (center.offsetWidth > 420) {
+                if (right && right.style.display == 'none') {
+                    right.style.display = '';
+                    center.style.marginRight = '170px';
+                } else {
+                    if (left && left.style.display == 'none') {
+                        left.style.display = '';
+                        center.style.marginLeft = '170px';
+                    }
+                }
+            }
+        }
+        ksComm.addEvent(window.window, 'resize', resizeChatWin);
+        resizeChatWin();
+</script>
+    <div style="display: none">
+        <script type="text/javascript">
+</script>
+    </div>
+    <div id="leftAdDiv" style="position: absolute; width: 170px; height: 100%; left: 0px; top: 0px; overflow: hidden; background-color: rgb(255, 255, 255);">
+        <div style="margin-top: 54px; height: 100%;">
+            <div style="HEIGHT: 100%; WIDTH: 170px; BACKGROUND-COLOR: #3da2dc">
+                <p>
+                    <img src="~/img/login/yys.jpg" /></p>
+            </div>
+            <div style="CURSOR: pointer; HEIGHT: 30px; WIDTH: 100px; BACKGROUND-IMAGE: url(data:image/gif;base64,AAAA); POSITION: absolute; LEFT: 35px; TOP: 504px"></div>
+        </div>
+    </div>
+    <div id="_altlayer" style="display: none; border: 1px solid rgb(0, 0, 0); font-size: 12px; position: fixed; z-index: 99999; background-color: rgb(255, 255, 204);"></div>
+</body>
+
+</html>

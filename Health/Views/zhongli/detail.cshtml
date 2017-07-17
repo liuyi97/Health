@@ -1,0 +1,663 @@
+﻿@{
+    //ViewBag.Title = "detail";
+    Layout = null;
+}
+@model Health.Models.S4doctors
+<html>
+<head>
+    <title>doctor</title>
+    <link href="~/Content/expert1.css" rel="stylesheet" />
+    <link href="~/Content/common1.css" rel="stylesheet" />
+    <link href="~/Content/doctor1/expert.css" rel="stylesheet" />
+    <link href="~/Content/doctor1/css.css" rel="stylesheet" />
+    <link href="~/Content/doctor1/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="~/Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/jquery.tools.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <script type="text/javascript">        
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="headtp">
+            <div class="container">
+                <div class="fl">
+                    <a href="#" onclick="AddFavorite(window.location,document.title)">收藏首页</a>
+                    <a href="/zhongli/resigter">免费注册</a>
+                    <a href="/zhongli/login" target="_blank">会员登录</a>
+                </div>
+                <div class="fr">
+                    <div class="search">
+                        <form>
+                            <input class="iptxt" type="text" onblur="if(this.value=='')this.value='搜索关键词...';" onfocus="if(this.value=='搜索关键词...')this.value='';" value="搜索关键词..." title="搜索" id="mykey" style="color: rgb(198, 198, 198);">
+                            <a class="subtn" type="button" value="" id="mysub" href="javascript:void(0);"></a>
+                            <script type="text/javascript">
+                                $("#mysub").click(function () {
+                                    if ($.trim($("#mykey").val()) == "搜索") {
+                                        alert("请输入关键字！");
+                                        return;
+                                    }
+                                    location.href = "/aspx/pageabout.aspx?type=search&keyword=" + escape($("#mykey").val()) + "";
+                                });
+                                function AddFavorite(sURL, sTitle) {
+                                    sURL = encodeURI(sURL);
+                                    try {
+                                        window.external.addFavorite(sURL, sTitle);
+                                    } catch (e) {
+                                        try {
+                                            window.sidebar.addPanel(sTitle, sURL, "");
+                                        } catch (e) {
+                                            alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+                                        }
+                                    }
+                                }
+                            </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headcon">
+            <div class="container">
+                <a href="index.html" target="_blank"></a>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <div class="navbar container">
+                <ul>
+                    <li><a href="/mingpiao/shouye">首页</a></li>
+                    <li id="m_about"><a href="~/mingpiao/jzxm">精专项目</a>
+                       
+                    </li>
+                    <li id="m_news"><a href="~/zhongli/doctor">专家团队</a></li>
+                    <li id="m_member"><a href="~/zhongli/anli">成功案例</a>
+                      
+                    </li>
+                    <li id="m_committee"><a href="/mingpiao/shouye">环境设备</a>
+                       
+                    </li>
+                  
+                    <li><a href="/mingpiao/lylx">来院路线</a></li>
+                    <li><a href="#">个人中心</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--主体部分-->
+    <div class="container clearfix">
+        <!--右侧内容栏-->
+        <div class="rtbox fr">
+            <div class="rtit">
+                <div class="srtit">
+                    <h2 class="fl"><i>
+                        <img src="~/img/line_red.png"></i>协会专家&nbsp;|&nbsp;团队建设</h2>
+                    <p class="fr">当前位置：<a href="#">首页</a> &gt; <a href="#">专家智库</a> &gt;<a href="#">协会专家</a></p>
+                </div>
+            </div>
+            <!--公告内容-->
+            <div class="rtcon abtbg">
+                <div class="rtcontain aboutbox">
+                    <!--内容开始-->
+                    <div id="left">
+                        <div class="notice">
+                            <div class="img2 fl ">
+                                <a href="#">
+                                    <img src="~/img/doctor/@Html.ValueFor(n => n.dapic)" width="210"; height="280"/></a>
+                            </div>
+                            <div class="txt fr">
+                                <h4>@Html.ValueFor(n => n.dname)<span><i></i>
+                                    <img src="~/img/doctor/心.net.png" style="margin-bottom: -6px;" />480</span></h4>
+                                <ul>
+                                    <li><strong>职    称</strong>：@Html.ValueFor(n => n.dzhicheng)  </li>
+                                    <li><strong>所属门店</strong>：@Html.ValueFor(n => n.daddress) </li>
+                                    <li><strong>擅长项目</strong>：@Html.ValueFor(n => n.dxiangqing) </li>
+                                    <li><strong>专家简介</strong>：@Html.ValueFor(n => n.djianjie)
+                                </ul>
+                                <div class="askBox">
+                                    <a class="btn" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=792891386&amp;site=qq&amp;menu=yes">给他留言</a><a class="btn a2" title="杨福强" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2537036964&amp;site=qq&amp;menu=yes">预约该专家</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="body3-box">
+                                <div class="ayzs-t">
+                                    <div id="container">
+                                        <div class="tab-container">
+                                            <div id="c1">
+                                                <a href="#" class="tab-container-a tab-a-curr" title="">牙齿矫正科普</a>
+                                                <div class="tab-content" style="display: block;">
+                                                    <div class="w-c-top">
+                                                        <div class="w-c-top-left">
+                                                            <div id="ad-banner07">
+                                                                <div class="g-single-main g-main" style="font-size: 13px; color: #585858;">
+                                                                    <img src="~/img/doctor/simg.jpg" style="border-radius: 3px;" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-c-top-right">
+                                                            <div class="etsy-t">
+                                                                <span><a href="#" target="_blank">门牙不齐可以矫正吗?</a></span>
+                                                                <p>门牙不齐可以矫正吗?门牙不齐不仅直接影响了面部的美观，同时还有可能给我们口腔带来口腔疾病，那么门牙不齐可以矫正吗</p>
+                                                            </div>
+                                                            <div class="line" style="margin-bottom: 10px;"></div>
+                                                            <div class="w-gdnr">
+                                                                <ul>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿矫正有年龄限制吗…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">根管治疗能维持几年…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">长了龅牙怎么办呢?</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿松动能恢复吗？</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿拥挤什么矫正方法…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">龅牙的矫正方式</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿不齐如何整?</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿矫正的最佳时间是…</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div id="c2">
+                                                <a href="#" class="tab-container-a" title="">牙齿种植科普</a>
+                                                <div class="tab-content" style="display: none;">
+                                                    <div class="w-c-top">
+                                                        <div class="w-c-top-left">
+                                                            <div id="ad-banner08">
+                                                                <div class="g-single-main g-main" style="font-size: 13px; color: #585858;">
+                                                                    <img src="~/img/doctor/tc.jpg" width="450" style="border-radius: 3px;" height="300" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-c-top-right">
+                                                            <div class="etsy-t">
+                                                                <span><a href="#" target="_blank">常熟种植牙的寿命是多少年</a></span>
+                                                                <p>牙齿出现缺失，当务之急就是要快速选择合适的方法进行修复。种植牙是目前修复牙齿缺失首选的方式，那么常熟种植牙的寿命是多少年?</p>
+                                                            </div>
+                                                            <div class="line" style="margin-bottom: 10px;"></div>
+                                                            <div class="w-gdnr">
+                                                                <ul>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">常熟种植牙的寿命是多…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">前门牙缺失可以种植吗…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">大牙能种吗，达美专家…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿松动能恢复吗？</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">全口牙齿缺失怎么种植</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">种植牙与烤瓷牙哪个好</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">种植牙寿命多久，如何…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">武汉种植牙的利弊是什…</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div id="c3">
+                                                <a href="#" class="tab-container-a" title="">牙齿修复科普</a>
+                                                <div class="tab-content" style="display: none;">
+                                                    <div class="w-c-top">
+                                                        <div class="w-c-top-left">
+                                                            <div id="ad-banner09">
+                                                                <div class="g-single-main g-main" style="font-size: 13px; color: #585858;">
+                                                                    <img src="~/img/doctor/牙齿修复1.jpg" width="450" style="border-radius: 3px;" height="300" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-c-top-right">
+                                                            <div class="etsy-t">
+                                                                <span><a href="#" target="_blank">瓷贴面的适应范围包括哪些？</a></span>
+                                                                <p>对瓷贴面可能不少人还比较陌生，但对于牙齿有缺陷患者来说，瓷贴面是一种很好的牙齿美容方法。</p>
+                                                            </div>
+                                                            <div class="line" style="margin-bottom: 10px;"></div>
+                                                            <div class="w-gdnr">
+                                                                <ul>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿缺失怎么补比较好</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙缝比较大，能矫正吗…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">哪种牙齿贴面效果好？</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">根管治疗一般要多少钱</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">根管治疗能维持几年？…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿松动了怎么办呢?</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙缺失用什么方法修复…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙贴面有那些优缺点</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div id="c4">
+                                                <a href="#" class="tab-container-a" title="">牙齿美白科普</a>
+                                                <div class="tab-content" style="display: none;">
+                                                    <div class="w-c-top">
+                                                        <div class="w-c-top-left">
+                                                            <div id="ad-banner10">
+                                                                <div class="g-single-main g-main" style="font-size: 13px; color: #585858;">
+                                                                    <img src="~/img/doctor/ycmb.jpg" height="300" style="border-radius: 3px;" />
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-c-top-right">
+                                                            <div class="etsy-t">
+                                                                <span><a href="#" target="_blank">影响洗牙费用的因素有哪些</a></span>
+                                                                <p>现在有越来越多的人都会比较重视牙齿问题，为了保证自己的牙齿健康，很多人都会选择洗牙技术，洗牙能够有效的防止口腔疾病的发生，而人们对于洗牙的费用也是比较关心的，</p>
+                                                            </div>
+                                                            <div class="line" style="margin-bottom: 10px;"></div>
+                                                            <div class="w-gdnr">
+                                                                <ul>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿发黄如何解决？</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿发黑、发黄？改变…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿美白费用是多少？</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">武汉四环素牙美白有哪…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">武汉美白四环素牙要多…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">武汉牙齿激光美白多少…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">氟斑牙如何美白好</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">治疗氟斑牙价格是多少…</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div id="c5">
+                                                <a href="#" class="tab-container-a" title="">儿童健牙科普</a>
+                                                <div class="tab-content" style="display: none;">
+                                                    <div class="w-c-top">
+                                                        <div class="w-c-top-left">
+
+                                                            <div id="ad-banner11">
+                                                                <div class="g-single-main g-main" style="font-size: 13px; color: #585858;">
+                                                                    <img src="~/img/doctor/儿童牙科1.jpg" width="450" style="border-radius: 3px;" height="300" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-c-top-right">
+                                                            <div class="etsy-t">
+                                                                <span><a href="#" target="_blank">儿童牙齿松动怎么办？</a></span>
+                                                                <p>儿童在生长发育阶段常出现牙齿松动的现象，家长要特别注意的是不要轻易拔除松动的牙齿，而应该查明病因，选择合理的方式治疗。</p>
+                                                            </div>
+                                                            <div class="line" style="margin-bottom: 10px;"></div>
+                                                            <div class="w-gdnr">
+                                                                <ul>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">儿童龅牙，达美专家告…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">乳牙不整齐有什么影响…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">武汉达美口腔提醒：吸…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">婴幼儿口腔该如何清洁…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">儿童牙齿矫正的四个时…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">儿童牙齿矫正的费用贵…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">儿童牙齿拥挤应及时矫…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">预防儿童牙病的方法有…</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div id="c6">
+                                                <a href="#" class="tab-container-a" title="">口腔疾病科普</a>
+                                                <div class="tab-content" style="display: none;">
+                                                    <div class="w-c-top">
+                                                        <div class="w-c-top-left">
+                                                            <!--首页banner12-->
+                                                            <div id="ad-banner12">
+                                                                <div class="g-single-main g-main" style="font-size: 13px; color: #585858;">
+                                                                    <img src="~/img/doctor/口腔疾病.jpg" width="450" style="border-radius: 3px;" height="300" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-c-top-right">
+                                                            <div class="etsy-t">
+                                                                <span><a href="#" target="_blank">快来自测一下你是否需要洗牙</a></span>
+                                                                <p>你的牙齿是否刷得够干净？快来自测一下你是否需要洗牙。</p>
+                                                            </div>
+                                                            <div class="line" style="margin-bottom: 10px;"></div>
+                                                            <div class="w-gdnr">
+                                                                <ul>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">冬天容易口腔溃疡，饮…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">智齿发炎了怎么办？</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">吃东西容易塞牙</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">冬天牙齿的护理几个T…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">孕期能不能看牙？</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">智齿，到底该不该拔呢…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">武汉达美口腔补牙后饮…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙龈萎缩有哪些治疗方…</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $('.tab-content').hide();
+                                                    $('.tab-a-curr').next('.tab-content').show();
+                                                    $('.tab-container-a').mouseover(function () {
+                                                        $('.tab-content').hide();
+                                                        $('.tab-container-a').removeClass('tab-a-curr');
+                                                        $(this).next('.tab-content').show();
+                                                        $(this).addClass('tab-a-curr');
+                                                    });
+                                                });
+                                            </script>
+                                            <div id="c7">
+                                                <div class="tab-content" style="display: none;">
+                                                    <div class="w-c-top">
+                                                        <div class="w-c-top-left">
+                                                            <!--首页banner07-->
+                                                            <div id="ad-banner07">
+                                                                <div class="g-single-main g-main" style="font-size: 13px; color: #585858;">
+                                                                    <img src="~/img/doctor/牙齿矫正1.jpg" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-c-top-right">
+                                                            <div class="etsy-t">
+                                                                <span><a href="#" target="_blank">门牙不齐可以矫正吗?</a></span>
+                                                                <p>门牙不齐可以矫正吗?门牙不齐不仅直接影响了面部的美观，同时还有可能给我们口腔带来口腔疾病，那么门牙不齐可以矫正吗</p>
+                                                            </div>
+                                                            <div class="line" style="margin-bottom: 10px;"></div>
+                                                            <div class="w-gdnr">
+                                                                <ul>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿矫正有年龄限制吗…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">根管治疗能维持几年？…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">长了龅牙怎么办呢?</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿拥挤什么矫正方法…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">龅牙的矫正方式</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">虎牙矫正的方法有哪几…</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿不齐如何整?</a></li>
+                                                                    <li class="gdnr-one"><i class="iconfont" style="font-size: 12px;"></i><a href="#" target="_blank">牙齿矫正的最佳时间是…</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!--kp beigin-->
+                                                    <div class="w-c-bottom">
+                                                        <img src="./武汉达美口腔-专注口腔保健与美学修复的私人口腔会所_files/zj-b222.png">
+                                                        <div class="zjwd-one">
+                                                            <i class="iconfont" style="color: #B17C2D; font-size: 13px;"></i>&nbsp;<span class=""><a href="#">武汉矫正的费用是多少</a><a></a></span><a>
+                                                            </a><a href="#">
+                                                                <p>我今年20岁，下排牙齿不齐，想矫正。</p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="zjwd-one">
+                                                            <i class="iconfont" style="color: #B17C2D; font-size: 13px;"></i>&nbsp;<span class=""><a href="#">牙齿矫正的种类有哪些</a><a></a></span><a>
+                                                            </a><a href="#">
+                                                                <p>这是很多想要矫正牙齿的朋友想问的问题，武汉达美口腔医院的专家表示， 牙齿矫正方法是一种可以让不齐或歪挤的牙齿重新变整齐和美观的方法，</p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="zjwd-one">
+                                                            <i class="iconfont" style="color: #B17C2D; font-size: 13px;"></i>&nbsp;<span class=""><a href="#">门牙前突矫正多少钱？</a><a></a></span><a>
+                                                            </a><a href="#">
+                                                                <p>您好！医生，我的门牙前突。</p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="zjwd-one">
+                                                            <i class="iconfont" style="color: #B17C2D; font-size: 13px;"></i>&nbsp;<span class=""><a href="#">矫正后牙齿易脱落吗？</a><a></a></span><a>
+                                                            </a><a href="#">
+                                                                <p>您好，牙齿矫正后是不会导致牙齿脱落的。</p>
+                                                            </a>
+                                                        </div>
+
+                                                    </div>
+                                                    <!--end-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div id="right1">
+                    <div class="expOrder">
+                        <div class="item">
+                            <div class="book mr">
+                                <h3><i></i>问答</h3>
+                                <ul class="wend">
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>你好，请问种植牙多少钱呢</a></li>
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>最近天气冷，吃冷的东西时，牙齿非</a></li>
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>冬天做种植牙好吗</a></li>
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>圣诞节来了，有优惠吗？</a></li>
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>补一个牙要多少钱</a></li>
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>美白要多少钱</a></li>
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>美白牙齿用什么方法最好？</a></li>
+                                    <li><a href="#" target="_blank" rel="nofollow"><span style="color: #fc5c14; font-stretch: initial;">☆</span>咋样才能预防口腔溃疡</a></li>
+                                </ul>
+                            </div>
+                            <div class="FL book">
+                                <h3><i></i>自信完美的笑容一定能帮你赢得好</h3>
+                                <img src="~/img/doctor/ru399di.png"  style="height: 271px; width:471px;margin-left:-25px;" />
+                               
+                            </div>
+                            <div class="method">
+                                <h3><i></i>使用方法：</h3>
+                                <p>只花<b>2分钟</b>时间，即可完成<b>免费预约</b>，我院承诺您的个人隐私信息将被保密。提交前，请认真核对个人信息是否准确，预约成功后将显示您的预约号，并且24小时内我院将有专人跟您联系，凭预约号到院即可进行就诊。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="infiniteCarousel">
+                    <div class="wrapper">
+                        <ul>
+                            <li>
+                                <div onmouseover="this.className='on-div'" onmouseout="this.className=''">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="~/img/doctor/证书1.jpg" width="250" height="230" alt="证书1" title="证书" /></td>
+                                        </tr>
+                                    </table>
+                                    <a href="#" target="_blank" title="证书1"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div onmouseover="this.className='on-div'" onmouseout="this.className=''">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="~/img/doctor/证书2.jpg" width="250" height="230" alt="证书2" title="证书" /></td>
+                                        </tr>
+                                    </table>
+                                    <a href="#" target="_blank" title="证书2"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div onmouseover="this.className='on-div'" onmouseout="this.className=''">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="~/img/doctor/证书3.jpg" width="250" height="230" alt="证书3" title="证书" /></td>
+                                        </tr>
+                                    </table>
+                                    <a href="#" target="_blank" title="证书3"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div onmouseover="this.className='on-div'" onmouseout="this.className=''">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="~/img/doctor/证书4.jpg" width="250" height="230" alt="证书4" title="证书" /></td>
+                                        </tr>
+                                    </table>
+                                    <a href="#" target="_blank" title="证书4"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div onmouseover="this.className='on-div'" onmouseout="this.className=''">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="~/img/doctor/证书5.jpg" width="250" height="230" alt="证书5" title="证书" /></td>
+                                        </tr>
+                                    </table>
+                                    <a href="#" target="_blank" title="证书5"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div onmouseover="this.className='on-div'" onmouseout="this.className=''">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="~/img/doctor/证书6.jpg" width="250" height="230" alt="证书6" title="证书" /></td>
+                                        </tr>
+                                    </table>
+                                    <a href="#" target="_blank" title="证书6"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Infi_bg"></div>
+                    <a id="prev" class="btn_icon" href="javascript:;"></a>
+                    <a id="next" class="btn_icon" href="javascript:;"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <footer id="footer">
+        <div class="fttool">
+            <div class="container">
+                <a href="#" target="_blank">关于我们</a> - <a href="#" target="_blank">办事指南</a> - <a href="#" target="_blank">在线咨询</a> - <a href="#" target="_blank">网站管理</a> - 欢迎您，您是第28735位访问者！
+            </div>
+        </div>
+        <div class="ftbt container">
+            <div class="ftbt_left fl">
+                <p>武汉市大数据研究与应用协会  版权所有</p>
+                <p>地址：中国湖北省武汉船舶职业技术学院临江N8</p>
+                <p>联系方式：17762479829</p>
+            </div>
+            <div class="ftbt_right fr">
+                <p>客服QQ：2324387748</p>
+                <p>邮箱：2324387748@163.com</p>
+                <p>官方微博：15971819640</p>
+            </div>
+            <div class="middle fr">
+                <img src="~/img/weixin2.png" width="90" height="90" />
+            </div>
+        </div>
+        <div class="copyright container">
+            Copyright © 2013-2015 gdccia.org All rights reserved.&nbsp;&nbsp;&nbsp;粤ICP备15048364号-1&nbsp;&nbsp;&nbsp;技术支持：武汉船舶教育机构
+        </div>
+    </footer>
+    <!--左侧微信-->
+    <div id="ewm">
+        <span>关闭</span>
+        <img src="~/img/weixin2.png" alt="微信">
+    </div>
+    <!--右侧工具栏-->
+    <div id="sidebar">
+        <ul>
+            <li class="qq">
+                <span>咨询</span>
+                <div class="showbox">
+                    <div class="qqlist">
+                        <div class="qqtop">在线咨询</div>
+                        <div class="qqlist2">
+                            <a target="_blank" href="#" rel="nofollow">协会咨询</a><a target="_blank" href="#" rel="nofollow">网站咨询</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="qrcode">
+                <span>微信</span>
+                <div class="showbox">
+                    <img src="~/img/weixin2.png" width="100" height="100" alt="微信">
+                </div>
+            </li>
+            <li class="share">
+                <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                    <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                </div>
+            </li>
+            <li class="gotop"><span>顶部</span></li>
+        </ul>
+        <style type="text/css">
+            #sidebar .bdshare-button-style0-16 .bds_more {
+                background: none;
+                display: block;
+                padding: 0px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px;
+                float: none;
+            }
+
+                #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+        </style>
+        <script type="text/javascript">
+            window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script src="#" type="text/javascript"></script>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/doctor/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".Nav ul li a").mouseover(function () { //When trigger is clicked...
+            //Following events are applied to the subnav itself (moving subnav up and down)
+            $(this).parent().find(".subnav").slideDown('fast').show(); //Drop down the subnav on click
+            $(this).parent().hover(function () {
+            }, function () {
+                $(this).parent().find(".subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up
+            });
+            //Following events are applied to the trigger (Hover events for the trigger)
+        })
+    });
+</script>
+<script src="~/Scripts/doctor/roll.js"></script>
+<script type="text/javascript">
+    function setTab(m, n) {
+        var menu = document.getElementById("tab" + m).getElementsByTagName("span");   //获取ID为tab+m标签下的li标签
+        var showdiv = document.getElementById("tablist" + m).getElementsByTagName("ul");   //获取ID为tablist+m标签下的div标签
+        for (i = 0; i < menu.length; i++) {
+            menu[i].className = i == n ? "on" : "";   //如果i=n;那么menu[i].classname为now
+            showdiv[i].style.display = i == n ? "block" : "none";   //如果如果i=n;那么showdiv[i].style.display为block"
+        }
+    };
+    //鼠标经过切换父div背景
+    $(function () {
+        $("#T1").mouseover(
+			function () {
+			    $(this).parent("div").removeClass("N_li");
+			});
+        $("#T2").mouseover(
+			function () {
+			    $(this).parent("div").addClass("N_li");   //鼠标经过时增加样式N_li
+			});
+    });
+    //鼠标经过li切换背景、字体 颜色
+    $("#tablist1 li").hover(
+		function () {
+		    $(this).addClass("li_color");   //鼠标经过时增加样式P02
+		},
+		function () {
+		    $(this).removeClass("li_color"); //鼠标离开时移除样式P02
+		}
+	);
+</script>

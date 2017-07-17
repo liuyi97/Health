@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+@model Health.Models.S4doctors
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+    <form id="xgzj">
+        <br />
+        编号：<p style="display: none">@Html.TextBoxFor(n => n.did)</p>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+       
+        姓名：@Html.TextBoxFor(n => n.dname)
+        <br />
+        <br />
+        密码： @Html.TextBoxFor(n => n.dpwd)   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
+        大图：@Html.TextBoxFor(n => n.dapic)
+        <br />
+        <br />
+        小图：@Html.TextBoxFor(n => n.dxpic)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        性别：@Html.TextBoxFor(n => n.dsex)
+        <br />
+        <br />
+        地址：@Html.TextAreaFor(n => n.daddress)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简介：@Html.TextAreaFor(n => n.djianjie)
+        <br />
+        <br />
+        详情： @Html.TextAreaFor(n => n.dxiangqing)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;职称： @Html.TextAreaFor(n => n.dzhicheng)
+
+
+        <br />
+        <br />
+        总数：@Html.TextBoxFor(n => n.shu)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        时间：@Html.DropDownListFor(n=>n.tiid,ViewBag.mm as SelectList)
+         <br />
+        <br />
+         类型：@Html.DropDownListFor(n=>n.xid,ViewBag.mmm as SelectList)
+
+
+    </form>
+</body>
+</html>
+

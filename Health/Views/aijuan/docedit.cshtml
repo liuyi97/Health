@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "docedit";
+    Layout = null;
+}
+@model Health.Models.S4doctors
+@using (Html.BeginForm("docedit", "aijuan", FormMethod.Post, new { id = "form1" }))
+{ 
+    <p style="display: none">医生编号：@Html.EditorFor(u => u.did)</p>
+    <p>医生姓名：@Html.EditorFor(u => u.dname)</p>
+    <p>密码：@Html.EditorFor(u => u.dpwd)</p>
+    <p>医生职务：@Html.EditorFor(u => u.dzhicheng)</p>
+    <p>地址：@Html.EditorFor(u => u.daddress)</p>
+   
+    <p>医生简介： @Html.TextAreaFor(n => n.djianjie, 6, 80, null)</p>
+    <p>医生详情：  @Html.TextAreaFor(n => n.dxiangqing, 6, 80, null)</p>
+    <p>
+        性别： @Html.RadioButton("dsex", "男", true) 男 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          @Html.RadioButton("dsex", "女") 女
+    </p>
+    <p>剩余预约：@Html.EditorFor(u => u.shu)</p>
+    <p style="display: none">时间类型：@Html.EditorFor(u => u.tiid)</p>
+    <p style="display: none">项目类型：@Html.EditorFor(u => u.xid)</p>
+
+}

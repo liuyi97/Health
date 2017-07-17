@@ -1,0 +1,266 @@
+﻿@{
+    Layout = null;
+}
+<script src="~/UI/jquery.min.js"></script>
+<script src="~/UI/jquery.easyui.min.js"></script>
+<script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+<link href="~/UI/themes/icon.css" rel="stylesheet" />
+<link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/templatemo_main.css" rel="stylesheet" />
+<script src="../../js/templatemo_script.js"></script>
+<script src="~/js/templatemo_script.js"></script>
+
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        $(function () {
+            cx();
+        });
+        function cx() {
+            $("#xzj").datagrid({
+                url: "/zhongna/czj?dname="+$("#dname").val(),
+                height: 600,
+                width: 1120,
+                plain: true,
+                pagination: true,
+                method: "post",
+                fitColumns: true,
+                pageSize: 10,
+                pageList: [5, 10, 15, 20, 25, 30],
+                idField: "did",
+                striped: true,
+                singleSelect: false,
+                rownumbers: true,
+                columns: [[
+                     { field: 'ck', checkbox: true },
+                     { field: "dname", title: "专家姓名", width: 20, align: "center" },
+                     { field: "dpwd", title: "专家密码", width: 20, align: "center" },
+                     { field: "dzhicheng", title: "专家职称", width: 20, align: "center" },
+                     { field: "daddress", title: "专家地址", width: 20, align: "center" },
+                     { field: "djianjie", title: "专家简介", width: 20, align: "center" },
+                     { field: "dxiangqing", title: "专家详情", width: 20, align: "center" },
+                     { field: "dapic", title: "专家大图片", width: 20, align: "center" },
+                     { field: "dxpic", title: "专家小图片", width: 20, align: "center" },
+                     { field: "dsex", title: "专家性别", width: 20, align: "center" },
+                     { field: "shu", title: "总人数", width: 20, align: "center" },
+                     { field: "tiname", title: "上班时间", width: 20, align: "center" },
+                     { field: "xname", title: "类型", width: 20, align: "center" },
+                ]],
+                toolbar: '#t2',
+            })
+            $("#Addbtn").click(function () {
+                $("#addzj").dialog({
+                    title: '添加专家信息',
+                    height: 580,
+                    width: 350,
+                    href: '/zhongna/Addzj',
+                    buttons: [{
+                        text: '保存',
+                        iconCls: 'icon-save',
+                        handler: function () {
+                            $("#fzj").form("submit", {
+                                url: '/zhongna/Addzj2',
+                                success: function () {
+                                    $.messager.alert("提示", "添加成功！");
+                                    $("#addzj").dialog("close");
+                                    $("#xzj").datagrid("reload");
+                                }
+                            })
+                        }
+                    }
+                    ]
+
+                })
+
+
+            })
+            $("#Delbtn").click(function () {
+                var chk = $("#xzj").datagrid("getChecked");
+                if (chk.length == 0) {
+                    $.messager.alert("提示", "您未选中任何行！！");
+                }
+
+                else {
+                    $.messager.confirm("提示", "是否确认删除选中项？", function (r) {
+                        if (r) {
+                            var did = "";
+                            for (i = 0; i < chk.length; i++) {
+                                if (i < chk.length - 1) {
+                                    did += chk[i].did + ',';
+                                } else {
+                                    did += chk[i].did;
+                                }
+                            }
+                            $.ajax({
+                                url: '/zhongna/Delzj?did=' + chk[0].did,
+                                success: function () {
+                                    $.messager.alert("提示", "删除成功！");
+                                    $("#xzj").datagrid("reload");
+                                }
+                            })
+                        }
+                    })
+
+                }
+
+
+
+            })
+         
+
+        }
+          
+    </script>
+
+  <div id="main-wrapper">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <div class="logo">
+                    <a href="~/mingpiao/shouye">
+                        <h1>Dental Health</h1>
+                    </a>
+                    <p style="margin-left: 1000px; margin-top: -22px; color: white">
+                       
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="template-page-wrapper">
+            <div class="navbar-collapse collapse templatemo-sidebar">
+           <ul class="templatemo-sidebar-menu">
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-table"></i>用户管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/guanliyuan">用户列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-user"></i>管理员管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                          <li><a href="~/zhongna/guanliyuan2">管理员列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-toggle-left"></i>新闻管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/xinwen">新闻列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-eye"></i>测试管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/ceshi">测试列表</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-star-half-full"></i>专家管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/zhuanjia">专家列表</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-pencil"></i>留言管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/liuyan">留言列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-table"></i>成功案例
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/Success">成功案例列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                              <i class="fa fa-star-half-full"></i>项目管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/xiangmu">项目列表</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="~/zhongli/login"><i class="fa fa-sign-out"></i>退出</a></li>
+
+                </ul>
+            </div>
+            <div class="templatemo-content-wrapper">
+                <div class="templatemo-content">
+
+
+                    <div class="row">
+  <table id="xzj">
+      
+    </table>
+    
+    <div id="addzj">
+      
+    </div>
+ <div id="t2">
+     <a id="Addbtn" href="#"  class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>  
+     <a id="Delbtn" href="#"  class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a>  
+    @*  <a id="Editbtn" href="#"  class="easyui-linkbutton" data-options="iconCls:'icon-edit'">修改</a> *@ 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       专家姓名：
+            @Html.TextBox("dname")  <input id="Submit1" type="submit" value="查询"  onclick="cx()"/>
+ </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="templatemo-footer">
+                <div class="templatemo-copyright">
+                    <p>Copyright &copy; 2016 武汉船舶职业技术学院 <a href="#">无需等待，马上行动！</a> - Dental Health <a href="#">口腔健康之家</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
+

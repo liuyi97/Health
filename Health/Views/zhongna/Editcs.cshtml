@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+@model Health.Models.S4text
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form id="xgcs">
+        <br />
+       测试编号： <p style="display:none">@Html.TextBoxFor(n => n.tid)</p>
+        <br />
+        <br />
+        题目： @Html.EditorFor(n => n.tabout)
+        <br />
+        <br />
+        分数：  @Html.EditorFor(n => n.tscore)
+    </form>
+</body>
+</html>

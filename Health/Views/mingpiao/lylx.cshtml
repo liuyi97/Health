@@ -1,0 +1,188 @@
+﻿@{
+    //Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+    <link href="~/css/contact.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    <script>
+        $(function () {
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+        })
+    </script>
+    <!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TP1I4bsoxvKXUYnugSn4PoK3"></script>
+</head>
+<body>
+<!--头部-->
+<!--主体部分-->
+<div class="container clearfix" style="width:1300px;">
+    <!--左侧导航栏-->
+     <div class="ltbox fl bd1">
+            <div class="ltmenu">
+                <div class="tit">
+                    <h2>来院路线</h2>
+                </div>
+                <ul class="menulist clearfix">
+                  @*  <li class="current cli"><a href="#"><i></i>知识目录</a></li>
+                    <li class="cli"><a href="~/zhongli/doctor"><i></i>更多详情</a></li>
+               *@
+                </ul>
+            </div>
+            <script type="text/javascript" src="js/cur.js"></script>    
+        </div>
+  @*  <div class="ltbox fl bd1">
+        <div class="ltmenu">
+            <div class="tit">
+                <h2>联系我们</h2>
+            </div>
+            <ul class="menulist clearfix">
+                <li class="current"><a href="contact.html"><i><img src="images/red_icon.png"></i>来院路线</a></li>
+                     
+            </ul>
+        </div>
+        <!--QQ咨询-->
+        <div class="ltqq">
+            <div class="tit">
+                <h2>在线咨询</h2>
+            </div>
+            <div class="ltqbox clearfix">
+                <img class="ltqimg" src="images/catimg.jpg" alt="在线咨询">
+                <div class="ltqsend">
+                    <p>qq在线咨询:<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow"><img border="0" src="http://wpa.qq.com/pa?p=2:2324387748:51" alt="协会咨询" title="协会咨询"></a></p>          
+                </div>
+            </div>
+        </div>
+    </div>*@
+    <!--右侧内容栏-->
+    <div class="rtbox fr" style="width:1040px;">
+        <div class="rtit">
+            <div class="srtit">
+                <h2 class="fl"><i><img src="~/img/line_red.png"></i>通讯地址&nbsp;|&nbsp; Website Building</h2>
+                <p class="fr">当前位置：<a href="#">首页</a> &gt; <a href="#">联系我们</a> &gt;<a href="#">来院路线</a> </p>
+            </div>
+        </div>
+        <!--内容框-->
+        <div class="rtcon abtbg">
+            <div class="rtcontain aboutbox">
+                <!--百度地图容器-->
+                <div style="width:900px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+                <script type="text/javascript">
+                    //创建和初始化地图函数：
+                    function initMap() {
+                        createMap();//创建地图
+                        setMapEvent();//设置地图事件
+                        addMapControl();//向地图添加控件
+                        addMapOverlay();//向地图添加覆盖物
+                    }
+                    function createMap() {
+                        map = new BMap.Map("map");
+                        map.centerAndZoom(new BMap.Point(114.262265, 30.583908), 15);//待定
+                    }
+                    function setMapEvent() {
+                        map.enableScrollWheelZoom();
+                        map.enableKeyboard();
+                        map.enableDragging();
+                        map.enableDoubleClickZoom()
+                    }
+                    function addClickHandler(target, window) {
+                        target.addEventListener("click", function () {
+                            target.openInfoWindow(window);
+                        });
+                    }
+                    function addMapOverlay() {
+                    }
+                    //向地图添加控件
+                    function addMapControl() {
+                        var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+                        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+                        map.addControl(scaleControl);
+                        var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+                        map.addControl(navControl);
+                        var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+                        map.addControl(overviewControl);
+                    }
+                    var map;
+                    initMap();
+                </script>
+                <!--文字地址-->
+                <div class="add">
+                    <ul style="padding-bottom:30px;font-size:14px;line-height:30px;">
+                        <li><span>单       位：dental health牙科门户网</span></li>
+                        <li><span>地       址：武汉船舶职业技术学院</span></li>
+                        <li><span>邮政编码: 430050</span></li>
+                        <li><span>办公电话:13697334878</span></li>
+                        <li><span>传     真: 83797292</span></li>
+                        <li><span>电子邮箱: 2537036964@qq.com</span></li>
+                    </ul>
+                </div>
+                <!--文字地址end-->
+            </div>
+         </div>
+        <!--内容框end-->
+        </div>
+</div>
+
+<!--左侧微信-->
+<div id="ewm">
+    <span>关闭</span>
+    <img src="~/img/weixin2.png"  alt="微信"/>
+    
+</div>
+<!--右侧工具栏-->
+<div id="sidebar">
+    <ul>
+        <li class="qq">
+            <span>咨询</span>
+            <div class="showbox">
+                <div class="qqlist">
+                    <div class="qqtop">在线咨询</div>
+                    <div class="qqlist2">
+                        <a target="_blank"href="http://wpa.qq.com/msgrd?v=3&uin=1958366264&site=qq&menu=yes" rel="nofollow">协会咨询</a><a target="_blank"href="http://wpa.qq.com/msgrd?v=3&uin=971919614&site=qq&menu=yes" rel="nofollow">网站咨询</a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="qrcode">
+            <span>微信</span>
+            <div class="showbox">
+                <img src="img/weixin2.png" width="100" height="100"  alt="微信">
+            </div>
+        </li>
+        <li class="share">
+            <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+            </div>
+        </li>
+        <li class="gotop"><span>顶部</span></li>
+    </ul>
+    <style type="text/css">
+        #sidebar .bdshare-button-style0-16 .bds_more{background:none; display:block;  padding:0px; height:40px;line-height:40px; margin:0px; float:none}
+        #sidebar .bdshare-button-style0-16 .bds_more:hover{color:#fff; text-decoration:none;}
+    </style>
+    <script type="text/javascript">
+        window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script src="http://hm.baidu.com/h.js?68f5be90c2d9d141dd7fc539233f5431" type="text/javascript"></script>
+</div>
+
+</body>
+</html>

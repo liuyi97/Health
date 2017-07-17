@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="css/common3.css">
+    <script>
+        $(function () {
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="nav_Box">
+        <div class="hea">
+            <div class="zz">
+                <div class="den">
+                    <div class="logo">
+                        <a href="~/mingpiao/shouye">
+                            <img src="~/img/logo.png" style="padding-left: 70px;" /></a>
+                    </div>
+                    <h1>Dental Health</h1>
+                </div>
+            </div>
+            <div class="yy">
+                <ul>
+                    <li><a href="~/zhongli/resigter">免费注册</a></li>
+                    <li><a href="~/zhongli/login">用户登录</a></li>
+                </ul>
+            </div>
+        </div>
+
+       <ul class="nav">
+            <li><a href="/mingpiao/shouye">首页</a></li>
+            <li><a href="#">精专项目</a>
+                <ul class="subNav">
+                    <li><a href="~/mingpiao/jzxm">牙齿种植</a></li>
+                    <li><a href="~/mingpiao/ycjz">牙齿矫正</a></li>
+                    <li><a href="~/mingpiao/mrxf">美容修复</a></li>
+                    <li><a href="~/mingpiao/zhzl">综合治疗</a></li>
+                    <li><a href="~/mingpiao/yzzl">牙周治疗</a></li>
+                    <li><a href="~/mingpiao/rtyk">儿童牙科</a></li>
+                </ul>
+            </li>
+            <li><a href="~/zhongli/doctor">专家团队</a></li>
+            <li><a href="~/zhongli/anli">成功案例</a></li>
+            <li><a href="~/mingpiao/shouye">环境设备</a></li>
+            <li><a href="~/mingpiao/lylx">来院路线</a></li>
+             
+        </ul>
+    </div>
+    @RenderBody()
+    <div id="foot">
+        <div class="aa">
+            <p>
+                关于我们 -办事指南 -在线咨询 - 网站管理 - 欢迎您，您是第28735位访问者！
+            </p>
+        </div>
+        <div id="cc">
+            <div id="zuo">
+                <p>武汉市大数据研究与应用协会  版权所有</p>
+                <p>地址：中国湖北省武汉船舶职业技术学院临江N8</p>
+                <p>联系方式：17762479829</p>
+            </div>
+            <div id="you">
+                <div id="y1">
+                    <img src="~/img/weixin2.png" style="height: 100px; width: 100px; padding-top: 20px; padding-left: 20px;" />
+                </div>
+                <div id="y2">
+                    <p>客服QQ：2324387748</p>
+                    <p>邮箱：2324387748@163.com</p>
+                    <p>官方微博：15971819640</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左侧微信-->
+    <div id="ewm">
+        <span>关闭</span>
+        <img src="~/img/weixin2.png" alt="微信">
+    </div>
+    <!--右侧工具栏-->
+    <div id="sidebar">
+        <ul>
+            <li class="qq">
+                <span>咨询</span>
+                <div class="showbox">
+                    <div class="qqlist">
+                        <div class="qqtop">在线咨询</div>
+                        <div class="qqlist2">
+                             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">qq咨询</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="qrcode">
+                <span>微信</span>
+                <div class="showbox">
+                    <img src="~/img/weixin2.png" width="100" height="100" alt="微信">
+                </div>
+            </li>
+            <li class="share">
+                <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                    <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                </div>
+            </li>
+            <li class="gotop"><span>顶部</span></li>
+        </ul>
+        <style type="text/css">
+            #sidebar .bdshare-button-style0-16 .bds_more {
+                background: none;
+                display: block;
+                padding: 0px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px;
+                float: none;
+            }
+
+                #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+        </style>
+        <script type="text/javascript">
+            window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script src="#" type="text/javascript"></script>
+    </div>
+</body>
+</html>

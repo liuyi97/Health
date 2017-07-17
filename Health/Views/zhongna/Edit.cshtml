@@ -1,0 +1,17 @@
+﻿@{
+    Layout=null;
+}
+@model Health.Models.S4manager
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form id="gly2">          
+             编号：@Html.EditorFor(n=>n.mid)<br /><br />
+             账号：@Html.EditorFor(n=>n.macount)<br /><br />
+             姓名：@Html.EditorFor(n=>n.mname)<br /><br />
+             密码：@Html.EditorFor(n=>n.mpwd)
+        </form>
+    </body>
+</html>

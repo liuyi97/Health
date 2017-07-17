@@ -1,0 +1,290 @@
+﻿@{
+    ViewBag.Title = "jzxm";
+    //Layout = null;
+}
+@model IEnumerable<Health.Models.S4zhishi>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    <script src="~/js/lxb.js" charset="utf-8"></script>
+    <script src="~/js/hm.js"></script>@*//来电*@
+  @*  <script src="~/js/jquery1.js"></script>*@
+    <script type="text/javascript" src="~/js/jquery1.js"></script>
+    <script src="~/js/foucs.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/superslide.js"></script>
+    <script type="text/javascript" src="~/js/ss.js"></script>
+
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+</head>
+<body>
+    <script src="~/js/lrtk.js"></script>
+    <script>
+        $(function () {
+            $(".gfwx").hover(function () {
+
+                $(".kf_ewm").show();
+            }, function () {
+                $(".kf_ewm").hide();
+            })
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+            /*成功案例*/
+            $(".cgal_list").hide();
+            $(".cgal_list").eq(0).show();
+
+            $(".cgal_title li").hover(function () {
+                var x = $(".cgal_title li").index(this)
+                $(".cgal_list").hide();
+                $(".cgal_list").eq(x).show();
+
+                $(".cgal_title li").removeClass("current_al")
+                $(this).addClass("current_al")
+            })
+
+            /*种植*/
+            $(".zz_text").hide();
+            $(".zz_text").eq(0).show();
+
+            $(".zz_list li").hover(function () {
+                var x = $(".zz_list li").index(this)
+                $(".zz_text").hide();
+                $(".zz_text").eq(x).show();
+
+                $(".zz_list li").removeClass("current_zz")
+                $(this).addClass("current_zz")
+            })
+        })
+    </script>
+    <!--主体部分-->
+    <div class="container clearfix" style="width: 1300px; margin-top: 0px;">
+        <!--左侧导航栏-->
+        <div class="ltbox fl bd1">
+            <div class="ltmenu">
+                <div class="tit">
+                    <h2>牙齿种植</h2>
+                </div>
+                <ul class="menulist clearfix">
+                    <li class="current cli"><a href="#o1" class="scroll"><i></i>什么是种植牙？</a></li>
+                    @*  <li class="cli"><a href="#o2" class="scroll"><i></i>牙齿种植专家</a></li>*@
+                    <li class="cli"><a href="#o3" class="scroll"><i></i>检查</a></li>
+                    <li class="cli"><a href="#o4" class="scroll"><i></i>即刻种植技术</a></li>
+                    <li class="cli"><a href="#o5" class="scroll"><i></i>微创种植技术</a></li>
+                    <li class="cli"><a href="#o6" class="scroll"><i></i>热门问答</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/cur.js"></script>
+        <!--右侧内容栏-->
+        <div class="rtbox fr" style="width: 1060px;">
+            <div class="yczz_box">
+                <div id="o1">
+                    <div class="part01">
+                        <div class="part01_text">
+                            <div class="part02_L">
+                                <img src="~/images/part02_wz1.jpg">
+                                <p>
+                                    种植牙也叫人工种植牙，并不是真的种上自然牙齿，而是选用与人体相容性好的生物材料，制成特定的形态，植入到牙槽骨内而形成人工牙根，之后在人工牙根上进
+行修复，恢复缺失牙齿的形态和功能。种植牙以无需磨损邻牙、咀嚼功能强大、生命力更长久、自然逼真被誉为人类的第三副牙齿。是当今国际口腔医学界公认的缺
+牙首选修复方式。
+                                </p>
+                            </div>
+                            <div class="part02_line"></div>
+                            <div class="part02_R">
+                                <img class="part02_bt" src="~/images/part02_wz2.jpg">
+                                <div class="part02_text">
+                                    <img src="~/images/part02_tp.jpg">
+                                    <p>
+                                        种植牙适应范围非常广泛，无论缺牙多少（一颗、多颗或全口缺牙）、缺牙部位在何处（上颌、下颌或双颌）、缺牙时间长短（即拔即种或缺牙3个月以上）、年龄大小（发育成熟即可），只要全身健康允许，大都可以种植。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ys">
+                        <img src="~/images/part02_ys.jpg">
+                    </div>
+                </div>
+                <div id="o3">
+                    <div class="part03">
+                        <div class="part03_title">
+                            <img src="~/images/part_03.jpg">
+                        </div>
+                        <div class="part03_text">
+                            <p>
+                                种植牙作为牙齿修复首选，越来越多的被临床使用，但是对于种植牙过程，大家还是缺少系统的了解。
+                            </p>
+                            <p>
+                                <span>专家表示：</span>种植牙虽然功能性、美观性都比传统假牙优越，并且没有年龄限制，但是，也不是人人都可以做的。所以，在术前，需要做一系列术前检查，根据自身的实际情况，判断是否适合种植牙，并量身定做最适合自己的种植方案。
+                            </p>
+                            <img src="~/images/part03_tp.jpg">
+                        </div>
+                    </div>
+                    <div class="part03">
+                        <div class="part03_title">
+                            <img src="~/images/part_04.jpg">
+                        </div>
+                        <img style="display: block; margin: 20px auto;" src="~/images/part04_tp.jpg">
+                    </div>
+                </div>
+
+                <div class="part06">
+                    <div id="o4">
+                        <div class="part03_title">
+                            <img src="~/images/part_06.jpg">
+                        </div>
+                        <div class="part06_text">
+                            <li>
+                                <div class="part06_L">
+                                    <h1>dental health口腔即刻种植技术
+                                    </h1>
+                                    <p>
+                                        即刻种植指的是在拔牙后，即刻植入人工种植体，是针对牙齿缺失的情况马上种植牙的技术，由于采取在患者新鲜的拔牙创口立即植入种植体，而不需等待4-6月
+创伤修复后才种植，所以即刻种植的方法能缩短疗程，降低费用，防止牙槽骨吸收。dental health口腔不断引进国际先进种植牙技术，根据您的情况，可实现拔牙后即刻植入
+种植体，手术过程仅需10－20分钟，短暂的手术时间降低了手术风险。
+                                    </p>
+                                </div>
+                                <div class="part06_line">
+                                </div>
+                                <div class="part06_R">
+                                    <h1>
+                                       <img src="~/images/part06_ys.jpg">
+                                    </h1>
+                                    <ul>
+                                        <li>
+                                            <img src="~/images/part06_ys01.jpg">
+                                            <p>
+                                                无须等待拔牙的创口愈合即可立即修复，早期恢复咀嚼功能,减少了手术次数，大大缩短了治疗时间。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <img src="~/images/part06_ys02.jpg">
+                                            <p>
+                                                拔牙后立即植入植骨材料或人工牙根能有效的预防牙槽嵴吸收，避免因拔牙而发生的废用性萎缩，使骨丧失达到最小程度。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <img src="~/images/part06_ys03.jpg">
+                                            <p>
+                                                参照原有牙根的方向，种植体易于植入较理想的位置，冠部易与邻牙协调一致，形成自然的弧度和明显的龈乳头，增加美观的同时可获得最多的软组织支持，保存了牙槽骨的高度和宽度。
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="part06" style="margin-bottom: 20px;">
+                    <div id="o5">
+                        <div class="part03_title">
+                            <img src="~/images/part_07.jpg">
+                        </div>
+                        <div class="part06_text">
+                            <div class="part07_L">
+                                <img src="~/images/part07_tp01.jpg">
+                                <p>
+                                    微创种植牙（Minimally Invasive Dental 
+Implant）是将微创技术应用到了种植牙领域，在传统种植牙的基础上用特殊的手术方式和技术（Graftless 
+solution）来完成种植牙的植入过程，利用微小切口（3～4毫米）将人工牙根“种”入口腔内，摆脱了传统种植牙切开翻起牙肉、缝合、拆线等步骤，将
+创伤降低到最小程度，大大减少了肿痛和出血量，大幅度缩短了种植过程所需的时间（种植过程仅需15-30分钟），而且减少了感染的风险，术后几乎不会疼痛
+和肿胀，是国际上广泛应用的种植方式。
+                                </p>
+                            </div>
+                            <div class="part07_line">
+                            </div>
+                            <div class="part07_R">
+                                <h1>微创种植优势
+                                </h1>
+                                <img src="~/images/part07_tp02.jpg">
+                                <p>
+                                    微创种植手术通过少量去骨和分割牙冠，降低了拔牙难度，减轻了患者种植牙过程中的不适感觉，患者在不知不觉中完成种植牙过程；缩短了手术时间，消除患者紧
+张恐惧的心理，具有创口小、出血少、痛苦轻、术后并发症少的优点，使平常的种植牙手术向着微创化、舒适化、规范化、人性化、数字化方向发展。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="part06" style="margin-bottom: 20px;">
+                    <div class="part08_title"><a href=""></a></div>
+                    <div class="part08_al">
+                        <div class="part08_al_L">
+                            <h1>外伤变瘪嘴，种植牙修复后外貌功能如常
+                            </h1>
+                            <div class="part08_al_tp">
+                                <img alt="" src="~/images/9f7df96e78c3bfe61e176676ea271fe2.jpg"><img alt="" src="~/images/841cc4f54a3eed8d866a12be7315e8ef.jpg">
+                            </div>
+                            <p>
+                                姓名：严女士<br>
+                                年龄：45岁<br>
+                                严女士上半年前不幸遭遇车祸，颌骨撞断，下颌多牙缺失，面目全非，严重影响了日常人际交流。后虽颌骨折断愈合，但仍无法进食。来到dental health口腔经周先略院长等专家会诊，术前进行CT检查，模板设计，给患者下颌植入七颗种植体，使患者恢复正常容颜和功能，让其恢复自信。
+                            </p>
+                            <div class="part08_al_btn">
+                                <a href="~/zhongli/doctor" target="_blank">点击咨询</a>
+                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">在线预约</a>
+                            </div>
+                        </div>
+                        <div class="part08_al_line">
+                        </div>
+                        <div class="part08_al_L">
+                            <h1>先天缺牙多年，种植牙修复后了却爷爷多年心
+                            </h1>
+                            <div class="part08_al_tp">
+                                <img alt="" src="~/images/1c1a7ae20325be171c9ca6590cacf1c1.jpg"><img alt="" src="~/images/2edac9fe6aa6ed15ffd29e6706d823db.jpg">
+                            </div>
+                            <p>
+                                姓名：龙先生<br>
+                                年龄：28岁<br>
+                                龙先生上颌先天缺失多颗牙，影响咀嚼和美观，因咬合紧，缺牙多，常规修复方式不理想，为此七十多岁的爷爷成天愁眉不展，经多方打听，来到dental health口腔种植中心进行种植手术，种植牙修复后了却爷爷多年心愿。
+                            </p>
+                            <div class="part08_al_btn">
+                                <a href="~/zhongli/doctor" target="_blank">点击咨询</a>
+                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">在线预约</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="o6">
+                    <div class="rmhd_title " style="border-top: none; height: 67px; margin-bottom: 10px;">
+                        <img src="~/images/part_rmhd.jpg">
+                    </div>
+                    <div id="w" style="height: 15px;"></div>
+                    <div class="zhzl_rmwd_db_list">
+                        @foreach (var item in Model)
+                        {  
+                            <ul class="ljgd_list">
+                                <li><a href="~/mingpiao/zslj?zsid=@item.zsid" target="_blank">@item.zstitle</a></li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+

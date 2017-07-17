@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19fa4e2031d44fd6b1bc14bb0c22d1f1" Name="关系图1">
+        <EntityTypeShape EntityType="S4HealthModel.S4anli" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4doctors" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4huanjing" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4image" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4information" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4liuyan" Width="1.5" PointX="10.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4machine" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4manager" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4news" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4newstype" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4orders" Width="1.5" PointX="13.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4ordertype" Width="1.5" PointX="11.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4text" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4users" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4xiangmu" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.S4zhishi" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="S4HealthModel.timetype" Width="1.5" PointX="3.75" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="S4HealthModel.FK_S4anli_S4anli" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4anli_S4xiangmu" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4doctors_S4xiangmu" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4doctors_timetype" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4liuyan_S4doctors" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4orders_S4doctors" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4users_S4doctors" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4liuyan_S4users" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4news_S4newstype1" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4orders_S4ordertype" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4orders_S4users" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4orders_timetype" ManuallyRouted="false" />
+        <AssociationConnector Association="S4HealthModel.FK_S4zhishi_S4xiangmu" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

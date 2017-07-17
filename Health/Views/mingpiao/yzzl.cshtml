@@ -1,0 +1,722 @@
+﻿@{
+    ViewBag.Title = "jzxm";
+    //Layout = null;
+}
+@model IEnumerable<Health.Models.S4zhishi>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+
+    @*  <link href="~/css/css2.css" rel="stylesheet" />*@
+    <script src="~/js/lxb.js" charset="utf-8"></script>
+    <script src="~/js/hm.js"></script>
+    <script src="~/js/jquery1.js"></script>
+    <script type="text/javascript" src="~/js/jquery1.js"></script>
+    <script src="~/js/foucs.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/superslide.js"></script>
+    <script type="text/javascript" src="~/js/ss.js"></script>
+    <script>
+        $(function () {
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+        })
+    </script>
+    
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+</head>
+<body>
+    <!--主体部分-->
+    <div class="container clearfix" style="width: 1300px;">
+        <!--左侧导航栏-->
+        <div class="ltbox fl bd1">
+            <div class="ltmenu">
+                <div class="tit">
+                    <h2>牙周治疗</h2>
+                </div>
+                <ul class="menulist clearfix">
+                    <li class="current cli"><a href="#o1" class="scroll"><i></i>了解牙周病</a></li>
+                    <li class="cli"><a href="#o2" class="scroll"><i></i>牙周病治疗方法</a></li>
+                    <li class="cli"><a href="#o3" class="scroll"><i></i>牙周治疗专家</a></li>
+                    <li class="cli"><a href="#o4" class="scroll"><i></i>无痛牙周治疗</a></li>
+                    <li class="cli"><a href="#o5" class="scroll"><i></i>牙周的预防和防治</a></li>
+                    <li class="cli"><a href="#o6" class="scroll"><i></i>治疗案例</a></li>
+                    <li class="cli"><a href="#o7" class="scroll"><i></i>热门问答</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/cur.js"></script>
+        <!--右侧内容栏-->
+        <div class="rtbox fr" style="width: 1060px;">
+            <!--牙周治疗-->
+            <div class="yzzl_box" style="width: 1060px;">
+                <div class="yzzl_C">
+                    <div id="o1">
+                        <div class="yzzl_01">
+                            <div class="yzzl_01_title">
+                                <img src="~/images/yzzl_01_title.png">
+                            </div>
+                            <div class="yzb_js">
+                                <div class="yzb_js_L">
+                                    <p>
+                                        牙周病是发生在牙齿支持组织包括牙龈、牙骨质、牙周韧带和牙槽骨的一种慢性、破坏性疾病，是导致牙齿丧失的最大“杀手”，我国18-50岁人群中90%患
+不同程度的牙周疾病，70%有牙周炎。牙周病常由菌斑、炎症引起，发病早期没有明显疼痛症状，易被忽略，等到症状明显时往往牙齿不保。所以dental health口腔专家提
+醒您：及时有效的控制牙周炎症，是拥有健全牙齿咀嚼功能的关键。
+                                    </p>
+                                </div>
+                                <div class="yzb_js_R">
+                                    <h1>牙周病发展示意图
+                                    </h1>
+                                    <img src="~/images/yzzl_01_tp02.jpg">
+                                    <p>
+                                        dental health口腔提倡牙周综合治疗的先进理念，拥有国际最先进、严谨的牙周治疗技术，先进的设备，精细、轻柔、一站式治疗的操作方式，为您的牙周健康保驾护航。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="yzb_zz" style="background-color: #fff">
+                                <h1>牙周病有哪些常见症状？</h1>
+                                <ul>
+                                    <li>
+                                        <img src="~/images/yzzl_01_tp03.jpg">
+                                        <h2>1.刷牙出血
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/yzzl_01_tp04.jpg">
+                                        <h2>2.牙龈红肿疼痛
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/yzzl_01_tp05.jpg">
+                                        <h2>3.口臭、口气不清新
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/yzzl_01_tp06.jpg">
+                                        <h2>4.牙周袋形成
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/yzzl_01_tp07.jpg">
+                                        <h2>5.牙龈形态不美观
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/yzzl_01_tp08.jpg">
+                                        <h2>6.牙槽骨萎缩
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/yzzl_01_tp09.jpg">
+                                        <h2>7.牙齿松动、脱落
+                                        </h2>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="yzzl_xx"></div>
+                            <div class="yzb_wh">
+                                <img src="~/images/yzzl_01_tp10.jpg">
+                                <div class="yzb_wh_C">
+                                    <h1>[牙周疾病的危害]
+                                    </h1>
+                                    <p>
+                                        患牙周疾病后，轻者牙龈发炎、出血、疼痛、口臭，重者牙周组织被破坏，使牙齿与牙龈分离，导致牙齿松动移位、牙齿酸软、咀嚼无力、甚至脱落，而且还会引发许多疾病，如风湿、抑郁症、心脏病、血液病，等等。
+                                    </p>
+                                    <ul>
+                                    </ul>
+                                </div>
+
+
+                                <div class="yzb_wh_R">
+                                    <h1>[牙周疾病的防护]</h1>
+                                    <img src="~/images/yzzl_01_tp11.jpg">
+                                    <ul>
+                                    </ul>
+
+                                    <a href="#" class="ysb_zxzx"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="o2">
+                        <div class="yzzl_01">
+                            <div class="yzzl_01_title">
+                                <img src="~/images/yzzl_02_title.jpg">
+                            </div>
+                            <div class="yzb_zlff">
+                                <p>
+                                    治疗牙周病，必需先由专业医生对牙周组织的状况及破坏程度先作一番了解与评估，评估完后才能拟定治疗方案，通常牙周病的治疗分三期：
+                                </p>
+                            </div>
+                            <ul class="yzb_zlff_list">
+                                <li>
+                                    <img src="~/images/yzzl_02_tp01.jpg">
+                                    <p>
+                                        1） 利用超声波洁牙、牙周囊袋深部结石的刮除及牙根整平术等来清洁口腔。<br>
+                                        2） 日常用具清洁及正确的使用方法，包括患者日常使用的牙刷、牙线等，从源头消灭病菌。
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="~/images/yzzl_02_tp02.jpg">
+                                    <p>
+                                        比较严重的患部，尤其牙周囊袋较深之处，需配合手术治疗。若有骨损失，还要配合放置牙周再生膜及人工骨粉使破坏的骨组织再生，达到积极重建牙周组织的目的，来帮助松动牙齿的固定。
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="~/images/yzzl_02_tp03.jpg">
+                                    <p>
+                                        日常注意口腔清洁，定期洗牙，做深度清洁，一般半年/一年洗一次牙，严重牙周病患者，要在3-6个月进行一次洗牙。
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="~/images/yzzl_02_tp04.jpg">
+                                    <p>
+                                        应遵照医师指示，半年/一年进行口腔检查，以充分掌握牙周及口腔情况，避免牙周疾病复发。
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="o3">
+                        <div class="yzzl_01">
+                            <div class="yzzl_01_title">
+                                <img src="~/images/yzzl_03_title.jpg">
+                            </div>
+                            <div class="xf_zjbox">
+                                <img class="xf_zjBtnL prev" src="~/images/ycxf_03_btnL.jpg">
+                                <div class="xf_zjUl">
+                                    <div class="tempWrap" style="overflow: hidden; position: relative; width: 748px">
+                                        <ul style="width: 5688px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -1796px;">
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="#" target="_blank">
+                                                        <img src="~/images/1c8a7a76272aee5775b5211a50c54718.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>何向东 </h1>
+                                                    <p>
+                                                        副主任医师 中心门诊部主任
+                                                        <br>
+                                                        擅长固定义齿、内科根管治疗、复杂牙拔除
+                                                    </p>
+                                                    <br>
+                                                        <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="#" target="_blank">
+                                                        <img src="~/images/51b7ab4729456dee281b0c1389f9f66e.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>付才华 </h1>
+                                                    <p>
+                                                        主治医师 珞狮路门诊部主任
+                                                        <br>
+                                                        擅长内科根管治疗、复杂牙拔除、烤瓷固定修复及活动修复
+                                                    </p>
+                                                    <br>
+                                                 <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="#" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>陈汉正 </h1>
+                                                    <p>
+                                                        教授 主任医师  
+                                                        <br>
+                                                        擅长牙体牙髓及口腔粘膜病等口腔内科疾病的治疗
+                                                    </p>
+                                                    <br>
+                                                       <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="#" target="_blank">
+                                                        <img src="~/images/dc3.jpg" height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>陈汉正 </h1>
+                                                    <p>
+                                                        教授    主任医师    牙体牙髓科专家
+                                                        <br>
+                                                        擅长牙体牙髓及口腔粘膜病等口腔内科疾病的治疗
+                                                    </p>
+                                                    <br>
+                                                      <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="#" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>王小永 </h1>
+                                                    <p>
+                                                        副教授 副主任医师 
+                                                        <br>
+                                                        擅长牙体牙髓病、牙周病的治疗，精于口腔临床指导工作
+                                                    </p>
+                                                    <br>
+                                                      <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/76" target="_blank">
+                                                         <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>何向东 </h1>
+                                                    <p>
+                                                        副主任医师 中心门诊部主任
+                                                        <br>
+                                                        擅长固定义齿、内科根管治疗、复杂牙拔除
+                                                    </p>
+                                                    <br>
+                                                      <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/77" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>付才华 </h1>
+                                                    <p>
+                                                        主治医师 珞狮路门诊部主任
+                                                        <br>
+                                                        擅长内科根管治疗、复杂牙拔除、烤瓷固定修复及活动修复
+                                                    </p>
+                                                    <br>
+                                                       <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/78" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>李永军 </h1>
+                                                    <p>
+                                                        主治医师 光谷门诊部主任
+                                                        <br>
+                                                        擅长口腔种植、复杂牙拔除、根管治疗
+                                                    </p>
+                                                    <br>
+                                                <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>                                    
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/75" target="_blank">
+                                                       <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>王小永 </h1>
+                                                    <p>
+                                                        副教授 副主任医师 
+                                                        <br>
+                                                        擅长牙体牙髓病、牙周病的治疗，精于口腔临床指导工作
+                                                    </p>
+                                                    <br>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/76" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>何向东 </h1>
+                                                    <p>
+                                                        副主任医师 中心门诊部主任
+                                                        <br>
+                                                        擅长固定义齿、内科根管治疗、复杂牙拔除
+                                                    </p>
+                                                    <br>
+                                                      <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/77" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>付才华 </h1>
+                                                    <p>
+                                                        主治医师 珞狮路门诊部主任
+                                                        <br>
+                                                        擅长内科根管治疗、复杂牙拔除、烤瓷固定修复及活动修复
+                                                    </p>
+                                                    <br>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/78" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>李永军 </h1>
+                                                    <p>
+                                                        主治医师 光谷门诊部主任
+                                                        <br>
+                                                        擅长口腔种植、复杂牙拔除、根管治疗
+                                                    </p>
+                                                    <br>
+                                                     <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/82" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>陈汉正 </h1>
+                                                    <p>
+                                                        教授 主任医师  
+                                                        <br>
+                                                        擅长牙体牙髓及口腔粘膜病等口腔内科疾病的治疗
+                                                    </p>
+                                                    <br>
+                                                        <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                            <li style="float: left; width: 305px;">
+                                                <div class="xf_zj_tp">
+                                                    <a href="http://www.chinadzyl.com/index.php/detail/yzqwzj/75" target="_blank">
+                                                        <img src="~/images/dc10.jpg"  height="134" width="106"></a>
+                                                </div>
+                                                <div class="xf_zj_wz">
+                                                    <h1>王小永 </h1>
+                                                    <p>
+                                                        副教授 副主任医师 
+                                                        <br>
+                                                        擅长牙体牙髓病、牙周病的治疗，精于口腔临床指导工作
+                                                    </p>
+                                                    <br>
+                                                        <div><a href="~/zhongli/doctor">专家简介</a>
+                                                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">我要咨询</a></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                   
+                                </div>
+                                <img class="xf_zjBtnR next" src="~/images/ycxf_03_btnR.jpg">
+                            </div>
+                            <script language="javascript">
+                                $(".xf_zjUl ul li img").hover(function () { $(this).css("border-color", "#A0C0EB"); }, function () { $(this).css("border-color", "#d8d8d8") });
+                                jQuery(".xf_zjbox").slide({ titCell: "", mainCell: ".xf_zjUl ul", autoPage: true, effect: "leftLoop", autoPlay: true, vis: 3 });
+                            </script>
+                        </div>
+                    </div>
+                    <div id="o4">
+                        <div class="yzzl_01 yzzl_05">
+                            <div class="yzzl_01_title">
+                                <img src="~/images/yzzl_05_title.png">
+                            </div>
+                            <div class="yzzl_05_yzjs">
+                                <img src="~/images/yzzl_05_tp01.png">
+                                <div class="yzzl_05_yzjs_R">
+                                    <p>无痛龈下刮治术是用比较精细的无痛龈下刮治器刮除位于牙周袋内根面上的牙石和菌斑，是有效治疗牙周炎重要技术。</p>
+                                    <p>牙周炎是导致牙齿丧失的最大元凶之一，其主要致病因素即为附着在牙根表面形成的牙石和菌斑。而我们一般通过无痛龈下刮治术，也就是通俗所说的“深层洁牙”来去除深在的牙石菌斑。而根面平整术即为无痛龈下洁治术的继续和完善。</p>
+                                    <p>由于牙石菌斑分布散在广泛，同时肉眼不可见，医生临床操作不可能完全清除干净，常有一定数量的牙石遗漏，所以在无痛龈下洁治术后医生利用精细的无痛龈下刮治器，利用手感感知并刮除根面病变的组织及散在的牙石菌斑，使根面光滑，有利于牙龈重新附着于根面，使牙周袋消失。</p>
+                                </div>
+
+                            </div>
+                            <div class="yzzl_syb">
+                                <h1>适应症</h1>
+
+                            </div>
+                            <div class="yzzl_syz_list">
+                                <div class="yzzl_syz_list_title">
+                                    <span>1</span>
+                                    <h1>牙周炎，牙龈炎
+                                    </h1>
+                                </div>
+                                <div class="yzzl_syz_list_tp">
+                                    <img src="~/images/yzzl_05_tp02.png"><img src="~/images/yzzl_05_tp03.png"><img src="~/images/yzzl_05_tp04.png"><img src="~/images/yzzl_05_tp05.png"><img src="~/images/yzzl_05_tp06.png"><img src="~/images/yzzl_05_tp07.png">
+                                </div>
+                                <p class="yzzl_syz_list_text">
+                                    医学上将围绕并覆盖在牙齿周围的软组织称为牙龈，发生于牙龈组织的急慢性炎症称为牙龈炎。表现为牙龈出血，红肿，胀痛，继续发展侵犯硬组织，产生牙周炎，
+包括牙龈组织的炎症及全身疾病在牙龈的表现。 
+牙周炎主要是由局部因素引起的牙周支持组织的慢性炎症。发病年龄以35岁以后较为多见。如龈炎未能及时治疗，炎症可由牙龈向深层扩散到牙周膜、牙槽骨和牙
+骨质而发展为牙周炎。由于早期多无明显自觉症状而易被忽视，待有症状时已较严重，甚至已不能保留牙齿。因而必须加强宣教，使患者早期就诊和及时治疗。
+                                </p>
+                            </div>
+                            <div class="yzzl_yf">
+                                <div class="yzzl_yf_L">
+                                    <div class="yzzl_syz_list_title">
+                                        <span>2</span>
+                                        <h1>预防性治疗
+                                        </h1>
+                                    </div>
+                                    <div class="yzzl_yf_tp">
+                                        <img src="~/images/yzzl_05_tp08.png">
+                                        <p>
+                                            牙周维护期间定期洁治，去除菌斑、牙石，以长期维持牙周健康，预防牙周疾病发生和复发。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="yzzl_yf_C">
+                                </div>
+                                <div class="yzzl_R">
+                                    <div class="yzzl_syz_list_title">
+                                        <span>3</span>
+                                        <h1>口腔内其他治疗前的准备
+                                        </h1>
+                                    </div>
+                                    <div class="yzzl_yf03_tp">
+                                        <img src="~/images/yzzl_05_tp09.png">
+                                        <p>
+                                            对牙石较多者在修复取印模前先做洁治，以消除牙龈炎症，利于修复体的制作精确。口内一些大手术前需要先做洁治，以消除感染隐患和一过性菌血症。正畸治疗前和治疗过程中也需要做洁治，消除原有的牙龈炎，或预防牙龈炎的发生。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="o5">
+                        <div class="yzzl_01">
+                            <div class="yzzl_01_title">
+                                <img src="~/images/yzzl_06_title.png">
+                            </div>
+                            <ul class="yzzl_06_text">
+                                <li>
+                                    <img src="~/images/yzzl_06_tp01.jpg">
+                                    <p>
+                                        养成每天刷牙3次、饭后漱口、睡前不吃东西的习惯。
+                                    </p>
+                                </li>
+                                <li class="yzzl_06_no2">
+                                    <img src="~/images/yzzl_06_tp02.jpg">
+                                    <p>
+                                        定期洗牙，去除引起牙龈炎的菌斑和牙石，一般一年一次。
+                                    </p>
+                                </li>
+                                <li class="yzzl_06_no3">
+                                    <img src="~/images/yzzl_06_tp03.jpg">
+                                    <p>
+                                        控制已经发生的牙周深层组织病变，消除创伤，固定松动的牙齿，拔除不能保留的牙齿。
+                                    </p>
+                                </li>
+                                <li class="yzzl_06_no4">
+                                    <img src="~/images/yzzl_06_tp04.jpg">
+                                    <p>
+                                        定期进行口腔检查，早期发现，早期治疗。
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="o6">
+                        <div class="ycxf_01">
+                            <div class="yzzl_01_title">
+                                <img src="~/images/yzzl_07_title.png">
+                            </div>
+                            <div class="ycxf_al_text yzzl_al_text">
+                                <div class="ycxf_al_L">
+                                    <div class="ycxf_al_L01">
+                                        <img src="~/images/yzzl_07_tp01.jpg">
+                                        <img src="~/images/yzzl_07_tp02.jpg">
+                                        <p>
+                                            患者：李先生    年龄：33岁
+                                            <br>
+                                            主诉：全口牙龈出血<br>
+                                            治疗方案：进行全口无痛龈下刮治能改善牙龈的恢复，防止牙龈进一步发展，是一种有效的改善牙龈恢复情况的治疗方式。
+                                        </p>
+                                    </div>
+                                    <div class="ycxf_al_L01">
+                                        <img src="~/images/yzzl_07_tp03.jpg">
+                                        <img src="~/images/yzzl_07_tp04.jpg">
+                                        <p>
+                                            患者：邓先生    年龄：37岁
+                                            <br>
+                                            主诉：口腔刷牙出血，口内有异味，多牙出现慢慢松动<br>
+                                            治疗方案：做详细检查，诊断为慢性牙周病，需做全口牙龈上及牙龈下洁治。经过前前后后4次左右的治疗，病人出血及松动情况明显好转，牙齿基本不松动。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="ycxf_al_R">
+                                    <h1>温馨提示</h1>
+                                    <ul>
+                                        <li>
+                                            <p>定期进行口腔清洁，去除牙垢和牙石，但切忌自己用刀去刮，以免造成伤害。</p>
+                                        </li>
+                                        <li>
+                                            <p>一旦发现牙龈出血、牙龈肿胀等现象，及时到正规口腔机构进行检查，做到早发现早治疗，避免恶化增加就诊难度。</p>
+                                        </li>
+                                        <li>
+                                            <p>早晚叩齿，上下用力叩敲数十次，有改养循环、促进牙龈组织新陈代谢的作用。</p>
+                                        </li>
+                                        <li>
+                                            <p>正确刷牙，不论前后都要竖着刷，并在每个部位坚持数十次，早晚各刷一次，条件允许中午刷一次牙更好。对于牙缝两侧的牙齿表面清洁和牙龈沟牙刷触及不到的部位，配合冲牙器，可彻底清除缝隙中的菌斑和残留物。</p>
+                                        </li>
+                                        <li>
+                                            <p>糖尿病患者牙周感染的风险比非糖尿病患者高2到3倍。严重的糖尿病还会导致牙周脓肿，甚至发生牙齿松动或移位，这样不但会抵消降糖药的作用，还有可能导致血糖升高，糖尿病进一步加重。完善的牙周治疗可改善糖尿病的症状，甚至可减少糖尿病的用药量。</p>
+                                        </li>
+                                    </ul>
+                                    <div class="yzzl_06_zxzx"><a href="http://kft.zoosnet.net/LR/Chatpre.aspx?id=KFT41922462" target="_blank"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="o7">
+                        <div class="yzzl_rmwt">
+                            <img class="yzzl_rmwt_title" src="~/images/part_rmhd.jpg">
+                            <div class="yzzl_rmwt_line"></div>
+                            <ul class="yzzl_rmwt_list">
+
+                                <li>
+                                    <h1>有牙周炎已松动的牙需要拔吗</h1>
+                                    <p>
+                                        牙周炎已松动的牙需要拔吗？武汉dental health口腔专家指出：很多人觉得牙齿松动了就要拔掉，或者是等着牙齿自然脱落，其实这两种方法都是不可取的，而是根据牙齿松动的情况下进行有效的治疗。
+　　　　
+...<a href="#" target="_blank">&gt;&gt;&gt;点击咨询详情</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h1>牙周炎引起牙痛牙松动怎么办</h1>
+                                    <p>
+                                        牙齿就如同我们口腔中的“防护林”牢牢的保护着我们口腔甚至是身体健康的第一关。可是，当“防护林”遭遇如龋齿、外伤、牙周病等各种牙齿问题的侵袭时，就会出现根基不不稳、牙齿疼痛的现象。
+ ...<a href="#" target="_blank">&gt;&gt;&gt;点击咨询详情</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h1>牙周炎患者吃哪些食物好</h1>
+                                    <p>
+                                        牙周炎患者吃哪些食物好？其实每个牙周炎患者都爱漂亮爱美丽，但却不知道如何去预防自身的健康问题以及外观的重要性。dental health口腔专家给大家介绍几种食物对预防牙周炎很有好处
+　　1.核桃：有的人牙...<a href="#" target="_blank">&gt;&gt;&gt;点击咨询详情</a>
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </div>
+                       
+                            <div class="zhzl_rmwd_db_list">
+                              @foreach (var item in Model)
+                        {  
+                            <ul class="ljgd_list">
+                                <li><a href="~/mingpiao/zslj?zsid=@item.zsid" target="_blank">@item.zstitle</a></li>
+                            </ul>
+                        }
+                            <a class="yzzl_ljgd_btn" href="http://www.chinadzyl.com/index.php/category/yzrmwt">了解更多&gt;&gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+
+    <!--左侧微信-->
+    <div id="ewm">
+        <span>关闭</span>
+        <img src="~images/weixin2.png" alt="微信">
+    </div>
+    <!--右侧工具栏-->
+    <div id="sidebar">
+        <ul>
+            <li class="qq">
+                <span>咨询</span>
+                <div class="showbox">
+                    <div class="qqlist">
+                        <div class="qqtop">在线咨询</div>
+                        <div class="qqlist2">
+                            <a target="_blank" href="#" rel="nofollow">协会咨询</a><a target="_blank" href="#" rel="nofollow">网站咨询</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="qrcode">
+                <span>微信</span>
+                <div class="showbox">
+                    <img src="images/weixin2.png" width="100" height="100" alt="微信">
+                </div>
+            </li>
+            <li class="share">
+                <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                    <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                </div>
+            </li>
+            <li class="gotop"><span>顶部</span></li>
+        </ul>
+        <style type="text/css">
+            #sidebar .bdshare-button-style0-16 .bds_more {
+                background: none;
+                display: block;
+                padding: 0px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px;
+                float: none;
+            }
+
+                #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+        </style>
+        <script type="text/javascript">
+            window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script src="#" type="text/javascript"></script>
+    </div>
+</body>
+</html>
+
+

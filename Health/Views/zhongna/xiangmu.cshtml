@@ -1,0 +1,286 @@
+﻿@{
+    Layout = null;
+}
+<script src="~/UI/jquery.min.js"></script>
+<script src="~/UI/jquery.easyui.min.js"></script>
+<script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+<link href="~/UI/themes/icon.css" rel="stylesheet" />
+<link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/templatemo_main.css" rel="stylesheet" />
+<script src="../../js/templatemo_script.js"></script>
+<script src="~/js/templatemo_script.js"></script>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        $(function () {
+            $("#xiangmu").datagrid({
+                url: "/zhongna/cxm",
+                nowrap: true,
+                height: 600,
+                width: 1120,
+               
+                method: "post",
+                fitColumns: true,            
+              
+                idField: "xid",
+                striped: true,
+                singleSelect: false,
+                rownumbers: true,
+                columns: [[
+                     { field: 'ck', checkbox: true },
+                     { field: "xid", title: "项目编号", width: 10, align: "center" },
+                     { field: "xname", title: "项目名", width: 20, align: "center" },
+                     { field: "xjieshao", title: "项目介绍", width: 20, align: "center" },
+                ]],
+                toolbar: [
+                        {
+                            id: "btnAddxm",
+                            text: "添加",
+                            iconCls: "icon-add",
+                            handler: function () {
+                                $("#xm").dialog({
+                                    title: '添加项目',
+                                    width: 400,
+                                    height: 230,                                 
+                                    href: '/zhongna/Addxm',
+                                    buttons:[{
+                                        text: '保存',
+                                        iconCls:'icon-save',
+                                        handler: function () {
+                                            $("#tjxm").form("submit", {
+                                                url: '/zhongna/Addxm2',
+                                                success: function () {
+                                                    $.messager.alert("提示", "添加成功！");
+                                                    $("#xm").dialog("close");
+                                                    $("#xiangmu").datagrid("reload");
+
+                                                }
+                                            })
+                                        }
+                                    }
+                                    ]
+                                })
+
+                            }
+                        }, '-',
+
+                          {
+                              id: "btnDeletexm",
+                              text: "删除",
+                              iconCls: "icon-remove",
+                              handler: function () {
+                                  var chk = $("#xiangmu").datagrid("getChecked");
+                                  if (chk.length == 0) {
+                                      $.messager.alert("提示", "您未选中任何行！");
+                                  }
+                                  else {
+                                      $.messager.confirm("提示", "您是否确认删除？", function (r) {
+                                          if (r) {
+                                              var xid = "";
+                                              for (var i = 0; i < chk.length; i++) {
+                                                  if (i < chk.length - 1) {
+                                                      xid += chk[i].xid + ',';
+                                                  }
+                                                  else {
+                                                      xid += chk[i].xid;
+                                                  }
+                                              }
+                                              $.ajax({
+                                                  url: '/zhongna/Delxm?xid=' + chk[0].xid,
+                                                  success: function () {
+                                                      $.messager.alert("提示", "删除成功！");
+                                                      $("#xiangmu").datagrid("reload");
+                                                  }
+
+                                              })
+                                          }
+
+                                      })
+                                  }
+
+                              }
+                          }, '-',
+                                {
+                                    id: "btnEditxm",
+                                    text: "修改",
+                                    iconCls: "icon-edit",                                   
+                                    handler: function () {
+                                        var chk = $("#xiangmu").datagrid("getChecked");
+                                        if (chk.length == 0) {
+                                            $.messager.alert("提示", "您未选中任何行！");
+                                        }
+                                        else {
+                                            $("#xm").dialog({
+                                                title: '修改项目信息',
+                                                width: 300,
+                                                height: 250,
+                                                href: '/zhongna/Editxm?xid=' + chk[0].xid,
+                                                buttons: [{
+                                                    text: '保存',
+                                                    iconCls: 'icon-save',
+                                                    handler: function () {
+                                                        $("#xgxm").form("submit", {
+                                                            url: '/zhongna/Editxm2',
+                                                            success: function () {
+                                                                $.messager.alert("提示", "修改成功！");
+                                                                $("#xm").dialog("close");
+                                                                $("#xiangmu").datagrid("reload");
+
+                                                            }
+                                                        })
+                                                    }
+                                                }
+                                                ]
+                                            })
+                                        }                                 
+                                    }
+                                }
+
+                ]
+            })
+  
+        });
+    </script>
+  
+
+
+
+ <div id="main-wrapper">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <div class="logo">
+                    <a href="~/mingpiao/shouye">
+                        <h1>Dental Health</h1>
+                    </a>
+                    <p style="margin-left: 1000px; margin-top: -22px; color: white">
+                       
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="template-page-wrapper">
+            <div class="navbar-collapse collapse templatemo-sidebar">
+                <ul class="templatemo-sidebar-menu">
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-table"></i>用户管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/guanliyuan">用户列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-user"></i>管理员管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/guanliyuan2">管理员列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-toggle-left"></i>新闻管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/xinwen">新闻列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-eye"></i>测试管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/ceshi">测试列表</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-star-half-full"></i>专家管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+                            <li><a href="~/zhongna/zhuanjia">专家列表</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-pencil"></i>留言管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/liuyan">留言列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-table"></i>成功案例
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/Success">成功案例列表</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub open">
+                        <a href="javascript:;">
+                            <i class="fa fa-star-half-full"></i>项目管理
+                            <div class="pull-right"><span class="caret"></span></div>
+                        </a>
+                        <ul class="templatemo-submenu">
+
+
+                            <li><a href="~/zhongna/xiangmu">项目列表</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="~/zhongli/login"><i class="fa fa-sign-out"></i>退出</a></li>
+
+                </ul>
+            </div>
+            <div class="templatemo-content-wrapper">
+                <div class="templatemo-content">
+
+
+                    <div class="row">
+                         <table id="xiangmu">
+    </table>
+    <div id="xm"></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="templatemo-footer">
+                <div class="templatemo-copyright">
+                    <p>Copyright &copy; 2016 武汉船舶职业技术学院 <a href="#">无需等待，马上行动！</a> - Dental Health <a href="#">口腔健康之家</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
+

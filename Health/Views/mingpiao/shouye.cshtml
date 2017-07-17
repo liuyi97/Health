@@ -1,0 +1,774 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<Health.Models.sbhj>
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="~/css/common3.css" rel="stylesheet" />
+     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--导航-->
+    <script type="application/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+
+    <link href="~/css/css1190.css" rel="stylesheet" />
+    <link href="~/css/index2.css" rel="stylesheet" />
+
+    <link href="~/css/css2.css" rel="stylesheet" />
+    @*<script src="~/js/banner.js"></script>*@
+    @* <script src="~/js/jquery-1.js"></script>*@
+    <script src="~/js/jquery.js"></script>
+    <script>
+        $(function () {
+            /*主导航*/
+            $(".nav li").hover(function () {
+                $(this).children("ul").stop(false, true).slideDown(300)
+            }, function () {
+                $(this).children("ul").stop(false, true).slideUp(100)
+            })
+            /*dental health新闻*/
+            $(".news_text_list li a").hover(function () {
+                var x = $(".news_text_list li a").index(this)
+                $(".dzxw_text").hide();
+                $(".dzxw_text").eq(x).show();
+
+                $(".news_text_list li a").removeClass("current_news")
+                $(this).addClass("current_news")
+            })
+            /*案例展示*/
+            $(".alzs_title li").hover(function () {
+                var x = $(".alzs_title li").index(this)
+                $(".case_box").hide();
+                $(".case_box").eq(x).show();
+
+                $(".alzs_title li").removeClass("current_alzs")
+                $(this).addClass("current_alzs")
+            })
+            /*医疗设备*/
+            $(".picMarquee-sb").hide();
+            $(".picMarquee-sb").eq(0).show();
+
+            $(".ylsb_bt a").hover(function () {
+                var x = $(".ylsb_bt a").index(this)
+                $(".picMarquee-sb").hide();
+                $(".picMarquee-sb").eq(x).show();
+
+                $(".ylsb_bt a").removeClass("current_ylsb")
+                $(this).addClass("current_ylsb")
+            })
+            /*合作伙伴*/
+            $(".link_title li").hover(function () {
+                var x = $(".link_title li").index(this)
+                $(".link_tp_box").hide();
+                $(".link_tp_box").eq(x).show();
+
+                $(".link_title li").removeClass("current_link")
+                $(this).addClass("current_link")
+            })
+            /*活动专区*/
+            $(".ylsb_bt a").hover(function () {
+                var x = $(".ylsb_bt a").index(this)
+                $(".ylsb_tp").hide();
+                $(".ylsb_tp").eq(x).show();
+
+                $(".ylsb_bt a").removeClass("current_ylsb")
+                $(this).addClass("current_ylsb")
+            })
+
+            $(".gfwx").hover(function () {
+
+                $(".kf_ewm").show();
+            }, function () {
+                $(".kf_ewm").hide();
+            })
+
+
+        })
+    </script>
+    <script src="~/js/superslide.js"></script>
+
+
+    @*  //轮播*@
+    <script src="~/js/jquery-1.7.2.min.js"></script>
+    @* <script src="js/Index_jquery.js"></script>*@
+    <script src="~/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".section ul li .rsp").hide();
+            $(".section	 ul li").hover(function () {
+                $(this).find(".rsp").stop().fadeTo(500, 0.5)
+                $(this).find(".text").stop().animate({ left: '0' }, { duration: 500 })
+            },
+            function () {
+                $(this).find(".rsp").stop().fadeTo(500, 0)
+                $(this).find(".text").stop().animate({ left: '609' }, { duration: "fast" })
+                $(this).find(".text").animate({ left: '-609' }, { duration: 0 })
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--导航-->
+    <div class="nav_Box">
+        <ul class="nav">
+            <li><a href="~/mingpiao/shouye">首页</a></li>
+            <li><a href="#">精专项目</a>
+                <ul class="subNav">
+                    <li><a href="~/mingpiao/jzxm">牙齿种植</a></li>
+                    <li><a href="~/mingpiao/ycjz">牙齿矫正</a></li>
+                    <li><a href="~/mingpiao/mrxf">美容修复</a></li>
+                    <li><a href="~/mingpiao/zhzl">综合治疗</a></li>
+                    <li><a href="~/mingpiao/yzzl">牙周治疗</a></li>
+                    <li><a href="~/mingpiao/rtyk">儿童牙科</a></li>
+                </ul>
+            </li>
+            <li><a href="~/zhongli/doctor">专家团队</a></li>
+            <li><a href="~/zhongli/anli">成功案例</a></li>
+            <li><a href="~/mingpiao/shouye">环境设备</a></li>
+            <li><a href="~/mingpiao/lylx">来院路线</a></li>
+          
+            <li><a href="~/zhongli/resigter">免费注册</a></li>
+            <li><a href="~/zhongli/login">用户登录</a></li>
+        </ul>
+    </div>
+    <!--banner-->
+    @* //轮播*@
+    <div class="banner-box">
+        <div class="bd">
+            <ul>
+                <li><a href="javascript:void(0);">
+                    <img src="~/images/banner2.jpg" />
+                    <div style="background: url('~/images/banner2.jpg') center no-repeat;"></div>
+                     
+                </a></li>
+                <li><a href="javascript:void(0);">
+                  
+                    <div style="background: url(~/images/banner1.jpg) center no-repeat;"></div>
+                </a></li>
+                <li><a href="javascript:void(0);">
+                    <div style="background: url(~/images/banner3.jpg) center no-repeat;"></div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="banner-btn">
+            <a class="prev" href="javascript:void(0);"></a><a class="next" href="javascript:void(0);"></a>
+            <div class="hd">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="index_search">
+       
+    </div>
+
+
+    <div id="h" style="height: 25px;"></div>
+    @* 第二层*@
+    <div class="About_Box">
+        <div class="About">
+            <h1><a href="#">关于dental health</a></h1>
+            <div class="About_text">
+                <a href="#">
+                    <img src="~/images/About_tp.png"></a>
+                <p>
+                    <a href="#">武汉dental health口腔门诊部是一所集口腔医疗、预防、保健、教学、科研为一体的专业口腔连锁诊疗机构，于2009年 武汉dental health口腔门诊部。</a>
+                </p>
+                <p>
+                    <a href="#">纳入武汉市医保定点医疗机构武汉dental health口腔门诊部是一所集口腔医疗、预防、保健、教学、科研为一体的专业口腔连锁诊疗纳入武汉市医保定点医疗机构.......<span>了解详细&gt;&gt;</span> </a>
+                </p>
+            </div>
+        </div>
+        <div class="news">
+            <div class="news_bt">
+                <h1><a href="#">dental health新闻</a></h1>
+                <a href="#" class="more"></a>
+            </div>
+            <div style="display: none;" class="dzxw_text">
+                <div class="news_title">
+                    <img src="~/images/xw1.jpg" height="90" width="130">
+                    <div class="news_title_text">
+                        <h2><a href="#" target="_blank" style="">dental health口腔，您值得信赖的牙科连锁</a></h2>
+                        <p>
+                            魏则西事件已经过去了一段时间，百度的自我整改也早已正式启动。民众的恐慌情绪看似将要风平浪静回归正轨，...<a href="#" target="_blank">了解详细&gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+                <ul class="news_list">
+                    <li><a href="#" target="_blank" style="">• dental health口腔迈入发展快车道——新三板挂牌活动圆满落幕</a><span>2015-07-08</span></li>
+                    <li><a href="#" target="_blank" style="">• dental health口腔通过湖北口腔种植技术认证</a><span>2015-06-30</span></li>
+                    <li><a href="#" target="_blank" style="">• 5.8日母亲节——dental health口腔两场义诊圆满结束</a><span>2016-05-09</span></li>
+                </ul>
+            </div>
+            <div class="dzxw_text" style="display: none;">
+                <div class="news_title">
+                    <img src="~/images/xw2.jpg" height="90" width="130">
+                    <div class="news_title_text">
+                        <h2><a href="#" target="_blank" style="">dental health口腔5.12护士节庆祝大会暨演讲比赛圆满结</a></h2>
+                        <p>
+                            为了纪念 “5.12”国际护士节105周年，弘扬南丁格尔精神，展示dental health口腔护理队伍精神风貌和职业风范，激励全体护士爱岗敬业、积...<a href="http://www.chinadzyl.com/index.php/detail/ygtd/439" target="_blank">了解详细&gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+                <ul class="news_list">
+                    <li><a href="#" target="_blank" style="">• 虽时有黑暗，但你手中有光——祝所有护士节日快乐！</a><span>2016-05-12</span></li>
+                    <li><a href="#" target="_blank" style="">• dental health口腔2016年第二期岗前培训顺利结束</a><span>2016-04-29</span></li>
+                    <li><a href="#" target="_blank" style="">• dental health口腔健康快乐开封行</a><span>2016-04-22</span></li>
+                </ul>
+            </div>
+            <div class="dzxw_text" style="display: none;">
+                <div class="news_title">
+                    <img src="~/images/xw3.png" height="90" width="130">
+                    <div class="news_title_text">
+                        <h2><a href="#" target="_blank" style="">dental health口腔引进种植新技术——德国CAMLOG®种植�</a></h2>
+                        <p>
+                            Camlog种植系统是由汉瑞祥CAMLOG Biotechnologies AG生产的优秀种植体系，由瑞士知名牙医研发设计，德国精密工艺制造，自1999年上市以来...<a href="http://www.chinadzyl.com/index.php/detail/zykx/425" target="_blank">了解详细&gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+                <ul class="news_list">
+                    <li><a href="#" target="_blank" style="">• dental health口腔——口腔显微治疗基础知识培训</a><span>2016-05-11</span></li>
+                    <li><a href="#" target="_blank" style="">• 清洁牙刷同样重要</a><span>2016-03-31</span></li>
+                    <li><a href="#" target="_blank" style="font-weight: bold;">• 牙龈炎的自我诊断与预防！</a><span>2016-03-31</span></li>
+                </ul>
+            </div>
+            <div class="dzxw_text" style="display: block;">
+                <div class="news_title">
+                    <img src="~/images/xw4.jpg" height="90" width="130">
+                    <div class="news_title_text">
+                        <h2><a href="#" target="_blank" style="">25年前的烤瓷牙变色，导致陈医生命丧刀下？</a></h2>
+                        <p>
+                            5月5日17点20分许，广东省人民医院口腔科主任陈仲伟在家中被一名患者砍成重伤，身中数十刀不治身亡。理由竟然是25年前的烤瓷牙变...<a href="http://www.chinadzyl.com/index.php/detail/zhxw/437" target="_blank">了解详细&gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+                <ul class="news_list">
+                    <li><a href="#" target="_blank" style="">• dental health口腔义诊活动5.11日继续进行</a><span>2016-05-11</span></li>
+                    <li><a href="#" target="_blank" style="">• 感恩母亲节——关爱妈妈，从给她一口好牙开始</a><span>2016-05-05</span></li>
+                    <li><a href="#" target="_blank" style="">• 对不起，汉口的种植牙顾客们，我们来晚了！</a><span>2016-04-15</span></li>
+                </ul>
+            </div>
+            <ul class="news_text_list">
+                <li><a class="" href="#">护牙知识</a></li>
+                <li><a href="#">员工天地</a></li>
+                <li><a href="#">专业快讯</a></li>
+                <li><a class="current_news" href="#">综合新闻</a></li>
+            </ul>
+        </div>
+        <div class="hdzq">
+            <div class="hdzq_bt">
+                <h1><a href="#">活动专区</a></h1>
+                <a href="#" class="more"></a>
+            </div>
+            <div id="banner">
+                <div class="slides">
+                    <ul class="slide-pic">
+                        <li style="display: none;" class="">
+                            <a href="#" target="_blank">
+                                <img src="~/images/b036dc2c42a4ae9f2400e5c827df08e9.jpg" alt="" />
+                            </a></li>
+                        <li class="" style="display: none;"><a href="#" target="_blank">
+                            <img alt="" src="~/images/3919fb4d66c4813fcfd06b449112f737.jpg"></a></li>
+                        <li class="cur" style="display: list-item; opacity: 1;"><a href="#" target="_blank">
+                            <img src="~/images/ycxf_03_tp11.png" alt="" />
+                        </a></li>
+                    </ul>
+                    <ul class="slide-li slide-txt">
+                        <li class="cur"><a href="#" target="_blank" style="">
+                            <img src="~/images/no_002.png" alt=""><h1>“小牙医的奇趣动物园”</h1>
+                        </a></li>
+                        <li class=""><a href="#" target="_blank" style="">
+                            <img src="~/images/no.png" alt=""><h1>用电钻吃玉米？别闹了！牙齿宝宝</h1>
+                        </a></li>
+                        <li class=""><a href="#" target="_blank" style="">
+                            <img src="~/images/no_003.png" alt=""><h1>口腔种植沙龙活动现场出现</h1>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    @* 第三层*@
+    <br />
+    <br />
+    <div class="alzs_Box">
+        <h1><a href="#">案例展示</a></h1>
+        <div class="alzs_text_box">
+            <div class="alzs_L">
+                <ul class="alzs_title">
+                    <li class="" onclick="location='/index.php/category/cyczz'">牙齿种植</li>
+                    <li class="" onclick="location='/index.php/category/cyzjz'">牙齿矫正</li>
+                    <li class="current_alzs" onclick="location='/index.php/category/cmrxf'">美容修复</li>
+                    <li class="" onclick="location='/index.php/category/czhzl'">综合治疗</li>
+                    <li class="" onclick="location='/index.php/category/cyzzl'">牙周治疗</li>
+                    <li class="" onclick="location='/index.php/category/cetyk'">儿童牙科</li>
+                </ul>
+
+                <div style="display: none;" class="case_box">
+                    <div class="case_L">
+                        <img src="~/images/d52480216cc4e1fd53c538a9d34bf9c7.jpg" height="141" width="185">
+                        <div class="case_title">
+                            <h2><a href="#" target="_blank" style="">龙先生先天缺牙多年，种植牙修复后了却爷爷多</a></h2>
+                            <p>
+                                患者：龙先生
+                                来自：成都
+                                年龄：28
+                                症状描述：右上颌多颗牙缺失
+                                就诊时间：2014年5月7号
+                                治疗方案：右上颌牙种植修复
+                                
+                                龙先生今年二十多岁，上颌先天缺失多颗牙，影响咀嚼和...<a href="~/mingpiao/jzxm" target="_blank">了解详细&gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="case_R">
+                        <li><a href="#" target="_blank" style="">• 肖先生下颌前牙缺失，种植牙</a><span>2015-07-13</span></li>
+                        <li><a href="#" target="_blank" style="">• 陈先生多颗后牙缺失 种植牙</a><span>2015-07-13</span></li>
+                        <li><a href="#" target="_blank" style="">• 九岁小男孩 门牙失而复得</a><span>2015-07-13</span></li>
+                        <li><a href="#" target="_blank" style="">• 陆先生全口多数牙齿缺失 种</a><span>2015-07-13</span></li>
+                        <li><a href="#" target="_blank" style="">• 严女士外伤变瘪嘴，种植牙修</a><span>2015-06-30</span></li>
+                    </ul>
+                </div>
+                <div class="case_box" style="display: none">
+
+                    <div class="case_L">
+                        <img src="~/images/4901a45d8fd57fca302669c897eeafe3.jpg" height="141" width="185">
+                        <div class="case_title">
+                            <h2><a href="#" target="_blank" style="">直丝弓矫治技术解决牙齿稀疏问题</a></h2>
+                            <p>
+                                姓名：CBZ
+                                年龄：12
+                                就诊时间：2109.8.10
+                                就诊地点：dental health口腔
+                                症状描述：牙齿有缝
+                                治疗方案：不拔牙矫治，直丝弓矫治技术
+                                陈某某，家长发现孩子牙齿非常稀疏，有散在缝隙，在...<a href="~/mingpiao/ycjz" target="_blank">了解详细&gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="case_R">
+                        <li><a href="#" target="_blank" style="">• 固定矫正 治疗“地包天”</a><span>2015-07-13</span></li>
+                        <li><a href="#" target="_blank" style="">• 销售员牙列不齐 全口牙正畸</a><span>2015-07-13</span></li>
+                        <li><a href="#" target="_blank" style="">• 牙齿拥挤有哪些危害</a><span>2017-06-09</span></li>
+                        <li><a href="#" target="_blank" style="">• 快速矫正牙齿的办法</a><span>2017-06-09</span></li>
+                        <li><a href="#" target="_blank" style="">• 龅牙畸形牙齿有哪些影响？</a><span>2017-06-09</span></li>
+                    </ul>
+                </div>
+                <div class="case_box" style="display: block;">
+
+                    <div class="case_L">
+                        <img src="~/images/48a140809f917e02e7ed324664b3244b.jpg" height="141" width="185">
+                        <div class="case_title">
+                            <h2><a href="#" target="_blank" style="">碳酸饮料喝坏牙齿 美容冠修复来拯救</a></h2>
+                            <p>
+                                姓名：万伦
+                                年龄：19岁
+                                就诊时间：2014年6月5日
+                                就诊地点：dental health口腔光谷门诊部
+                                症状描述：上前牙变色影响美观数年要求补牙
+                                治疗方案：上前牙美容冠修复术
+                                患者刚毕业学生，长...<a href="~/mingpiao/mrxf" target="_blank">了解详细&gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="case_R">
+                        <li><a href="#" target="_blank" style="">• dental health口腔让80岁婆婆重拾镶牙</a><span>2015-07-14</span></li>
+                        <li><a href="#" target="_blank" style="">• 冷光美白让王女士找回自信</a><span>2015-07-14</span></li>
+                        <li><a href="#" target="_blank" style="">• 刘阿姨家庭困难 义齿修复恢</a><span>2015-07-14</span></li>
+                        <li><a href="#" target="_blank" style="">• 前牙外突 美学修复</a><span>2015-07-14</span></li>
+                        <li><a href="#" target="_blank" style="">• 牙缺失多年 陈大爷终于“找</a><span>2015-07-14</span></li>
+                    </ul>
+                </div>
+                <div class="case_box" style="display: none">
+
+                    <div class="case_L">
+                        <img src="~/images/d227befaf3de905e36fc97694309a91d.jpg" height="141" width="185">
+                        <div class="case_title">
+                            <h2><a href="#" target="_blank" style="">显微镜运用于根管再治疗</a></h2>
+                            <p>
+                                患者：李女士
+                                来自：武汉
+                                年龄：32岁
+                                症状描述：左上后牙缺损一月
+                                就诊时间：2014年10月与dental health口腔门诊部
+                                治疗方案：显微根管治疗
+                                李女士左上后牙多年前因蛀牙外院充填修复过...<a href="~/mingpiao/zhzl" target="_blank">了解详细&gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="case_R">
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/czhzl/120" target="_blank" style="">• 生理期可以拔牙吗？需要注意</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/czhzl/119" target="_blank" style="">• 治疗牙痛最好的方法是什么？</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/czhzl/118" target="_blank" style="">• 病牙不拔有哪些危害？</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/czhzl/117" target="_blank" style="">• 感冒能拔牙吗？</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/czhzl/116" target="_blank" style="">• 根管治疗大概费用</a><span>2017-06-09</span></li>
+                    </ul>
+                </div>
+                <div class="case_box" style="display: none">
+
+                    <div class="case_L">
+                        <img src="~/images/b91a63cd002f177e46f58a558cd22128.jpg" height="141" width="185">
+                        <div class="case_title">
+                            <h2><a href="http://www.chinadzyl.com/index.php/detail/cyzzl/107" target="_blank" style="">无痛龈下洁治</a></h2>
+                            <p>
+                                姓名：邓先生
+                                年龄：37岁
+                                来自：武汉
+                                就诊时间：2015年3月
+                                就诊地点：dental health口腔杨园门诊
+                                症状描述：口内多牙松动不适多年
+                                治疗方案：无痛龈下洁治
+                                
+                                邓院发，男，37岁。近几年...<a href="~/mingpiao/yzzl" target="_blank">了解详细&gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="case_R">
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cyzzl/126" target="_blank" style="">• 牙周病早期有哪些信号</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cyzzl/125" target="_blank" style="">• 牙周病为什么需及时治疗</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cyzzl/124" target="_blank" style="">• 牙龈炎的病因有哪些？</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cyzzl/123" target="_blank" style="">• 牙出血是怎么回事？</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cyzzl/122" target="_blank" style="">• 不要小瞧牙龈出血</a><span>2017-06-09</span></li>
+                    </ul>
+                </div>
+                <div class="case_box" style="display: none;">
+
+                    <div class="case_L">
+                        <img src="~/images/57d7cc51104e232a20fb907e326bb16d.jpg" height="141" width="185">
+                        <div class="case_title">
+                            <h2><a href="http://www.chinadzyl.com/index.php/detail/cetyk/108" target="_blank" style="">地包天致脸部变形 及时矫正小姑娘恢复笑容</a></h2>
+                            <p>
+                                患者：周某某
+                                来自：武汉
+                                年龄：10岁
+                                症状描述：患者家长诉前牙“地包天”
+                                治疗方案：功能性矫治，前方牵引
+                                周某某，在家长的带领下来我院就诊，家长主诉小孩的脸有点瘪，微...<a href="~/mingpiao/rtyk" target="_blank">了解详细&gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="case_R">
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cetyk/131" target="_blank" style="">• 小孩龋齿疼痛怎么办</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cetyk/130" target="_blank" style="">• 儿童牙髓炎怎么办</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cetyk/129" target="_blank" style="">• 儿童窝沟封闭</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cetyk/128" target="_blank" style="">• 儿童虫牙的原因</a><span>2017-06-09</span></li>
+                        <li><a href="http://www.chinadzyl.com/index.php/detail/cetyk/127" target="_blank" style="">• 宝宝长牙换牙时应该注意的问</a><span>2017-06-09</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alzs_R">
+                <div class="www51buycom">
+                    <ul style="position: relative; width: 300px; height: 230px;" class="51buypic">
+                        <li style="position: absolute; width: 300px; left: 0px; top: 0px; display: none;"><a href="http://www.chinadzyl.com/index.php/category/yczz" target="_blank">
+                            <img src="~/images/Item_t_01.jpg" height="210" width="300"></a></li>
+                        <li style="position: absolute; width: 300px; left: 0px; top: 0px; display: none;"><a href="http://www.chinadzyl.com/index.php/category/ycjz" target="_blank">
+                            <img src="~/images/1ff04f94d820cd8c2a8b7047b05c2d73.jpg" height="210" width="300"></a></li>
+                        <li style="position: absolute; width: 300px; left: 0px; top: 0px; display: none;"><a href="http://www.chinadzyl.com/index.php/category/mrxf" target="_blank">
+                            <img src="~/images/5599bff295d51568a4d7b2d8d2ebb2e0.jpg" height="210" width="300"></a></li>
+
+                        <li style="position: absolute; width: 300px; left: 0px; top: 0px; display: none;"><a href="http://www.chinadzyl.com/index.php/category/yzzl" target="_blank">
+                            <img src="~/images/c75e44918fdcc8f8bd1099027d1c0dc7.jpg" height="210" width="300"></a></li>
+                        <li style="position: absolute; width: 300px; left: 0px; top: 0px; display: list-item;"><a href="http://www.chinadzyl.com/index.php/category/etyk" target="_blank">
+                            <img src="~/images/9c993a594cf81f9ade612f46217613f0.jpg" height="210" width="300"></a></li>
+                    </ul>
+                    <div class="num">
+                        <ul>
+                            <li class="">1</li>
+                            <li class="">2</li>
+                            <li class="">3</li>
+                            <li class="">4</li>
+                            <li class="on">5</li>
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    /*鼠标移过，左右按钮显示*/
+                    $(".www51buycom").hover(function () {
+                        $(this).find(".prev,.next").fadeTo("show", 0.1);
+                    }, function () {
+                        $(this).find(".prev,.next").hide();
+                    })
+                    /*鼠标移过某个按钮 高亮显示*/
+                    $(".prev,.next").hover(function () {
+                        $(this).fadeTo("show", 0.7);
+                    }, function () {
+                        $(this).fadeTo("show", 0.1);
+                    })
+                    $(".www51buycom").slide({ titCell: ".num ul", mainCell: ".51buypic", effect: "fold", autoPlay: true, delayTime: 700, autoPage: true });
+                </script>
+                <!-- 代码 结束 -->
+            </div>
+        </div>
+    </div>
+
+    @* 第四层*@
+    <!--dental health专家-->
+    <div class="dzzj_box">
+        <div class="dzzj_box">
+            <h1><a href="#">dental health专家</a></h1>
+            <a href="#" class="more"></a>
+        </div>
+        <div class="dzzj_list">
+            <div class="mr_frbox">
+                <img class="mr_frBtnL prev" src="~/images/dzzj_btnL.png">
+                <div class="mr_frUl">
+                    <div class="tempWrap" style="overflow: hidden; position: relative; width: 930px;">
+                        <ul style="width: 7460px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -2800px;">
+                            @*   <li style="float: left; width: 210px;"><a href="http://www.chinadzyl.com/index.php/detail/zszj/20" target="_blank">
+                                <img src="~/images/b28baef68a9637dc79ca5b1683199eba.jpg" height="270" width="210"></a></li>*@
+                            @foreach (var item in Model)
+                            {
+                                <li style="float: left; width: 210px;">
+                                    <div class="ylst_tp01">
+                                        <a href="~/zhongli/detail?did=@item.did">                                     
+                                            <img src="~/images/@item.dapic" height="270" width="210"></a>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <img style="margin-right: 0px;" class="mr_frBtnR next" src="~/images/dzzj_btnR.png">
+            </div>
+            <script>
+                $(".mr_frUl ul li img").hover(function () { $(this).css("border-color", "#A0C0EB"); }, function () { $(this).css("border-color", "#d8d8d8") });
+                jQuery(".mr_frbox").slide({ titCell: "", mainCell: ".mr_frUl ul", autoPage: true, effect: "leftLoop", autoPlay: true, vis: 4 });
+            </script>
+        </div>
+    </div>
+    <br />
+    <br />
+    @*  第五层*@
+    <!--微笑导诊-->
+    <div class="link">
+        <ul class="link_title">
+            <li class="current_link">微笑导诊</li>
+            <li>专业咨询</li>
+            <li>形象规划</li>
+            <li>精确就诊</li>
+            <li>精心修复</li>
+        </ul>
+        <div class="link_tp_box">
+            <div class="link_tp">
+                <div class="fuwu_v1 fuwu_v01" style="display: block;">
+                    <div class="fuwu_v1_left">
+                        <h3>微笑导诊</h3>
+                        <p>dental health导诊以微笑欢迎您的光临，帮助您办理就医手续，协助您轻松完成美齿升级，严格尊重您的隐私，让您感觉温馨如家。</p>
+                    </div>
+                    <div class="fuwu_v1_right">
+                        <img src="~/images/b_member.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="link_tp_box">
+            <div class="link_tp">
+                <div class="fuwu_v1 fuwu_v02" style="display: block;">
+                    <div class="fuwu_v1_left">
+                        <h3>专业咨询</h3>
+                        <p>dental health咨询医生随时为您服务，解答你关于口腔的各种困惑，让您更了解自己，了解美丽。</p>
+                    </div>
+                    <div class="fuwu_v1_right">
+                        <img src="~/images/s_member3.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="link_tp_box">
+            <div class="link_tp">
+                <div class="fuwu_v1 fuwu_v03" style="display: block;">
+                    <div class="fuwu_v1_left">
+                        <h3>形象规划</h3>
+                        <p>dental health形象顾问会和主诊专家，从美学和医学角度出发，同时考虑您的个性化需求，为您提供个性化的美齿方案，实现您的美齿梦想。</p>
+                    </div>
+                    <div class="fuwu_v1_right">
+                        <img src="~/images/fuwu_v1_img04.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="link_tp_box">
+            <div class="link_tp">
+                <div class="fuwu_v1 fuwu_v04" style="display: block;">
+                    <div class="fuwu_v1_left">
+                        <h3>精确就诊</h3>
+                        <p>专家严格按照医德操守和口腔诊疗流程，根据您确定的美齿方案亲自为您精心施术。</p>
+                    </div>
+                    <div class="fuwu_v1_right">
+                        <img src="~/images/fuwu_v1_img05.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="link_tp_box">
+            <div class="link_tp">
+                <div class="fuwu_v1 fuwu_v05" style="display: block;">
+                    <div class="fuwu_v1_left">
+                        <h3>精心修复</h3>
+                        <p>诊疗结束后，专家定期亲自为您复查，排除各种隐患，保障您的健康和美齿效果得以长久，出院后，dental health客服定期回访，呵护您的美齿效果。</p>
+                    </div>
+                    <div class="fuwu_v1_right">
+                        <img src="~/images/simg.jpg" style="width: 598px; height: 378px;" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    @*//第七层*@
+    <!--医疗设备-->
+    <div class="part1 wrap">
+        <div class="ylsb_Box">
+            <div class="ylsb_bt">
+                <a href="#" class="current_ylsb">医疗设备</a>&nbsp;&nbsp;
+            <a href="#">环境设施</a>
+            </div>
+            <div style="display: block;" class="picMarquee-sb">
+                <div class="bd" style="margin-top: 15px;">
+                    <div class="tempWrap" style="overflow: hidden; position: relative; width: 1015px">
+                        <ul style="width: 1135px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -4942px;" class="ylsb_tp">
+                            @foreach (var item in Model)
+                            {
+                                <li style="float: left; width: 185px;">
+                                    <div class="ylst_tp01">
+                                        <a href="javascript:;" target="_blank">
+                                            <img src="~/images/@item.maimage" height="157" width="185"></a>
+                                    </div>
+                                    <div class="ylst_text"><a href="javascript:;" target="_blank" style="">@item.maname</a></div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="picMarquee-sb">
+                <div class="bd" style="margin-top: 15px;">
+                    <div class="tempWrap" style="overflow: hidden; position: relative; width: 1015px">
+                        <ul style="width: 1135px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -4942px;" class="ylsb_tp">
+                            @foreach (var item in Model)
+                            {
+                                <li style="float: left; width: 185px;">
+                                    <div class="ylst_tp01">
+                                        <a href="javascript:;" target="_blank">
+                                            <img src="~/images/@item.hjimage" height="157" width="185"></a>
+                                    </div>
+                                    <div class="ylst_text"><a href="javascript:;" target="_blank" style="">@item.hjname</a></div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                jQuery(".picMarquee-sb").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 5, interTime: 20 });
+            </script>
+        </div>
+    </div>
+    <!--底部-->
+    <div id="foot">
+        <div class="aa">
+            <p>
+                关于我们 -办事指南 -在线咨询 - 网站管理 - 欢迎您，您是第28735位访问者！
+            </p>
+        </div>
+        <div id="cc">
+            <div id="zuo">
+                <p>武汉市大数据研究与应用协会  版权所有</p>
+                <p>地址：中国湖北省武汉船舶职业技术学院临江N8</p>
+                <p>联系方式：17762479829</p>
+            </div>
+            <div id="you">
+                <div id="y1">
+                    <img src="~/img/weixin2.png"  style="height: 100px; width: 100px; padding-top: 20px; padding-left: 20px;"/>
+                    @*<img src="~/img/weixin.png" style="height: 100px; width: 100px; padding-top: 20px; padding-left: 20px;" />*@
+                </div>
+                <div id="y2">
+                    <p>客服QQ：2324387748</p>
+                    <p>邮箱：2324387748@163.com</p>
+                    <p>官方微博：15971819640</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左侧微信-->
+    <div id="ewm">
+        <span>关闭</span>
+        <img src="~/img/weixin2.png"   alt="微信"/>
+        @*<img src="images/weixin.png" alt="微信">*@
+    </div>
+    <!--右侧工具栏-->
+    <div id="sidebar">
+        <ul>
+            <li class="qq">
+                <span>咨询</span>
+                <div class="showbox">
+                    <div class="qqlist">
+                        <div class="qqtop">在线咨询</div>
+                        <div class="qqlist2">
+                             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2324387748&amp;site=qq&amp;menu=yes" rel="nofollow">qq咨询</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="qrcode">
+                <span>微信</span>
+                <div class="showbox">
+                    <img src="~/img/weixin2.png" width="100" height="100" alt="微信">
+                </div>
+            </li>
+            <li class="share">
+                <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1416968358289">
+                    <a class="bds_more" data-cmd="more" rel="nofollow">分享</a>
+                </div>
+            </li>
+            <li class="gotop"><span>顶部</span></li>
+        </ul>
+        <style type="text/css">
+            #sidebar .bdshare-button-style0-16 .bds_more {
+                background: none;
+                display: block;
+                padding: 0px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px;
+                float: none;
+            }
+
+                #sidebar .bdshare-button-style0-16 .bds_more:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+        </style>
+        <script type="text/javascript">
+            window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": [{ "tag": "share_1", bdUrl: '' }, { "tag": "share_2", bdUrl: '', "bdPopupOffsetLeft": "-130", "bdPopupOffsetTop": "80" }] }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68f5be90c2d9d141dd7fc539233f5431' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script src="#" type="text/javascript"></script>
+    </div>
+
+</body>
+</html>
+
+
+

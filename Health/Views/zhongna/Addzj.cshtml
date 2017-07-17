@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;
+}
+@model Health.Models.S4doctors
+<script src="~/UI/jquery.min.js"></script>
+<script src="~/UI/jquery.easyui.min.js"></script>
+<script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+<link href="~/UI/themes/icon.css" rel="stylesheet" />
+<link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form id="fzj">
+        <br />
+        编号：<input id="did" name="did" type="text" style="display: none" />
+        <br />
+        <br />
+        姓名：
+        <input id="dname" name="dname" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家姓名！" />
+        <br />
+        <br />
+        密码：<input id="dpwd" name="dpwd" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入密码！" />
+        <br />
+        <br />
+        职称：
+        <input id="dzhicheng" name="dzhicheng" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家职称！" />
+        <br />
+        <br />
+        地址：<input id="daddress" name="daddress" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家地址！" />
+        <br />
+        <br />
+        简介：
+        <input id="djianjie" name="djianjie" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家简介！" />
+        <br />
+        <br />
+        详情：<input id="dxiangqing" name="dxiangqing" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家详情！" />
+        <br />
+        <br />
+        大图：
+        <input id="dapic" name="dapic" type="file" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家大图！" />
+        <br />
+        <br />
+        小图：
+        <input id="dxpic" name="dxpic" type="file" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家小图！" />
+        <br />
+        <br />
+        性别：<input id="dsex" name="dsex" type="text" class="easyui-validatebox" data-options="required:true" missingmessage="请输入专家性别！" />
+        <br />
+        <br />
+        总数：
+        <input id="shu" name="shu" type="number" class="easyui-validatebox" data-options="required:true" missingmessage="请输入总数！" />
+        <br />
+        <br />
+        时间：@Html.DropDownListFor(n => n.tiid, ViewBag.mm as SelectList)
+        <br />
+        <br />
+        类型：@Html.DropDownListFor(n => n.xid, ViewBag.mmm as SelectList)
+
+    </form>
+
+</body>
+</html>
+

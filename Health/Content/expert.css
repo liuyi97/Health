@@ -1,0 +1,11 @@
+/*右侧内容栏*/
+.rtbox{width:1265px;margin-left:60px; margin-top:60px; background-color:#fbfffe; border-radius:5px; border-left:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc; border-right:1px solid #dcdcdc; margin-bottom:62px; _overflow:hidden;}
+.rtbox .rtit{height:56px;background:url(../images/rtit.gif) left top repeat-x;border-bottom:1px solid #d0d3d5;margin-left:-1px; width:1260px; line-height:55px; border-top-left-radius:5px; border-top-right-radius:5px;}
+.rtbox .srtit{margin-left:-2px; height:49px; background:url(../images/change.png) left  repeat-y;margin-top: 7px;}
+.rtbox .rtit h2{padding-left:22px; color:#000000; font-size:16px; font-weight:bold; }
+.rtbox .rtit h2 i{width:7px; height:55px;padding-bottom:5px; background:url(../images/line_red.png) no-repeat; margin-right:8px;z-index: 1999;}
+.rtbox .rtit p{margin-right:12px; _float:right; _display:inline;}
+.rtbox .rtit p.companyname{color:#0488e2; font-size:18px; font-weight:bold;}
+
+
+

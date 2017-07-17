@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "check2";
+    Layout = null;
+}
+
+@model Health.Models.S4orders
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@using (Html.BeginForm("check", "aijuan", FormMethod.Post, new { id = "checkform" }))
+{   
+      <p style="display:none">@Html.EditorFor(u =>u.oid)</p>
+     <p style="display:none">@Html.EditorFor(u =>u.tiid)</p>
+     <p style="display:none">@Html.EditorFor(u =>u.did)</p>
+      <p style="display:none">@Html.EditorFor(u =>u.S4ordertype)</p>
+    <p>患者编号：@Html.EditorFor(u => u.uid)</p>
+    <br />
+    <p>患者姓名：@Html.EditorFor(u => u.S4users.uname)</p>
+    <br />
+    <p>联系号码：@Html.EditorFor(u => u.S4users.uphone)</p>
+    <br />
+    <p>预约医生：@Html.EditorFor(u => u.S4doctors.dname)</p>
+    <br />
+    <p>预约状态：@Html.DropDownListFor(u => u.otid, ViewBag.ootid as SelectList)</p>
+    <br />
+    <p>预约时段：@Html.EditorFor(u => u.timetype.tiname)</p>
+    <br />
+    <p>总预约数：@Html.EditorFor(u => u.S4doctors.shu)</p>
+   
+    <br />
+}

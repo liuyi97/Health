@@ -1,0 +1,129 @@
+
+
+@import url('../../reset.css');
+
+body {
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#E7E7E7;
+}
+
+p, .tab-content li, h1, h2, h3{ /* This insures that there's enough space between your paragraphs, headings, etc */
+    margin-bottom: 10px;
+}
+
+a{
+	text-decoration:none; 
+	color:#EFD24A;
+}
+
+a:hover{
+	color:#AF9B41;
+}
+
+.tab-container h3{ /* Effects only the h3 headings inside the tabs */
+	font-size:147%;
+	color:#EFDFB3;
+}
+/* `Containers
+----------------------------------------------------------------------------------------------------*/
+
+#container{ /* Use this to position the entire tab module */
+	margin:0 auto; 
+	width:330px; 
+	margin-top:4%;
+    margin-left:40px;
+    float:left;
+}
+
+.tab-container {
+	position: relative; /* It's important to keep this position relative and the absolute positions in this file the same */
+	width: 100%; 
+	z-index:0;
+}
+
+/* `Common Styles
+----------------------------------------------------------------------------------------------------*/
+
+/* Tabs */
+
+.tab-container > div { 
+	display: inline; 
+}
+
+.tab-container > div > a {  
+	position: relative !important; /* Keeps the tabs in line with each other */
+	text-decoration: none; 
+	color: #D7D7D7; 
+	display: inline-block;
+	padding: 4px 14px; 
+	font-size:15px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	margin:2px;
+	background: #4C4648; /* old browsers */
+	background: -moz-linear-gradient(top, #4C4648 0%, #474344 52%, #2F2D2E 100%); /* firefox */
+	background: linear-gradient(top, #4C4648 0%, #474344 52%, #2F2D2E 100%); /* future browsers */
+	-pie-background: linear-gradient(top, #4C4648 0%, #474344 52%, #2F2D2E 100%); /* pie for ie */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4C4648), color-stop(52%,#474344), color-stop(100%,#2F2D2E)); /* webkit */
+	/** filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C4648', endColorstr='#2F2D2E',GradientType=0 ); **/ /* uncomment this when ie decides not to put boxes behind elements with a border radius */
+	border:dashed 2px #CFA840;
+	padding: 4px 14px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 0px;
+	border-radius: 3px;
+    text-shadow: 0 -1px 0 #000000;
+	-moz-box-shadow: 0 4px 10px -5px #000000;
+	box-shadow: 0 4px 10px -5px #000000;
+	-webkit-box-shadow: 0 4px 10px -5px #000000;
+}
+
+.tab-container > div:not(:target) > a {
+}	
+
+.tab-container > div:target > a { 
+    background: none repeat scroll 0 0 #948a81;
+    text-shadow: 0 1px 0 #4C4648;
+}	
+
+.tab-container > div > div { /* This is the container which holds the tab content */
+	background: #4C4648; /* old browsers */
+	background: -moz-linear-gradient(top, #4C4648 0%, #474344 84%, #2F2D2E 100%); /* firefox */
+	background: linear-gradient(top, #4C4648 0%, #474344 84%, #2F2D2E 100%); /* future browsers */
+	-pie-background: linear-gradient(top, #4C4648 0%, #474344 84%, #2F2D2E 100%); /* pie for ie */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4C4648), color-stop(84%,#474344), color-stop(100%,#2F2D2E)); /* webkit */
+	/** filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C4648', endColorstr='#2F2D2E',GradientType=0 ); **/ /* uncomment this when ie decides not to put boxes behind elements with a border radius */
+	-moz-box-shadow: 0 0 12px 1px #000000 inset;
+	-webkit-box-shadow: 0 0 12px 1px #000000 inset;
+	box-shadow: 0 0 12px 1px #000000 inset;
+	z-index: -2;
+	top: 50px;
+	padding: 20px;
+	border:solid 6px #4C4648;
+	outline: 2px dashed #CFA840;
+	outline-offset: -8px; /*Delete if you don't want an offset*/
+	min-height:350px; /* Change this value if you need more or less content space */
+	position:absolute; /* Fixes IE 7 & 8 */
+}	
+.tab-container > div:not(:target) > div { 
+	position: absolute; /* This keeps the tab module contained */
+}
+
+.tab-container > div:target > div { 
+	position: absolute; 
+	z-index: 3 !important; /* Brings the content to the front depending on the tab that was clicked */ 
+}
+
+div.tab-content{ /* Styles the inner content of the tabs */
+	padding-bottom: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+	
+.tab-content img{ 
+	margin:0 auto; 
+	display:block; 
+	padding-bottom: 20px;
+    padding-top: 10px;
+}

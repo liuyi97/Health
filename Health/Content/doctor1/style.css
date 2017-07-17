@@ -1,0 +1,140 @@
+.body3-box {
+    width: 1000px;
+    height: 400px;
+}
+.b3-more a {
+    color: #fff;
+}
+.b3-more a:hover {
+        color: #f00;
+    }
+.ayzs-t {
+    height: 35px;
+}
+.ayzs-t span {
+     color: #fff;
+}
+#container {
+    width: 1340px;
+    margin-top: 3px;
+    margin-left: -67px;
+}
+.tab-container {
+    z-index: 0;
+}
+.tab-a-curr {
+    font-weight: bold;
+    color: #AA7322 !important;
+}
+.tab-container > div {
+    display: inline;
+}
+    .tab-container > div > a {
+        color: #777;
+        text-align: center;
+        display: inline-block;
+        line-height: 50px;
+        font-size: 14px;
+        font-weight: bold;
+        border-right: 2px solid #e7e7e7;
+        border-bottom: 2px solid #e7e7e7;
+        width: 13.5%;
+        _width: 13.5%;
+    }
+    .tab-container > div > div {
+    }
+    .tab-container > div:not(:target) > div {
+        position: absolute;
+    }
+
+    .tab-container > div:target > div {
+        position: absolute;
+        z-index: 3 !important;
+    }
+
+div.tab-content {
+  width:1080px;
+
+}
+
+.tab-content img {
+    display: block;
+    margin-left:-150px;
+    padding-top: 20px;
+}
+.w-c-top {
+    width: 680px;
+    margin: 0 auto;
+}
+
+.w-c-top-left {
+    float: left;
+    width: 319px;
+}
+.w-c-top-right {
+    float: right;
+    width: 340px;
+}
+.etsy-t {
+    width: 340px;
+    margin-top: 20px;
+    margin-left:70px;
+}
+.etsy-t span {
+        margin-left: 80px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+ .etsy-t p {
+        padding-top: 10px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+        .etsy-t p a {
+            color: #955B09;
+        }
+
+            .etsy-t p a:hover {
+                color: #a3a3a3;
+            }
+
+.line {
+    margin-top: 20px;
+    border-top: 1px dashed #fff;
+}
+.w-gdnr {
+    font-size: 12px;
+    width: 400px;
+    line-height: 25px;
+     margin-left:70px;
+}
+.gdnr-one {
+    float: left;
+    width: 190px;
+}
+ul li { 
+  list-style-type: none;
+  background: url(../images/1-.png) no-repeat 0px 7px;
+  display: block;
+  margin: 0.38em 0;
+  color: #343434;
+  font-size: 15px;
+}
+ul li a {
+    color:#808080;
+    font-size: 14px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all; 
+} 
+ul li a:hover {
+     text-decoration: none;
+     color: #F98FB7;
+     padding-left: 1em;
+    }
+.notice ul li strong {
+   color:#AA7322;
+}

@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+<script src="~/UI/jquery.min.js"></script>
+<script src="~/UI/jquery.easyui.min.js"></script>
+<script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+<link href="~/UI/themes/icon.css" rel="stylesheet" />
+<link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            $(function () {
+                cx();
+            })
+            function cx()
+            {
+                $("#yh").datagrid({
+                    url: "/zhongna/cyh?uname="+$("#uname").val(),
+                    pagination: true,
+                    pageSize: 10,
+                    pageList: [5, 10, 15, 20, 25, 30],
+                    height: 600,
+                    width: 1120,
+                    method: "post",
+                    fitColumns: true,
+                    idField: "uid",
+                    striped: true,
+                    singleSelect: false,
+                    rownumbers: true,
+                    columns: [[
+                         { field: 'ck', checkbox: true },
+                         //{ field: "uid", title: "用户id", width: 10, align: "center" },
+                         { field: "uname", title: "用户姓名", width: 20, align: "center" },
+                         { field: "uacount", title: "用户账号", width: 20, align: "center" },
+                         { field: "upwd", title: "用户密码", width: 20, align: "center" },
+                         { field: "uphone", title: "用户电话", width: 20, align: "center" },
+                         { field: "img", title: "用户图片", width: 20, align: "center" },                      
+                         { field: "dname", title: "专家", width: 20, align: "center" },
+                         //{ field: "uscore", title: "测试分数", width: 20, align: "center" },
+                         {
+                             field: 'otname', title: '状态', width: 20, align: 'center',
+                             styler: function (otname) {
+                                 if (otname=="待审核") {
+                                     return 'color:red;';
+                                 }
+                             }
+                         },
+
+                         //{ field: "otname", title: "状态", width: 20, align: "center" },
+
+                    ]],
+                    toolbar: '#tl',
+
+
+                })
+
+            }
+          
+</script>
+         <div id="tl">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+             用户姓名：
+            @Html.TextBox("uname")<input id="Submit1" type="submit" value="查询"  onclick="cx()"/>
+               
+              </div>
+            <table id="yh">
+            
+            </table>
+           
+
+    </body>
+</html>
+
+

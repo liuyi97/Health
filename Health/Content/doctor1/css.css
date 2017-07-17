@@ -1,0 +1,12 @@
+.Head,.Heng,.Main,.Banner,.I_banner,.Bottom,.infiniteCarousel{width:970px;margin-top:0px auto;overflow:hidden;clear:both; border:1px solid #dedede;margin-bottom:28px}
+.infiniteCarousel {position:relative;height:231px;margin-top:24px;width:1146px;}
+.infiniteCarousel .wrapper {width:909px; overflow: hidden;height:241px;position: absolute;top: 0;z-index:1;margin-left:31px;}
+.infiniteCarousel ul{position: absolute;}
+.infiniteCarousel .wrapper ul li {float:left;width:289px;position:relative;background:url(../images/p_bg.gif) no-repeat left bottom;padding-bottom:23px;padding-righT:5px;text-aligN:center;overflow:hidden;_display:inline;}
+.infiniteCarousel .wrapper ul li div{widtH:500px;height:375px;overflow:hidden;text-align:center;padding:3px;}
+.infiniteCarousel .wrapper ul li div a{background:UrL(../images/pro_bg.png) no-repeat;widtH:223px;heighT:123px;position:absolute;left:300px;top:0px;display:block;}
+.infiniteCarousel .wrapper ul li div.on-div a{left:0px;}
+.infiniteCarousel a#prev,.infiniteCarousel a#next{display:block;height:118px;width:23px;position:absolute;top:0px;cursor: pointer;outline: 0;z-index:2;overflow:hidden;}
+.infiniteCarousel a#prev {background:url(../images/next.gif) no-repeat center #f5f5f5;right:0px;height:230px;}
+.infiniteCarousel a#next {background:url(../images/up.gif) no-repeat center #f5f5f5;left:0px;height:230px;}
+

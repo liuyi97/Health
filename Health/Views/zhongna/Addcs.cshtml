@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title></title>
+    <script src="~/UI/jquery.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="tjcs">
+        <br />
+        测试编号：<input type="text" id="tid" name="tid"  style="display:none"/><br />
+        <br />
+        题目： 
+        <input class="easyui-validatebox" type="text" id="tabout" name="tabout" data-options="required:true" missingmessage="请输入题目！" /><br />
+        <br />
+        分数：    
+        <input class="easyui-validatebox" type="text" id="tscore" name="tscore" data-options="required:true" missingmessage="请输入分数！" />
+    </form>
+</body>
+</html>
